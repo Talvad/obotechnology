@@ -76,20 +76,20 @@ function MissionStatement() {
                     fill='none'
                     points='50,5 90,27 90,73 50,95 10,73 10,27'
                     stroke='currentColor'
-                    stroke-width='1'
+                    strokeWidth='1'
                   ></polygon>
                   <polygon
                     fill='none'
                     points='50,20 78,35 78,65 50,80 22,65 22,35'
                     stroke='currentColor'
-                    stroke-width='0.8'
+                    strokeWidth='0.8'
                   ></polygon>
                   {/* <!-- Active Polygon Fill --> */}
                   <polygon
                     fill='rgba(234, 88, 12, 0.18)'
                     points='50,12 84,32 75,70 50,88 20,68 18,32'
                     stroke='#ea580c'
-                    stroke-width='2'
+                    strokeWidth='2'
                   ></polygon>
                   <circle cx='50' cy='12' fill='#ea580c' r='3'></circle>
                   <circle cx='84' cy='32' fill='#0051d5' r='3'></circle>
