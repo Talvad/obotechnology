@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#5a4138",
+            "secondary-fixed-dim": "#b4c5ff",
+            "surface-variant": "#e0e3e5",
+            "primary": "#ea580c",
+            "primary-container": "#ea580c",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#ffffff",
+            "surface": "#ffffff",
+            "surface-dim": "#f1f5f9",
+            "surface-bright": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f8fafc",
+            "surface-container": "#f1f5f9",
+            "surface-container-high": "#e2e8f0",
+            "surface-container-highest": "#cbd5e1",
+            "outline": "#cbd5e1",
+            "outline-variant": "#e2e8f0",
+            "on-surface": "#0f172a",
+            "text-primary": "#0f172a",
+            "text-secondary": "#475569",
+            "text-tertiary": "#64748b",
+            "electric-coral": "#ea580c",
+            "electric-blue": "#2563eb",
+            "tertiary": "#d97706"
+          },
+          fontFamily: {
+            "headline-hero": ["Space Grotesk", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"],
+            "body-sm": ["Hanken Grotesk", "sans-serif"],
+            "label-lg": ["Space Grotesk", "sans-serif"],
+            "label-md": ["Space Grotesk", "sans-serif"],
+            "label-caps": ["JetBrains Mono", "monospace"]
+          },
+          spacing: {
+            "space-3xl": "5.5rem",
+            "space-2xl": "3.5rem",
+            "space-xl": "2.25rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "4rem",
+            "margin": "2rem",
+            "margin-sm": "1rem",
+            "gutter-lg": "2rem",
+            "gutter": "1.5rem",
+            "gutter-sm": "1rem"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#f8fafc] font-body-md text-text-primary antialiased selection:bg-orange-100 selection:text-orange-900">
+<!-- Fixed Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+<div class="h-20 max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg flex items-center justify-between gap-gutter">
+<div class="flex items-center gap-space-md shrink-0">
+<a class="flex items-center gap-space-sm" data-path="obo-technology-homepage" href="#">
+<img alt="Obo Technology Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG7LU5QTjSlPanA21RMIwLY5HpKQ-Qq5NCg0zXg2SrTLjnEvEE304ik03J15mcnE-Y_3IwQ0zzG-KV3TBgCrPp7d9Mq1IP93osfjb8zU8tW6FNEw_uJncYpw3V7S1kiJN4WTKgMP2tiHhgiVf8f_BEz6-wVP8TAISjD3wKV6fky2dm9ks4vBwX7dRYOLVbL5rMIvobGsKlb3IXUMSiqwyL6_kX-V_XFVpc0wcNlwXKzA"/>
+<span class="font-headline-sm text-headline-sm text-slate-900 tracking-tight font-bold">Obo Technology</span>
+</a>
+</div>
+<nav class="hidden xl:flex items-center gap-gutter" data-active-classes="bg-slate-100 text-slate-900 font-label-lg rounded-lg border border-slate-200">
+<a class="font-label-lg text-slate-600 hover:text-slate-900 transition-colors py-space-xs px-space-sm rounded-lg" data-path="products-and-services" href="#">Products &amp; Services</a>
+<a class="font-label-lg text-slate-600 hover:text-slate-900 transition-colors py-space-xs px-space-sm rounded-lg" data-path="robotics-kits-and-hardware" href="#">Robotics Kits &amp; Hardware</a>
+<a class="font-label-lg text-slate-600 hover:text-slate-900 transition-colors py-space-xs px-space-sm rounded-lg" data-path="curriculum-and-programs" href="#">Curriculum &amp; Programs</a>
+<a class="font-label-lg text-slate-600 hover:text-slate-900 transition-colors py-space-xs px-space-sm rounded-lg" data-path="about-us" href="#">About Us</a>
+<a aria-current="page" class="transition-colors py-space-xs px-space-sm bg-orange-50 text-orange-700 font-label-lg rounded-lg border border-orange-200 font-semibold" data-path="careers" href="#">Careers</a>
+</nav>
+<div class="flex items-center gap-space-md shrink-0">
+<a class="hidden sm:inline-flex items-center justify-center font-label-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 px-space-md py-space-sm rounded-lg transition-all" data-path="login" href="#">Portal Login</a>
+<a class="inline-flex items-center justify-center font-label-lg bg-orange-600 text-white font-bold px-space-lg py-space-sm rounded-lg shadow-sm hover:bg-orange-500 active:scale-95 transition-all" data-path="signup" href="#">Get Started</a>
+</div>
+</div>
+</header>
+<main class="w-full pt-20 bg-[#f8fafc] min-h-screen">
+<div class="flex flex-col w-full">
+<!-- Top Atmospheric Hero Section -->
+<section class="relative w-full overflow-hidden py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-white border-b border-slate-200">
+<!-- Ambient Backdrop Highlights -->
+<div class="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-orange-100/60 blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/3 -right-20 w-[480px] h-[480px] rounded-full bg-blue-100/60 blur-[130px] pointer-events-none"></div>
+<div class="max-w-[1320px] mx-auto relative z-10 flex flex-col gap-space-2xl">
+<!-- Eyebrow & Badging -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-label-caps text-xs tracking-wider uppercase font-semibold">
+<span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
+              Careers at Obo Technology
+            </span>
+<span class="hidden sm:inline-flex text-slate-300 font-label-caps text-xs">/</span>
+<span class="text-slate-500 font-label-caps text-xs tracking-widest uppercase">Physical Computing • Robotics • Pedagogy</span>
+</div>
+<!-- Hero Main Heading Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-end">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<h1 class="font-headline-hero text-4xl sm:text-5xl lg:text-[54px] lg:leading-[62px] text-slate-900 tracking-tight font-extrabold max-w-4xl">
+                Build the future of <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-600 to-blue-600">physical computing</span> and robotics education.
+              </h1>
+<p class="font-body-lg text-lg text-slate-600 max-w-2xl leading-relaxed">
+                Join our mission to empower the next generation of thinkers, coders, and kinetic creators. We bridge industrial mechatronics, tactile curriculum, and edge software to spark lifelong discovery across global classrooms.
+              </p>
+</div>
+<!-- Quick Jump Button Box -->
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-sm">
+<a class="inline-flex items-center justify-center gap-space-sm px-space-xl py-space-md rounded-lg bg-orange-600 text-white font-label-lg font-bold shadow-sm hover:bg-orange-500 active:scale-95 transition-all" href="#open-positions">
+<span>Explore 6 Open Roles</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-sm px-space-xl py-space-md rounded-lg bg-slate-100 text-slate-800 border border-slate-200 font-label-lg font-semibold hover:bg-slate-200 transition-all" href="#life-at-obo">
+<span>Explore Life at Obo</span>
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</a>
+</div>
+</div>
+<!-- Impact Telemetry Metrics Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter pt-space-xl">
+<div class="p-space-lg rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-caps text-xs uppercase tracking-wider font-semibold">National Reach</span>
+<span class="material-symbols-outlined text-[20px] text-blue-600">domain</span>
+</div>
+<div class="mt-space-md">
+<span class="font-headline-hero text-4xl lg:text-[44px] font-bold text-slate-900">350+</span>
+<p class="font-body-sm text-sm text-slate-600 mt-space-xs">Partner public districts &amp; technical academies</p>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-caps text-xs uppercase tracking-wider font-semibold">Student Engagement</span>
+<span class="material-symbols-outlined text-[20px] text-orange-600">group</span>
+</div>
+<div class="mt-space-md">
+<span class="font-headline-hero text-4xl lg:text-[44px] font-bold text-slate-900">50,000+</span>
+<p class="font-body-sm text-sm text-slate-600 mt-space-xs">Budding engineers learning robotics weekly</p>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-caps text-xs uppercase tracking-wider font-semibold">Mission Commitment</span>
+<span class="material-symbols-outlined text-[20px] text-amber-600">handshake</span>
+</div>
+<div class="mt-space-md">
+<span class="font-headline-hero text-4xl lg:text-[44px] font-bold text-slate-900">100%</span>
+<p class="font-body-sm text-sm text-slate-600 mt-space-xs">Dedicated team commitment to Title-I STEM equity</p>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-caps text-xs uppercase tracking-wider font-semibold">Hardware Lab Stipend</span>
+<span class="material-symbols-outlined text-[20px] text-orange-600">precision_manufacturing</span>
+</div>
+<div class="mt-space-md">
+<span class="font-headline-hero text-4xl lg:text-[44px] font-bold text-slate-900">$3,500</span>
+<p class="font-body-sm text-sm text-slate-600 mt-space-xs">Personal home lab gear budget upon onboarding</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Perks & Engineering Culture Grid -->
+<section class="w-full py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-[#f8fafc] border-b border-slate-200 relative">
+<div class="max-w-[1320px] mx-auto flex flex-col gap-space-2xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="max-w-2xl">
+<span class="font-label-caps text-xs text-orange-700 uppercase tracking-widest font-bold">Why Work at Obo</span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-slate-900 font-bold tracking-tight mt-space-xs">
+                Where tangible hardware meets radical pedagogical optimism.
+              </h2>
+</div>
+<p class="font-body-md text-slate-600 max-w-md">
+              We combine the rapid execution of a Silicon Valley deep-tech studio with the empathetic pacing and care of dedicated educational reformers.
+            </p>
+</div>
+<!-- Bento-Style Value Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Value 1: Purpose-Driven Impact -->
+<div class="p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="w-12 h-12 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-600 mb-space-lg">
+<span class="material-symbols-outlined text-[26px]">school</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Purpose-Driven Impact</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  Every pull request, injection molding iteration, and lesson plan directly reaches classrooms. You see your work ignite lightbulb moments in students who never imagined themselves building robots.
+                </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold">
+<span>Direct Classroom Field Tests</span>
+<span class="material-symbols-outlined text-[15px] text-emerald-600">done_all</span>
+</div>
+</div>
+<!-- Value 2: Hardware + Software -->
+<div class="p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-space-lg">
+<span class="material-symbols-outlined text-[26px]">memory</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Cutting-Edge Hybrid Stack</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  We hack across physical and digital bounds: ESP32-S3 boards, low-latency WebBluetooth protocol stacks, real-time kinematics simulators, and interactive browser compiler toolchains.
+                </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold">
+<span>ESP32 • ROS2 • WebGL • Python</span>
+<span class="material-symbols-outlined text-[15px] text-blue-600">tune</span>
+</div>
+</div>
+<!-- Value 3: Lab Stipend -->
+<div class="p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="w-12 h-12 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 mb-space-lg">
+<span class="material-symbols-outlined text-[26px]">precision_manufacturing</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Generous Lab &amp; Gear Stipend</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  Every hire receives a high-speed Voron or Bambu 3D printer, complete soldering station, full sensor component kit, and unlimited filament so you can fabricate ideas freely from home.
+                </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold">
+<span>$3,500 Setup + Annual Refills</span>
+<span class="material-symbols-outlined text-[15px] text-amber-600">build_circle</span>
+</div>
+</div>
+<!-- Value 4: Flexible & Hybrid Culture -->
+<div class="p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="w-12 h-12 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 mb-space-lg">
+<span class="material-symbols-outlined text-[26px]">public</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Async, Distributed First</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  We value clarity of thought and documentation over nonstop calendar sprawl. Enjoy flexible hours, core overlap collaboration blocks, and zero penalty for deep uninterrupted maker time.
+                </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold">
+<span>Remote-First with Regional Hubs</span>
+<span class="material-symbols-outlined text-[15px] text-slate-600">schedule</span>
+</div>
+</div>
+<!-- Value 5: Health & Wellness -->
+<div class="p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="w-12 h-12 rounded-lg bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-space-lg">
+<span class="material-symbols-outlined text-[26px]">favorite</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Comprehensive Wellness &amp; Equity</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  100% premium health coverage (Medical, Dental, Vision) for you and dependents. Meaningful equity packages, 401(k) matching, and parental leaves designed to support sustainable life phases.
+                </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold">
+<span>Health • Equity • 401(k) Match</span>
+<span class="material-symbols-outlined text-[15px] text-rose-600">verified</span>
+</div>
+</div>
+<!-- Value 6: Continuous Learning -->
+<div class="p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="w-12 h-12 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-600 mb-space-lg">
+<span class="material-symbols-outlined text-[26px]">auto_stories</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Continuous Learning Grants</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  An annual $2,000 personal budget dedicated to robotics conferences, IEEE memberships, embedded software certifications, pedagogy courses, or books you choose to master.
+                </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold">
+<span>Annual $2k Growth Budget</span>
+<span class="material-symbols-outlined text-[15px] text-orange-600">psychology</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Open Positions Directory Section with Live Client-Side Filtering -->
+<section class="w-full py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-white border-b border-slate-200" id="open-positions">
+<div class="max-w-[1320px] mx-auto flex flex-col gap-space-2xl">
+<!-- Directory Heading & Controls -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-orange-600 font-label-caps text-xs uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[16px]">work_outline</span>
+<span>Live Opportunities</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg">
+<div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-slate-900 font-bold tracking-tight">Open Positions</h2>
+<p class="font-body-md text-slate-600 mt-space-xs">Explore high-impact positions across engineering, pedagogy, and field deployment.</p>
+</div>
+<span class="font-label-md text-sm text-slate-700 bg-slate-100 border border-slate-200 px-space-md py-space-xs rounded-lg font-semibold" id="role-counter">Showing 6 Open Roles</span>
+</div>
+<!-- Department Filter Tab Bar -->
+<div class="flex flex-wrap items-center gap-space-xs pt-space-md overflow-x-auto pb-space-xs">
+<button class="dept-filter-btn px-space-md py-space-sm rounded-lg font-label-md text-sm font-semibold bg-orange-600 text-white shadow-sm hover:bg-orange-500 transition-all" onclick="filterDepartment('all', this)" type="button">
+                All Departments
+              </button>
+<button class="dept-filter-btn px-space-md py-space-sm rounded-lg font-label-md text-sm font-semibold bg-slate-100 text-slate-700 border border-slate-200 hover:text-slate-900 hover:bg-slate-200 transition-all" onclick="filterDepartment('Engineering', this)" type="button">
+                Engineering
+              </button>
+<button class="dept-filter-btn px-space-md py-space-sm rounded-lg font-label-md text-sm font-semibold bg-slate-100 text-slate-700 border border-slate-200 hover:text-slate-900 hover:bg-slate-200 transition-all" onclick="filterDepartment('Curriculum &amp; Pedagogy', this)" type="button">
+                Curriculum &amp; Pedagogy
+              </button>
+<button class="dept-filter-btn px-space-md py-space-sm rounded-lg font-label-md text-sm font-semibold bg-slate-100 text-slate-700 border border-slate-200 hover:text-slate-900 hover:bg-slate-200 transition-all" onclick="filterDepartment('Product &amp; Hardware', this)" type="button">
+                Product &amp; Hardware
+              </button>
+<button class="dept-filter-btn px-space-md py-space-sm rounded-lg font-label-md text-sm font-semibold bg-slate-100 text-slate-700 border border-slate-200 hover:text-slate-900 hover:bg-slate-200 transition-all" onclick="filterDepartment('Sales &amp; Institutional', this)" type="button">
+                Sales &amp; Institutional Partnerships
+              </button>
+</div>
+</div>
+<!-- Job Roles Grid -->
+<div class="flex flex-col gap-space-md" id="roles-grid">
+<!-- Role 1 -->
+<div class="job-card p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg transition-all" data-department="Engineering">
+<div class="flex flex-col gap-space-sm max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-space-xs rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-label-caps text-xs uppercase font-bold">Engineering</span>
+<span class="px-space-sm py-space-xs rounded-full bg-slate-100 text-slate-700 font-label-caps text-xs uppercase font-medium">Senior Level</span>
+<span class="flex items-center gap-space-xs text-slate-500 font-body-sm text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                    Hybrid / Remote (US)
+                  </span>
+</div>
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Senior Embedded Firmware Engineer</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  Architect real-time motor controller algorithms, dual-core ESP32-S3 driver libraries, ROS2 communication bridges, and MicroPython firmware execution sandboxes designed for safe student execution.
+                </p>
+<div class="flex flex-wrap gap-space-xs text-slate-600 font-label-caps text-xs">
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">C / C++</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">ESP-IDF</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">ROS2</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">MicroPython</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">BLE Stack</span>
+</div>
+</div>
+<div class="flex lg:flex-col items-center lg:items-end justify-between gap-space-md shrink-0">
+<span class="text-slate-700 font-body-sm text-sm font-semibold bg-slate-50 px-space-sm py-1 rounded border border-slate-200">$150k – $185k • Equity</span>
+<button class="px-space-lg py-space-sm rounded-lg bg-orange-600 text-white font-label-md font-bold hover:bg-orange-500 active:scale-95 transition-all shadow-sm" onclick="openApplicationModal('Senior Embedded Firmware Engineer')" type="button">
+                  Apply Now
+                </button>
+</div>
+</div>
+<!-- Role 2 -->
+<div class="job-card p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg transition-all" data-department="Curriculum &amp; Pedagogy">
+<div class="flex flex-col gap-space-sm max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-space-xs rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-label-caps text-xs uppercase font-bold">Curriculum &amp; Pedagogy</span>
+<span class="px-space-sm py-space-xs rounded-full bg-slate-100 text-slate-700 font-label-caps text-xs uppercase font-medium">Lead Level</span>
+<span class="flex items-center gap-space-xs text-slate-500 font-body-sm text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                    San Francisco, CA / Remote
+                  </span>
+</div>
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Lead Robotics Curriculum Designer</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  Author and direct inquiry-based K-12 physical computing modules strictly aligned with Next Generation Science Standards (NGSS) and CSTA frameworks. Translate complex kinematics into joyful classroom explorations.
+                </p>
+<div class="flex flex-wrap gap-space-xs text-slate-600 font-label-caps text-xs">
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">NGSS Alignment</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">Scaffolding</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">Teacher Rubrics</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">Blockly to Python</span>
+</div>
+</div>
+<div class="flex lg:flex-col items-center lg:items-end justify-between gap-space-md shrink-0">
+<span class="text-slate-700 font-body-sm text-sm font-semibold bg-slate-50 px-space-sm py-1 rounded border border-slate-200">$135k – $165k • Equity</span>
+<button class="px-space-lg py-space-sm rounded-lg bg-orange-600 text-white font-label-md font-bold hover:bg-orange-500 active:scale-95 transition-all shadow-sm" onclick="openApplicationModal('Lead Robotics Curriculum Designer')" type="button">
+                  Apply Now
+                </button>
+</div>
+</div>
+<!-- Role 3 -->
+<div class="job-card p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg transition-all" data-department="Product &amp; Hardware">
+<div class="flex flex-col gap-space-sm max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-space-xs rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-label-caps text-xs uppercase font-bold">Product &amp; Hardware</span>
+<span class="px-space-sm py-space-xs rounded-full bg-slate-100 text-slate-700 font-label-caps text-xs uppercase font-medium">Mid-Senior</span>
+<span class="flex items-center gap-space-xs text-slate-500 font-body-sm text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                    Austin Hardware Studio, TX
+                  </span>
+</div>
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Educational Hardware Mechatronics Engineer</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  Design indestructible, modular robotic linkages, magnetic snap connectors, strain-relief chassis, and precision planetary gear assemblies crafted to withstand everyday classroom environments.
+                </p>
+<div class="flex flex-wrap gap-space-xs text-slate-600 font-label-caps text-xs">
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">Fusion360 / SolidWorks</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">DFM Injection</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">Rapid Prototyping</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">BLDC Actuation</span>
+</div>
+</div>
+<div class="flex lg:flex-col items-center lg:items-end justify-between gap-space-md shrink-0">
+<span class="text-slate-700 font-body-sm text-sm font-semibold bg-slate-50 px-space-sm py-1 rounded border border-slate-200">$140k – $170k • Studio Lab</span>
+<button class="px-space-lg py-space-sm rounded-lg bg-orange-600 text-white font-label-md font-bold hover:bg-orange-500 active:scale-95 transition-all shadow-sm" onclick="openApplicationModal('Educational Hardware Mechatronics Engineer')" type="button">
+                  Apply Now
+                </button>
+</div>
+</div>
+<!-- Role 4 -->
+<div class="job-card p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg transition-all" data-department="Sales &amp; Institutional">
+<div class="flex flex-col gap-space-sm max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-space-xs rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-label-caps text-xs uppercase font-bold">Sales &amp; Institutional</span>
+<span class="px-space-sm py-space-xs rounded-full bg-slate-100 text-slate-700 font-label-caps text-xs uppercase font-medium">Director / Lead</span>
+<span class="flex items-center gap-space-xs text-slate-500 font-body-sm text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                    East Coast Territory / Remote
+                  </span>
+</div>
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Institutional STEM Solutions Specialist</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  Partner with county superintendents, university provosts, and Title-I STEM directors to structure turnkey robotics lab implementations, grant funding allocation models, and multi-year adoptions.
+                </p>
+<div class="flex flex-wrap gap-space-xs text-slate-600 font-label-caps text-xs">
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">K-12 Procurement</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">State Grants &amp; Title I</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">District Pilots</span>
+</div>
+</div>
+<div class="flex lg:flex-col items-center lg:items-end justify-between gap-space-md shrink-0">
+<span class="text-slate-700 font-body-sm text-sm font-semibold bg-slate-50 px-space-sm py-1 rounded border border-slate-200">$120k Base + Uncapped Comm.</span>
+<button class="px-space-lg py-space-sm rounded-lg bg-orange-600 text-white font-label-md font-bold hover:bg-orange-500 active:scale-95 transition-all shadow-sm" onclick="openApplicationModal('Institutional STEM Solutions Specialist')" type="button">
+                  Apply Now
+                </button>
+</div>
+</div>
+<!-- Role 5 -->
+<div class="job-card p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg transition-all" data-department="Engineering">
+<div class="flex flex-col gap-space-sm max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-space-xs rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-label-caps text-xs uppercase font-bold">Engineering</span>
+<span class="px-space-sm py-space-xs rounded-full bg-slate-100 text-slate-700 font-label-caps text-xs uppercase font-medium">Mid-Senior</span>
+<span class="flex items-center gap-space-xs text-slate-500 font-body-sm text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                    Fully Remote (US / Canada)
+                  </span>
+</div>
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Frontend Engineer (WebIDE &amp; WebGL Simulator)</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  Engineer our browser-based robotics programming suite. You will optimize real-time WebBluetooth device telemetry pipelines and render 60fps 3D physical physics simulation scenes using Three.js and WebAssembly.
+                </p>
+<div class="flex flex-wrap gap-space-xs text-slate-600 font-label-caps text-xs">
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">TypeScript</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">Three.js</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">WebBluetooth API</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">WebAssembly</span>
+</div>
+</div>
+<div class="flex lg:flex-col items-center lg:items-end justify-between gap-space-md shrink-0">
+<span class="text-slate-700 font-body-sm text-sm font-semibold bg-slate-50 px-space-sm py-1 rounded border border-slate-200">$145k – $175k • Equity</span>
+<button class="px-space-lg py-space-sm rounded-lg bg-orange-600 text-white font-label-md font-bold hover:bg-orange-500 active:scale-95 transition-all shadow-sm" onclick="openApplicationModal('Frontend Engineer (WebIDE)')" type="button">
+                  Apply Now
+                </button>
+</div>
+</div>
+<!-- Role 6 -->
+<div class="job-card p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg transition-all" data-department="Curriculum &amp; Pedagogy">
+<div class="flex flex-col gap-space-sm max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-sm py-space-xs rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-label-caps text-xs uppercase font-bold">Curriculum &amp; Pedagogy</span>
+<span class="px-space-sm py-space-xs rounded-full bg-slate-100 text-slate-700 font-label-caps text-xs uppercase font-medium">Practitioner Lead</span>
+<span class="flex items-center gap-space-xs text-slate-500 font-body-sm text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                    Chicago, IL / Hybrid
+                  </span>
+</div>
+<h3 class="font-headline-sm text-xl text-slate-900 font-bold">Teacher Professional Development Specialist</h3>
+<p class="font-body-md text-slate-600 leading-relaxed">
+                  Design engaging train-the-trainer workshops, mentor STEM department chairs, and run interactive mechatronics bootcamps that turn non-technical educators into confident robotics mentors.
+                </p>
+<div class="flex flex-wrap gap-space-xs text-slate-600 font-label-caps text-xs">
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">Coaching</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">Instructional Design</span>
+<span class="bg-slate-100 border border-slate-200 px-space-xs py-0.5 rounded">In-Service Training</span>
+</div>
+</div>
+<div class="flex lg:flex-col items-center lg:items-end justify-between gap-space-md shrink-0">
+<span class="text-slate-700 font-body-sm text-sm font-semibold bg-slate-50 px-space-sm py-1 rounded border border-slate-200">$115k – $140k • Travel Stipend</span>
+<button class="px-space-lg py-space-sm rounded-lg bg-orange-600 text-white font-label-md font-bold hover:bg-orange-500 active:scale-95 transition-all shadow-sm" onclick="openApplicationModal('Teacher PD Specialist')" type="button">
+                  Apply Now
+                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- "Life at Obo" Culture Gallery & Quotes Section -->
+<section class="w-full py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-[#f8fafc] border-b border-slate-200" id="life-at-obo">
+<div class="max-w-[1320px] mx-auto flex flex-col gap-space-2xl">
+<!-- Section Intro -->
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<span class="font-label-caps text-xs text-orange-700 uppercase tracking-widest font-bold">Life at Obo</span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-slate-900 font-bold tracking-tight">
+              Where engineers brainstorm with middle school teachers.
+            </h2>
+<p class="font-body-md text-slate-600">
+              We test all firmware in actual classrooms, celebrate broken 3D prints as debugging discoveries, and value intellectual humility above all else.
+            </p>
+</div>
+<!-- Photo Mosaic Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 overflow-hidden rounded-xl bg-white border border-slate-200 relative group h-80 lg:h-96 shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An energetic modern robotics lab workshop with diverse mechatronics engineers and educators testing articulated orange robotic arms on lab tables surrounded by digital oscilloscopes and glowing monitors in deep moody blue and amber ambient light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCWNDtBXs1GIDIiU5L9unTXh6VcAp0BpKc0Q_2-IqGLqnGRMqbpoqtniAVB14EwfIR5PKHr1okyYOOXWn1SpuHNK6nWRnIN5bTW2vHuD7m02AnZ2Ihr6lTq-9Za4xJPLGGWQN2q9M26xIvbjyVUwF2WKf7SrJVZD24bXvbYzefnv6sOQVNM6W9eEqMGLk87R1BRgaB20jJj_VGQWuSZJksNfHBPX0xomMdiPOVkYt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg">
+<div>
+<span class="font-label-caps text-xs text-orange-400 uppercase font-semibold">Prototyping Studio • Austin</span>
+<p class="font-headline-sm text-lg text-white font-semibold">Testing modular magnetic motor assemblies with local teachers.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 overflow-hidden rounded-xl bg-white border border-slate-200 relative group h-80 lg:h-96 shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up shot of hands assembling an intricate multi-axis educational robotic gripper with transparent carbon fiber casings and embedded glowing LED status indicators in a tech development space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6DbpZj191PRgypREf3ucBcHMYHcdq6N87AKm3SSsaSVGYvh5A3RJxP1lRFVL6FuWYRlV5pvIe5ZfHCH_t-siTQABh08daw5qIWw0gIa8Stt6-rKRhLkSjxtCR7X_ApowV3HShq4C07p54bo1l03Qx6GLbTe9Y5WPz5xJv43gl2MSdzX7Z3iW3XT3-DtQFJwAZbkbQfPscvXqD9JfVk2oeApX6FEdXcOF6_acqhz1Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg">
+<div>
+<span class="font-label-caps text-xs text-amber-400 uppercase font-semibold">Kinematics Lab</span>
+<p class="font-body-md text-white font-semibold">Tuning torque thresholds for young students' hands.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 overflow-hidden rounded-xl bg-white border border-slate-200 relative group h-72 shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Young high school students cheering around an autonomous robotic rover following a line maze floor path during a classroom pilot session with smiling curriculum instructors taking telemetry notes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT7m-tgtluoLKatFi8e4cbHdDrwkRnIj-PfNmmQuFNxmCVP97V3cGSCruHOPDpJEG66ZuyGWR_nvUps456zdMZRYzIOVJEv03mk-Ad1pCyWVEbfiQIqyYS_oh5K8Dz9ZsQeoRjIFiBPilD5bhG1lhMXUvnq_OCYssxm5stVrl_Kec-098Fj5ZaBo0jZR6uP-voKbCz3nvDFFhm5QCB1ezW08Jd3LG7z9hObrQuJSHH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg">
+<div>
+<span class="font-label-caps text-xs text-blue-400 uppercase font-semibold">Classroom Pilots</span>
+<p class="font-body-md text-white font-semibold">Field day with 8th graders evaluating our sensor fusion kits.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 overflow-hidden rounded-xl bg-white border border-slate-200 relative group h-72 shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Remote distributed engineering team gathering around a whiteboard during an annual maker retreat, smiling while holding prototype circuit boards and custom robotic arm prototypes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-O3sGuP7NRUbw3ri0CB9Q0TA-qoV2yUrPWu78XD_KQZn25E8iRpUAbXP1Sx_Bka-GOM4rde0MQ0QjLRHwyZR_2M7ut2-tf_KursOD2AlPJ2ljZsM2lX-wY-CqZCUnXSD2XYy_zVvl_--WTStILsg-wNMPyWfP6ETCSHGZgjBTB5sW-LrSnoujBaHP-yeOKJCui8yqBKKNNTGP-RrOmR_oBdHXwKyJYnF6t3KkUwbL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg">
+<div>
+<span class="font-label-caps text-xs text-orange-400 uppercase font-semibold">Annual Maker Summit</span>
+<p class="font-body-md text-white font-semibold">Every team member brings a dream build to showcase.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial Quotes Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter pt-space-md">
+<!-- Quote 1 -->
+<div class="p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<span class="material-symbols-outlined text-[36px] text-orange-500">format_quote</span>
+<p class="font-body-lg text-lg text-slate-800 italic leading-relaxed">
+                  "At previous tech companies, I spent years shaving milliseconds off ad clicks. At Obo, I wrote the firmware that enabled a 6th grader in Detroit to build her first self-balancing robot. That emotional high is completely unmatched."
+                </p>
+</div>
+<div class="flex items-center gap-space-md pt-space-lg border-t border-slate-100">
+<div class="w-12 h-12 rounded-full bg-orange-100 border border-orange-200 flex items-center justify-center font-headline-sm text-base font-bold text-orange-700">
+                  MK
+                </div>
+<div>
+<h4 class="font-label-lg text-slate-900 font-bold">Mateo Kowalski</h4>
+<p class="font-body-sm text-sm text-slate-500">Lead Embedded Firmware Architect • Ex-Autonomous Vehicle Robotics</p>
+</div>
+</div>
+</div>
+<!-- Quote 2 -->
+<div class="p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<span class="material-symbols-outlined text-[36px] text-blue-500">format_quote</span>
+<p class="font-body-lg text-lg text-slate-800 italic leading-relaxed">
+                  "I taught public high school physics for nine years before joining Obo. The engineering team treats pedagogical feedback as a Tier 1 product requirement, not a marketing afterthought. We build tools that honor how real teachers teach."
+                </p>
+</div>
+<div class="flex items-center gap-space-md pt-space-lg border-t border-slate-100">
+<div class="w-12 h-12 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center font-headline-sm text-base font-bold text-blue-700">
+                  EL
+                </div>
+<div>
+<h4 class="font-label-lg text-slate-900 font-bold">Dr. Elena Lin</h4>
+<p class="font-body-sm text-sm text-slate-500">Director of Curriculum • Former Chicago Public Schools Educator</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- "Don't See Your Role?" General Application Callout -->
+<section class="w-full py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-white">
+<div class="max-w-[1320px] mx-auto">
+<div class="p-space-2xl rounded-2xl bg-gradient-to-br from-slate-50 via-white to-orange-50/40 border border-slate-200 flex flex-col lg:flex-row items-center justify-between gap-space-2xl shadow-sm relative overflow-hidden">
+<!-- Glow Accent -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-orange-200/40 blur-[100px] pointer-events-none"></div>
+<div class="flex flex-col gap-space-md max-w-2xl relative z-10">
+<span class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-amber-100 text-amber-800 border border-amber-200 font-label-caps text-xs uppercase tracking-wider self-start font-semibold">
+<span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+                General Fellowship &amp; Inquiries
+              </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-slate-900 font-bold tracking-tight">
+                Don't see your exact role on the board?
+              </h2>
+<p class="font-body-lg text-slate-600 leading-relaxed">
+                We are always scouting exceptional hardware hackers, technical writers, pedagogical researchers, and passionate robotics mentors. Send us your portfolio, open-source repositories, or syllabus ideas.
+              </p>
+</div>
+<div class="flex flex-col sm:flex-row lg:flex-col gap-space-md w-full lg:w-auto relative z-10 shrink-0">
+<button class="px-space-xl py-space-md rounded-lg bg-orange-600 text-white font-label-lg font-bold shadow-sm hover:bg-orange-500 active:scale-95 transition-all text-center" onclick="openApplicationModal('General Maker &amp; Pedagogy Application')" type="button">
+                Submit Open Application
+              </button>
+<a class="px-space-xl py-space-md rounded-lg bg-white border border-slate-300 text-slate-800 font-label-lg font-semibold hover:bg-slate-50 shadow-sm transition-all text-center" href="mailto:careers@obotechnology.com">
+                Email Recruiting Directly
+              </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Application Modal -->
+<div class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-margin-sm" id="application-modal">
+<div class="bg-white max-w-xl w-full rounded-2xl shadow-2xl border border-slate-200 overflow-hidden p-space-xl flex flex-col gap-space-lg relative animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-xs text-orange-600 uppercase tracking-wider font-semibold">Candidate Portal</span>
+<h3 class="font-headline-sm text-2xl text-slate-900 font-bold mt-space-xs" id="modal-role-title">Apply for Position</h3>
+</div>
+<button class="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition-colors" onclick="closeApplicationModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Application Form -->
+<form class="flex flex-col gap-space-md" id="role-application-form" onsubmit="handleApplicationSubmit(event)">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-sm text-slate-700 font-medium" for="applicant-name">Full Name</label>
+<input class="w-full px-space-md py-space-sm rounded-lg bg-slate-50 border border-slate-300 text-slate-900 font-body-sm text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500" id="applicant-name" placeholder="Ada Lovelace" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-sm text-slate-700 font-medium" for="applicant-email">Email Address</label>
+<input class="w-full px-space-md py-space-sm rounded-lg bg-slate-50 border border-slate-300 text-slate-900 font-body-sm text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500" id="applicant-email" placeholder="ada@domain.edu" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-sm text-slate-700 font-medium" for="applicant-links">GitHub / Portfolio / LinkedIn</label>
+<input class="w-full px-space-md py-space-sm rounded-lg bg-slate-50 border border-slate-300 text-slate-900 font-body-sm text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500" id="applicant-links" placeholder="https://github.com/..." required="" type="url"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-sm text-slate-700 font-medium" for="applicant-note">What robotic or educational project are you proudest of?</label>
+<textarea class="w-full px-space-md py-space-sm rounded-lg bg-slate-50 border border-slate-300 text-slate-900 font-body-sm text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500" id="applicant-note" placeholder="Tell us briefly about a mechatronics device you wired, or a classroom lesson you brought to life..." required="" rows="3"></textarea>
+</div>
+<div class="pt-space-xs flex items-center justify-end gap-space-md">
+<button class="px-space-md py-space-sm rounded-lg text-slate-600 hover:text-slate-900 font-label-md text-sm transition-colors font-medium" onclick="closeApplicationModal()" type="button">
+                Cancel
+              </button>
+<button class="px-space-xl py-space-sm rounded-lg bg-orange-600 text-white font-label-md font-bold hover:bg-orange-500 active:scale-95 transition-all shadow-sm" type="submit">
+                Submit Application
+              </button>
+</div>
+</form>
+<!-- Feedback Success State -->
+<div class="hidden flex-col items-center justify-center py-space-xl text-center gap-space-sm" id="modal-success">
+<span class="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-space-xs">
+<span class="material-symbols-outlined text-[32px]">check_circle</span>
+</span>
+<h4 class="font-headline-sm text-2xl text-slate-900 font-bold">Application Received!</h4>
+<p class="font-body-md text-slate-600 max-w-sm">
+              Thank you for applying. A talent partner from our robotics or pedagogy squad will review your submission within 3 business days.
+            </p>
+<button class="mt-space-md px-space-lg py-space-sm rounded-lg bg-slate-100 border border-slate-200 text-slate-800 font-label-md text-sm hover:bg-slate-200 transition-colors font-semibold" onclick="closeApplicationModal()" type="button">
+              Back to Careers
+            </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+      function filterDepartment(dept, btnElement) {
+        const cards = document.querySelectorAll('.job-card');
+        const buttons = document.querySelectorAll('.dept-filter-btn');
+        let visibleCount = 0;
+
+        buttons.forEach(b => {
+          b.classList.remove('bg-orange-600', 'text-white', 'shadow-sm');
+          b.classList.add('bg-slate-100', 'text-slate-700', 'border', 'border-slate-200');
+        });
+
+        btnElement.classList.remove('bg-slate-100', 'text-slate-700', 'border', 'border-slate-200');
+        btnElement.classList.add('bg-orange-600', 'text-white', 'shadow-sm');
+
+        cards.forEach(card => {
+          const cardDept = card.getAttribute('data-department');
+          if (dept === 'all' || cardDept === dept) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        const counter = document.getElementById('role-counter');
+        if (counter) {
+          counter.textContent = `Showing ${visibleCount} Open Role${visibleCount === 1 ? '' : 's'}`;
+        }
+      }
+
+      function openApplicationModal(roleName) {
+        const modal = document.getElementById('application-modal');
+        const roleTitle = document.getElementById('modal-role-title');
+        const form = document.getElementById('role-application-form');
+        const success = document.getElementById('modal-success');
+
+        if (roleTitle) roleTitle.textContent = roleName;
+        if (form) form.classList.remove('hidden');
+        if (success) success.classList.add('hidden');
+        if (modal) modal.classList.remove('hidden');
+      }
+
+      function closeApplicationModal() {
+        const modal = document.getElementById('application-modal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      function handleApplicationSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('role-application-form');
+        const success = document.getElementById('modal-success');
+
+        if (form) form.classList.add('hidden');
+        if (success) success.classList.remove('hidden');
+        if (form) form.reset();
+      }
+    </script>
+</main>
+<!-- Clean Light Footer -->
+<footer class="w-full bg-slate-900 text-slate-300">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg pt-space-3xl pb-space-2xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-lg pb-space-2xl">
+<div class="space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<img alt="Obo Technology Logo" class="h-8 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/AEtjO1XG7LU5QTjSlPanA21RMIwLY5HpKQ-Qq5NCg0zXg2SrTLjnEvEE304ik03J15mcnE-Y_3IwQ0zzG-KV3TBgCrPp7d9Mq1IP93osfjb8zU8tW6FNEw_uJncYpw3V7S1kiJN4WTKgMP2tiHhgiVf8f_BEz6-wVP8TAISjD3wKV6fky2dm9ks4vBwX7dRYOLVbL5rMIvobGsKlb3IXUMSiqwyL6_kX-V_XFVpc0wcNlwXKzA"/>
+<span class="font-headline-sm text-headline-sm text-white tracking-tight font-bold">Obo Technology</span>
+</div>
+<p class="font-body-sm text-sm text-slate-400 leading-relaxed">
+            Engineering future-ready educational robotics, precision automation kits, and adaptive STEM curriculum architectures for institutes, classrooms, and makers globally.
+          </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<a aria-label="Global Network" class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">language</span>
+</a>
+<a aria-label="Developer Hub" class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</a>
+<a aria-label="Community Forum" class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</a>
+</div>
+</div>
+<div class="space-y-space-md">
+<h3 class="font-label-caps text-xs text-white uppercase tracking-wider font-semibold">Solutions &amp; Platforms</h3>
+<ul class="space-y-space-sm font-body-sm text-sm">
+<li><a class="text-slate-400 hover:text-white transition-colors" data-path="products-and-services" href="#">Products &amp; Services Overview</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" data-path="robotics-kits-and-hardware" href="#">Autonomous Robotics Kits</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Kinematic Manipulator Arms</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Sensor Fusion Core Kits</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Enterprise District Licensing</a></li>
+</ul>
+</div>
+<div class="space-y-space-md">
+<h3 class="font-label-caps text-xs text-white uppercase tracking-wider font-semibold">Curriculum &amp; Resources</h3>
+<ul class="space-y-space-sm font-body-sm text-sm">
+<li><a class="text-slate-400 hover:text-white transition-colors" data-path="curriculum-and-programs" href="#">K-12 Robotic Foundations</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">University Mechatronics Syllabus</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Teacher Guides &amp; Rubrics</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" data-path="careers" href="#">Join Our Team (Careers)</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Accreditation Pathways</a></li>
+</ul>
+</div>
+<div class="space-y-space-md">
+<h3 class="font-label-caps text-xs text-white uppercase tracking-wider font-semibold">Stay Synchronized</h3>
+<p class="font-body-sm text-sm text-slate-400">Receive firmware releases, pedagogical whitepapers, and national STEM tournament invites.</p>
+<form class="space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<input class="w-full px-space-md py-space-sm rounded-lg bg-slate-800 border border-slate-700 text-white font-body-sm text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="educator@institution.edu" type="email"/>
+<button class="px-space-md py-space-sm rounded-lg bg-orange-600 text-white font-label-md font-bold shrink-0 hover:bg-orange-500 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<span class="font-label-caps text-xs text-slate-500 block">Zero spam. Opt-out anytime.</span>
+</form>
+</div>
+</div>
+<div class="pt-space-xl border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-sm text-slate-400">
+<p>© 2026 Obo Technology. All rights reserved.</p>
+<div class="flex items-center gap-gutter">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Security &amp; Compliance</a>
+<a class="hover:text-white transition-colors" href="#">Cookie Preferences</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

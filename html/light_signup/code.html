@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-surface-variant": "#5a4138",
+          "secondary-fixed-dim": "#b4c5ff",
+          "surface-variant": "#e0e3e5",
+          "primary": "#ea580c",
+          "primary-hover": "#c2410c",
+          "surface-tint": "#a73a00",
+          "secondary-container": "#316bf3",
+          "error-container": "#ffdad6",
+          "on-primary": "#ffffff",
+          "surface": "#f7f9fb",
+          "outline-variant": "#e2bfb2",
+          "error": "#ba1a1a",
+          "on-tertiary-fixed-variant": "#3f465c",
+          "on-tertiary": "#ffffff",
+          "surface-dim": "#d8dadc",
+          "tertiary-container": "#6c748b",
+          "on-background": "#0f172a",
+          "secondary": "#0051d5",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-fixed": "#00174b",
+          "tertiary-fixed": "#dae2fd",
+          "primary-container": "#ea580c",
+          "on-primary-fixed-variant": "#7f2b00",
+          "surface-bright": "#f7f9fb",
+          "outline": "#cbd5e1",
+          "on-secondary-fixed-variant": "#003ea8",
+          "background": "#f8fafc",
+          "on-secondary-container": "#fefcff",
+          "secondary-fixed": "#dbe1ff",
+          "inverse-surface": "#2d3133",
+          "on-primary-fixed": "#370e00",
+          "inverse-primary": "#ffb599",
+          "primary-fixed-dim": "#ffb599",
+          "surface-container": "#f1f5f9",
+          "on-tertiary-container": "#fefcff",
+          "primary-fixed": "#ffdbce",
+          "on-tertiary-fixed": "#131b2e",
+          "surface-container-highest": "#e2e8f0",
+          "on-secondary": "#ffffff",
+          "on-surface": "#0f172a",
+          "tertiary-fixed-dim": "#bec6e0",
+          "inverse-on-surface": "#eff1f3",
+          "on-error-container": "#93000a",
+          "on-primary-container": "#ffffff",
+          "tertiary": "#475569",
+          "surface-container-high": "#e2e8f0",
+          "surface-container-low": "#f8fafc",
+          "on-error": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.375rem",
+          "xl": "0.5rem",
+          "2xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "margin-mobile": "1rem",
+          "space-xs": "0.25rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-xl": "2.5rem",
+          "space-2xl": "4rem",
+          "space-3xl": "6rem"
+        },
+        "fontFamily": {
+          "label-code-md": ["JetBrains Mono"],
+          "headline-lg-mobile": ["Space Grotesk"],
+          "title-md": ["Hanken Grotesk"],
+          "label-code-sm": ["JetBrains Mono"],
+          "headline-lg": ["Space Grotesk"],
+          "headline-sm": ["Space Grotesk"],
+          "headline-md": ["Space Grotesk"],
+          "body-md": ["Hanken Grotesk"],
+          "body-lg": ["Hanken Grotesk"],
+          "body-sm": ["Hanken Grotesk"],
+          "display-lg-mobile": ["Space Grotesk"],
+          "label-ui": ["Hanken Grotesk"],
+          "display-lg": ["Space Grotesk"]
+        }
+      }
+    }
+  }
+</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-orange-100 selection:text-orange-900"><header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-[1320px] mx-auto px-margin-mobile md:px-margin lg:px-space-xl flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm" data-path="obo-technology-homepage" href="#"><img alt="Obo Technology Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG7LU5QTjSlPanA21RMIwLY5HpKQ-Qq5NCg0zXg2SrTLjnEvEE304ik03J15mcnE-Y_3IwQ0zzG-KV3TBgCrPp7d9Mq1IP93osfjb8zU8tW6FNEw_uJncYpw3V7S1kiJN4WTKgMP2tiHhgiVf8f_BEz6-wVP8TAISjD3wKV6fky2dm9ks4vBwX7dRYOLVbL5rMIvobGsKlb3IXUMSiqwyL6_kX-V_XFVpc0wcNlwXKzA"/><span class="font-headline-sm text-headline-sm text-slate-900 tracking-tight font-bold">Obo Technology</span></a></div><nav class="hidden xl:flex items-center gap-6"><a class="font-title-md text-[15px] font-medium text-slate-600 hover:text-slate-900 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-100" data-path="products-and-services" href="#">Products &amp; Services</a><a class="font-title-md text-[15px] font-medium text-slate-600 hover:text-slate-900 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-100" data-path="robotics-kits-and-hardware" href="#">Robotics Kits &amp; Hardware</a><a class="font-title-md text-[15px] font-medium text-slate-600 hover:text-slate-900 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-100" data-path="curriculum-and-programs" href="#">Curriculum &amp; Programs</a><a class="font-title-md text-[15px] font-medium text-slate-600 hover:text-slate-900 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-100" data-path="about-us" href="#">About Us</a><a class="font-title-md text-[15px] font-medium text-slate-600 hover:text-slate-900 transition-colors py-1.5 px-3 rounded-lg hover:bg-slate-100" data-path="careers" href="#">Careers</a></nav><div class="flex items-center gap-3 shrink-0"><a class="hidden sm:inline-flex items-center justify-center font-title-md text-[14px] font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100 px-4 py-2 rounded-lg transition-all" data-path="login" href="#">Portal Login</a><a class="inline-flex items-center justify-center font-title-md text-[14px] font-semibold bg-[#ea580c] hover:bg-[#c2410c] text-white px-5 py-2.5 rounded-lg shadow-sm hover:shadow active:scale-95 transition-all" data-path="signup" href="#">Get Started</a></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="relative w-full overflow-hidden py-10 lg:py-16">
+<div class="pointer-events-none absolute -top-40 -left-40 w-[620px] h-[620px] rounded-full bg-blue-100/50 blur-[130px]"></div>
+<div class="pointer-events-none absolute top-1/3 -right-32 w-[520px] h-[520px] rounded-full bg-orange-100/60 blur-[140px]"></div>
+<div class="pointer-events-none absolute -bottom-20 left-1/3 w-[460px] h-[460px] rounded-full bg-amber-50/70 blur-[120px]"></div>
+<div class="max-w-[1320px] mx-auto px-margin-mobile md:px-margin lg:px-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+<section class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
+<div class="flex flex-col gap-3">
+<div class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-orange-50 border border-orange-200/80 text-orange-700">
+<span class="material-symbols-outlined text-[16px] text-orange-600" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-title-md text-[12px] font-semibold uppercase tracking-wider text-orange-800">District Pilot Access • 2026 Cohort</span>
+</div>
+<h1 class="font-headline-lg text-3xl lg:text-4xl text-slate-900 tracking-tight font-bold">
+              Ignite hands-on robotics across your classrooms.
+            </h1>
+<p class="font-body-lg text-base text-slate-600 leading-relaxed">
+              Equip your STEM classrooms with award-winning hardware, turnkey NGSS curriculum, and cloud IDE access. 30-day risk-free pilot kits available for verified districts.
+            </p>
+</div>
+<div class="relative rounded-xl overflow-hidden bg-white border border-slate-200 p-6 shadow-sm">
+<div class="flex items-center justify-between gap-4 pb-4 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
+</span>
+<span class="font-title-md text-[11px] font-bold text-slate-500 uppercase tracking-wider">Pilot Deployment Pipeline</span>
+</div>
+<span class="font-title-md text-[12px] text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded border border-blue-100">14 District Kits Left This Cycle</span>
+</div>
+<div class="relative h-32 rounded-lg overflow-hidden my-4 border border-slate-200">
+<img class="w-full h-full object-cover" data-alt="Modern high school STEM innovation lab classroom where young diverse students collaborate over modular robotic rovers and micro-controllers. Cool cyan overhead laboratory lighting with warm orange ambient accents reflected on obsidian workbenches and laptops running code dashboards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApc8SXKJn1D6pwIy2gpzcyWFDDbjSExpOuPI0cJ5KfjRPcrnukKrS4kyK4sran_wcxFYrflHSLL0n9zrQfdCrhLs-BG8hwDWNV-fr39vmbauiMChEJc27PNnyOmyvrELtz1hNemDe2_arAdeJbjF3nzH6DpydNtu8ZDpK_LO6DypzsuWxgHn8iJrA8uK0MB-dOaKRCDXGulI0Ac371wqX6B8GmYddE4gDwis6I7v-P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white">
+<span class="font-headline-sm text-sm font-semibold tracking-tight">RoboGrid X4 Modular Fleet</span>
+<span class="font-title-md text-[11px] font-medium px-2 py-0.5 rounded bg-white/20 backdrop-blur-sm text-white">Plug &amp; Play</span>
+</div>
+</div>
+<div class="space-y-3.5">
+<div class="flex items-start gap-3">
+<div class="p-1.5 rounded-md bg-orange-50 text-orange-600 border border-orange-100 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-sm font-semibold text-slate-900">Instant 30-day classroom trial access</h2>
+<p class="font-body-sm text-xs text-slate-500 mt-0.5">Zero hardware deposit required for verified state and charter school districts.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="p-1.5 rounded-md bg-blue-50 text-blue-600 border border-blue-100 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">model_training</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-sm font-semibold text-slate-900">Free teacher onboarding &amp; micro-credential</h2>
+<p class="font-body-sm text-xs text-slate-500 mt-0.5">Self-paced 4-hour certified teacher pathway with 1.5 CEU credit certification.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="p-1.5 rounded-md bg-amber-50 text-amber-700 border border-amber-100 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-sm font-semibold text-slate-900">Turnkey NGSS &amp; CSTA crosswalk rubrics</h2>
+<p class="font-body-sm text-xs text-slate-500 mt-0.5">Scope, sequence, pacing charts, and student-ready lab sheets aligned directly to standard codes.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="p-1.5 rounded-md bg-emerald-50 text-emerald-600 border border-emerald-100 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-sm font-semibold text-slate-900">Dedicated STEM mechatronics concierge</h2>
+<p class="font-body-sm text-xs text-slate-500 mt-0.5">Direct 1-on-1 virtual hardware unboxing, live chat for lesson plans, and priority RMA swap-outs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col gap-3.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-full object-cover shrink-0 ring-2 ring-orange-200" data-alt="Portrait of an enthusiastic female high school robotics educator wearing safety glasses in a tech workshop with soft electric cyan and warm amber bokeh background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmgdjKTs7L5TMz8k1YdCDgvmhCAclwjk862rCzCr-sNtWdY5XUpjwE6nTb8a0EDeePK8Im9ZCMUD14AuiWHBOZ8OMIiqdO0oKAuP4bWUeANPYxNYium8fPBxtIXpN71f4ObVm_33xnj4CYq8xXQiWrixlZ37cogFO-7NoaVd_09CICtevAQ10ESIQ5zJgDphKkBbZDJtEmHm6OgNGDyu-9VRMsACU--dqcMHoGiq_G"/>
+<div>
+<p class="font-headline-sm text-sm font-semibold text-slate-900">Dr. Elena Rostova</p>
+<p class="font-body-sm text-xs text-slate-500">Director of K-12 STEM Innovation, Pacific Rim School District</p>
+</div>
+</div>
+<p class="font-body-sm text-xs text-slate-700 italic leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-100">
+              “Deploying Obo took three days instead of three months. The turnkey curriculum eliminated lesson prep overhead, and our Title I students had autonomous robots mapping corridors by week two.”
+            </p>
+<div class="flex items-center justify-between text-slate-500 pt-1 font-title-md text-[11px] font-semibold uppercase tracking-wider">
+<span class="text-slate-700">960+ Active Students</span>
+<span class="text-emerald-700">100% Student Data Privacy</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3 px-1 text-slate-500 text-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-amber-600">lock</span>
+<span class="font-title-md text-[11px] font-medium tracking-wide text-slate-600 uppercase">FERPA / COPPA Compliant</span>
+</div>
+<span class="text-slate-300">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-blue-600">shield_person</span>
+<span class="font-title-md text-[11px] font-medium tracking-wide text-slate-600 uppercase">Zero Student PII Harvested</span>
+</div>
+<span class="text-slate-300">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-orange-600">gavel</span>
+<span class="font-title-md text-[11px] font-medium tracking-wide text-slate-600 uppercase">CIPA Safe Cloud</span>
+</div>
+</div>
+</section>
+<section class="lg:col-span-7">
+<div class="rounded-2xl bg-white border border-slate-200/90 p-6 md:p-8 shadow-sm flex flex-col gap-6 relative">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-slate-100">
+<div>
+<span class="font-title-md text-[11px] font-bold text-orange-600 uppercase tracking-wider">Fast Track Provisioning</span>
+<h2 class="font-headline-md text-2xl text-slate-900 tracking-tight font-bold">Create your educator account</h2>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 self-start sm:self-auto">
+<span class="material-symbols-outlined text-[16px] text-amber-600">bolt</span>
+<span class="font-title-md text-[12px] font-semibold">3-min onboarding</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2.5 px-4 py-2.5 rounded-lg bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all group shadow-[0_1px_2px_rgba(0,0,0,0.04)]" type="button">
+<svg class="w-4 h-4 shrink-0" viewbox="0 0 24 24">
+<path d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" fill="#EA4335"></path>
+<path d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5.1 3.7-8.9z" fill="#4285F4"></path>
+<path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.8s.2-2.1.4-2.8L1.9 6.3C.7 8.7 0 10.8 0 12s.7 3.3 1.9 5.7l3.7-2.9z" fill="#FBBC05"></path>
+<path d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16c1.8 3.7 5.6 7 10.1 7z" fill="#34A853"></path>
+</svg>
+<span class="font-title-md text-[13px] font-semibold text-slate-700 group-hover:text-slate-900 transition-colors">Sign up with Google for Education</span>
+</button>
+<button class="flex items-center justify-center gap-2.5 px-4 py-2.5 rounded-lg bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all group shadow-[0_1px_2px_rgba(0,0,0,0.04)]" type="button">
+<div class="w-4 h-4 rounded bg-[#1B59F8] flex items-center justify-center text-white font-bold text-[10px]">C</div>
+<span class="font-title-md text-[13px] font-semibold text-slate-700 group-hover:text-slate-900 transition-colors">Sign up with Clever</span>
+</button>
+</div>
+<div class="relative flex items-center justify-center">
+<div class="w-full h-px bg-slate-200"></div>
+<span class="absolute px-3 bg-white font-title-md text-[11px] font-semibold text-slate-400 uppercase tracking-wider">or register with institutional email</span>
+</div>
+<form class="space-y-4" id="signup-form" onsubmit="event.preventDefault();">
+<div>
+<label class="block font-title-md text-[13px] font-semibold text-slate-700 mb-2">Account Role &amp; Access Tier</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="account-type-group" role="radiogroup">
+<label class="account-type-option flex flex-col p-3 rounded-lg border-2 border-orange-500 bg-orange-50/40 cursor-pointer transition-all hover:bg-orange-50/70" data-role="educator">
+<input checked="" class="sr-only" name="account_type" type="radio" value="educator"/>
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-[20px] text-orange-600">school</span>
+<span class="radio-indicator w-3.5 h-3.5 rounded-full bg-orange-600 ring-2 ring-orange-200"></span>
+</div>
+<span class="font-headline-sm text-xs font-bold text-slate-900">Educator / STEM Lead</span>
+<span class="font-body-sm text-[11px] text-slate-500 mt-0.5">Classrooms &amp; Labs</span>
+</label>
+<label class="account-type-option flex flex-col p-3 rounded-lg border border-slate-200 bg-slate-50/60 cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300" data-role="district">
+<input class="sr-only" name="account_type" type="radio" value="district"/>
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-[20px] text-blue-600">corporate_fare</span>
+<span class="radio-indicator w-3.5 h-3.5 rounded-full bg-slate-300"></span>
+</div>
+<span class="font-headline-sm text-xs font-bold text-slate-900">District Admin / RFPs</span>
+<span class="font-body-sm text-[11px] text-slate-500 mt-0.5">Multi-School RFPs</span>
+</label>
+<label class="account-type-option flex flex-col p-3 rounded-lg border border-slate-200 bg-slate-50/60 cursor-pointer transition-all hover:bg-slate-100 hover:border-slate-300" data-role="club">
+<input class="sr-only" name="account_type" type="radio" value="club"/>
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-[20px] text-amber-600">smart_toy</span>
+<span class="radio-indicator w-3.5 h-3.5 rounded-full bg-slate-300"></span>
+</div>
+<span class="font-headline-sm text-xs font-bold text-slate-900">Club / Camp Organizer</span>
+<span class="font-body-sm text-[11px] text-slate-500 mt-0.5">Leagues &amp; Non-profits</span>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<div>
+<label class="block font-title-md text-[13px] font-semibold text-slate-700 mb-1" for="first-name">First Name</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 border border-slate-200 text-slate-900 font-body-md text-sm placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" id="first-name" name="first_name" placeholder="Ada" required="" type="text"/>
+</div>
+<div>
+<label class="block font-title-md text-[13px] font-semibold text-slate-700 mb-1" for="last-name">Last Name</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 border border-slate-200 text-slate-900 font-body-md text-sm placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" id="last-name" name="last_name" placeholder="Lovelace" required="" type="text"/>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="font-title-md text-[13px] font-semibold text-slate-700" for="work-email">Institutional Work Email</label>
+<span class="hidden items-center gap-1 font-title-md text-[11px] font-semibold px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 border border-blue-200" id="edu-badge">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Verified Institutional Domain
+                  </span>
+</div>
+<div class="relative">
+<input class="w-full pl-3.5 pr-10 py-2.5 rounded-lg bg-slate-50/80 border border-slate-200 text-slate-900 font-body-md text-sm placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" id="work-email" name="email" placeholder="alovelace@district.k12.or.us or name@university.edu" required="" type="email"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+</div>
+<p class="font-body-sm text-[12px] text-slate-500 mt-1">
+                  Use your official <code class="font-label-code-sm font-semibold text-orange-700 bg-orange-50 px-1 py-0.5 rounded">.edu</code>, <code class="font-label-code-sm font-semibold text-orange-700 bg-orange-50 px-1 py-0.5 rounded">.k12</code>, or school district domain to automatically qualify for fast-track pilot kit dispatch.
+                </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+<div class="sm:col-span-2">
+<label class="block font-title-md text-[13px] font-semibold text-slate-700 mb-1" for="school-name">School or District Name</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 border border-slate-200 text-slate-900 font-body-md text-sm placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" id="school-name" name="school_name" placeholder="Westwood STEM Magnet High School" required="" type="text"/>
+</div>
+<div>
+<label class="block font-title-md text-[13px] font-semibold text-slate-700 mb-1" for="state-select">State / Territory</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-slate-50/80 border border-slate-200 text-slate-900 font-body-md text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" id="state-select" name="state" required="">
+<option disabled="" selected="" value="">Select State</option>
+<option value="CA">California (CA)</option>
+<option value="TX">Texas (TX)</option>
+<option value="NY">New York (NY)</option>
+<option value="FL">Florida (FL)</option>
+<option value="IL">Illinois (IL)</option>
+<option value="WA">Washington (WA)</option>
+<option value="MA">Massachusetts (MA)</option>
+<option value="CO">Colorado (CO)</option>
+<option value="NC">North Carolina (NC)</option>
+<option value="OTHER">Other / International</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-title-md text-[13px] font-semibold text-slate-700 mb-1.5">Primary Grade Band &amp; Focus (Select all that apply)</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<label class="cursor-pointer flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition-colors">
+<input class="rounded border-slate-300 text-[#ea580c] focus:ring-orange-500" name="grade_band" type="checkbox" value="k5"/>
+<span class="font-title-md text-xs font-medium">Elem (K–5)</span>
+</label>
+<label class="cursor-pointer flex items-center gap-2 p-2.5 rounded-lg border border-orange-200 bg-orange-50/50 text-slate-900 transition-colors">
+<input checked="" class="rounded border-slate-300 text-[#ea580c] focus:ring-orange-500" name="grade_band" type="checkbox" value="68"/>
+<span class="font-title-md text-xs font-semibold">Middle (6–8)</span>
+</label>
+<label class="cursor-pointer flex items-center gap-2 p-2.5 rounded-lg border border-orange-200 bg-orange-50/50 text-slate-900 transition-colors">
+<input checked="" class="rounded border-slate-300 text-[#ea580c] focus:ring-orange-500" name="grade_band" type="checkbox" value="912"/>
+<span class="font-title-md text-xs font-semibold">High (9–12)</span>
+</label>
+<label class="cursor-pointer flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition-colors">
+<input class="rounded border-slate-300 text-[#ea580c] focus:ring-orange-500" name="grade_band" type="checkbox" value="higher"/>
+<span class="font-title-md text-xs font-medium">Higher Ed</span>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<div>
+<label class="block font-title-md text-[13px] font-semibold text-slate-700 mb-1" for="password">Create Master Password</label>
+<div class="relative">
+<input class="w-full pl-3.5 pr-10 py-2.5 rounded-lg bg-slate-50/80 border border-slate-200 text-slate-900 font-body-md text-sm placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" id="password" name="password" placeholder="••••••••••••" required="" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" id="toggle-pwd" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<div>
+<label class="block font-title-md text-[13px] font-semibold text-slate-700 mb-1" for="confirm-password">Confirm Password</label>
+<div class="relative">
+<input class="w-full pl-3.5 pr-10 py-2.5 rounded-lg bg-slate-50/80 border border-slate-200 text-slate-900 font-body-md text-sm placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" id="confirm-password" name="confirm_password" placeholder="••••••••••••" required="" type="password"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 hidden text-emerald-600" id="match-icon">
+<span class="material-symbols-outlined text-[18px]">done</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-1.5 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Password Entropy Standard</span>
+<span class="font-title-md text-[11px] font-medium text-slate-400" id="strength-label">Minimum 8 characters</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden flex gap-1">
+<div class="h-full w-1/4 rounded-full bg-slate-200 transition-colors" id="bar-1"></div>
+<div class="h-full w-1/4 rounded-full bg-slate-200 transition-colors" id="bar-2"></div>
+<div class="h-full w-1/4 rounded-full bg-slate-200 transition-colors" id="bar-3"></div>
+<div class="h-full w-1/4 rounded-full bg-slate-200 transition-colors" id="bar-4"></div>
+</div>
+</div>
+<div class="pt-1">
+<label class="flex items-start gap-2.5 cursor-pointer select-none">
+<input class="mt-0.5 w-4 h-4 rounded border-slate-300 text-[#ea580c] focus:ring-orange-500 shrink-0" id="terms-check" required="" type="checkbox"/>
+<span class="font-body-sm text-xs text-slate-600 leading-normal">
+                    I agree to the <a class="text-blue-600 font-medium hover:underline" href="#">Terms of Service</a>, 
+                    <a class="text-blue-600 font-medium hover:underline" href="#">District Licensing Terms</a>, and confirm adherence to the 
+                    <a class="text-blue-600 font-medium hover:underline" href="#">Educator Privacy Agreement</a> (FERPA &amp; COPPA compliant zero-retention policy).
+                  </span>
+</label>
+</div>
+<div class="pt-2">
+<button class="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-lg bg-[#ea580c] hover:bg-[#c2410c] text-white font-title-md text-base font-semibold shadow-md shadow-orange-500/20 active:scale-[0.99] transition-all" id="submit-btn" type="submit">
+<span>Create Educator Account &amp; Launch Free Trial</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="pt-2 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+<span class="font-body-sm text-xs text-slate-600">
+                Already registered with an institution? 
+                <a class="text-[#ea580c] font-semibold hover:underline ml-1" data-path="login" href="#">Log in here</a>
+</span>
+<a class="font-title-md text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">contact_support</span>
+<span>District Procurement RFP Help</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<section class="w-full bg-white border-t border-slate-200 py-12 mt-12">
+<div class="max-w-[1320px] mx-auto px-margin-mobile md:px-margin lg:px-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-blue-100/80 text-blue-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-sm font-bold text-slate-900">Official State Standards Alignment</h3>
+<p class="font-body-sm text-xs text-slate-600 mt-1 leading-relaxed">Cross-referenced against NGSS, CSTA, ISTE, and Texas TEKS standards for effortless curriculum committee approvals.</p>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-orange-100/80 text-orange-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">security</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-sm font-bold text-slate-900">Certified Student Data Cleanroom</h3>
+<p class="font-body-sm text-xs text-slate-600 mt-1 leading-relaxed">Student telemetry is tokenized on local classroom gateways. No personally identifiable student data touches cloud neural engines.</p>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-amber-100/80 text-amber-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-sm font-bold text-slate-900">Pre-Configured Pilot Freight</h3>
+<p class="font-body-sm text-xs text-slate-600 mt-1 leading-relaxed">Hardware packs ship within 48 hours of educator verification in shockproof military-grade classroom storage crates.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+    (function initSignupEnhancements() {
+      const emailInput = document.getElementById('work-email');
+      const eduBadge = document.getElementById('edu-badge');
+      const pwdInput = document.getElementById('password');
+      const confirmInput = document.getElementById('confirm-password');
+      const matchIcon = document.getElementById('match-icon');
+      const togglePwdBtn = document.getElementById('toggle-pwd');
+      const strengthLabel = document.getElementById('strength-label');
+      const bar1 = document.getElementById('bar-1');
+      const bar2 = document.getElementById('bar-2');
+      const bar3 = document.getElementById('bar-3');
+      const bar4 = document.getElementById('bar-4');
+      const roleOptions = document.querySelectorAll('.account-type-option');
+
+      roleOptions.forEach(opt => {
+        opt.addEventListener('click', () => {
+          roleOptions.forEach(r => {
+            r.classList.remove('border-2', 'border-orange-500', 'bg-orange-50/40');
+            r.classList.add('border', 'border-slate-200', 'bg-slate-50/60');
+            const ind = r.querySelector('.radio-indicator');
+            if (ind) {
+              ind.classList.remove('bg-orange-600', 'ring-2', 'ring-orange-200');
+              ind.classList.add('bg-slate-300');
+            }
+          });
+          opt.classList.remove('border', 'border-slate-200', 'bg-slate-50/60');
+          opt.classList.add('border-2', 'border-orange-500', 'bg-orange-50/40');
+          const radio = opt.querySelector('input[type="radio"]');
+          if (radio) radio.checked = true;
+          const indicator = opt.querySelector('.radio-indicator');
+          if (indicator) {
+            indicator.classList.remove('bg-slate-300');
+            indicator.classList.add('bg-orange-600', 'ring-2', 'ring-orange-200');
+          }
+        });
+      });
+
+      if (emailInput && eduBadge) {
+        emailInput.addEventListener('input', (e) => {
+          const val = (e.target.value || '').toLowerCase();
+          const isInstitutional = val.includes('.edu') || val.includes('.k12') || val.includes('district') || val.includes('.school') || val.includes('.org');
+          if (isInstitutional) {
+            eduBadge.classList.remove('hidden');
+            eduBadge.classList.add('inline-flex');
+          } else {
+            eduBadge.classList.remove('inline-flex');
+            eduBadge.classList.add('hidden');
+          }
+        });
+      }
+
+      if (togglePwdBtn && pwdInput) {
+        togglePwdBtn.addEventListener('click', () => {
+          const isText = pwdInput.type === 'text';
+          pwdInput.type = isText ? 'password' : 'text';
+          const icon = togglePwdBtn.querySelector('.material-symbols-outlined');
+          if (icon) icon.textContent = isText ? 'visibility' : 'visibility_off';
+        });
+      }
+
+      function updateStrength() {
+        const p = pwdInput ? pwdInput.value : '';
+        const c = confirmInput ? confirmInput.value : '';
+
+        let score = 0;
+        if (p.length >= 8) score++;
+        if (/[A-Z]/.test(p) && /[a-z]/.test(p)) score++;
+        if (/[0-9]/.test(p)) score++;
+        if (/[^A-Za-z0-9]/.test(p)) score++;
+
+        const bars = [bar1, bar2, bar3, bar4];
+        bars.forEach(b => {
+          b.className = 'h-full w-1/4 rounded-full bg-slate-200 transition-colors';
+        });
+
+        if (!p) {
+          strengthLabel.textContent = 'Minimum 8 characters';
+          strengthLabel.className = 'font-title-md text-[11px] font-medium text-slate-400';
+        } else if (score <= 1) {
+          bar1.className = 'h-full w-1/4 rounded-full bg-red-500 transition-colors';
+          strengthLabel.textContent = 'Weak entropy';
+          strengthLabel.className = 'font-title-md text-[11px] font-semibold text-red-600';
+        } else if (score === 2) {
+          bar1.className = 'h-full w-1/4 rounded-full bg-amber-500 transition-colors';
+          bar2.className = 'h-full w-1/4 rounded-full bg-amber-500 transition-colors';
+          strengthLabel.textContent = 'Fair strength';
+          strengthLabel.className = 'font-title-md text-[11px] font-semibold text-amber-600';
+        } else if (score === 3) {
+          bar1.className = 'h-full w-1/4 rounded-full bg-blue-500 transition-colors';
+          bar2.className = 'h-full w-1/4 rounded-full bg-blue-500 transition-colors';
+          bar3.className = 'h-full w-1/4 rounded-full bg-blue-500 transition-colors';
+          strengthLabel.textContent = 'Robust district key';
+          strengthLabel.className = 'font-title-md text-[11px] font-semibold text-blue-600';
+        } else {
+          bars.forEach(b => b.className = 'h-full w-1/4 rounded-full bg-emerald-500 transition-colors');
+          strengthLabel.textContent = 'Hardware grade cipher';
+          strengthLabel.className = 'font-title-md text-[11px] font-semibold text-emerald-600';
+        }
+
+        if (confirmInput && matchIcon) {
+          if (c && c === p) {
+            matchIcon.classList.remove('hidden');
+          } else {
+            matchIcon.classList.add('hidden');
+          }
+        }
+      }
+
+      if (pwdInput) pwdInput.addEventListener('input', updateStrength);
+      if (confirmInput) confirmInput.addEventListener('input', updateStrength);
+    })();
+  </script>
+</div></main><footer class="w-full bg-slate-900 text-slate-400"><div class="max-w-[1320px] mx-auto px-margin-mobile md:px-margin lg:px-space-xl pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800"><div class="space-y-4"><div class="flex items-center gap-2.5"><img alt="Obo Technology Logo" class="h-8 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/AEtjO1XG7LU5QTjSlPanA21RMIwLY5HpKQ-Qq5NCg0zXg2SrTLjnEvEE304ik03J15mcnE-Y_3IwQ0zzG-KV3TBgCrPp7d9Mq1IP93osfjb8zU8tW6FNEw_uJncYpw3V7S1kiJN4WTKgMP2tiHhgiVf8f_BEz6-wVP8TAISjD3wKV6fky2dm9ks4vBwX7dRYOLVbL5rMIvobGsKlb3IXUMSiqwyL6_kX-V_XFVpc0wcNlwXKzA"/><span class="font-headline-sm text-lg text-white tracking-tight font-bold">Obo Technology</span></div><p class="font-body-sm text-xs text-slate-400 leading-relaxed">Engineering future-ready educational robotics, precision automation kits, and adaptive STEM curriculum architectures for institutes, classrooms, and makers globally.</p><div class="flex items-center gap-2 pt-1"><a aria-label="Global Network" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">language</span></a><a aria-label="Developer Hub" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">terminal</span></a><a aria-label="Community Forum" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">forum</span></a></div></div><div class="space-y-3"><h3 class="font-title-md text-xs font-bold text-white uppercase tracking-wider">Solutions &amp; Platforms</h3><ul class="space-y-2 font-body-sm text-xs"><li><a class="hover:text-white transition-colors" data-path="products-and-services" href="#">Products &amp; Services Overview</a></li><li><a class="hover:text-white transition-colors" data-path="robotics-kits-and-hardware" href="#">Autonomous Robotics Kits</a></li><li><a class="hover:text-white transition-colors" href="#">Kinematic Manipulator Arms</a></li><li><a class="hover:text-white transition-colors" href="#">Sensor Fusion Core Kits</a></li><li><a class="hover:text-white transition-colors" href="#">Enterprise District Licensing</a></li></ul></div><div class="space-y-3"><h3 class="font-title-md text-xs font-bold text-white uppercase tracking-wider">Curriculum &amp; Resources</h3><ul class="space-y-2 font-body-sm text-xs"><li><a class="hover:text-white transition-colors" data-path="curriculum-and-programs" href="#">K-12 Robotic Foundations</a></li><li><a class="hover:text-white transition-colors" href="#">University Mechatronics Syllabus</a></li><li><a class="hover:text-white transition-colors" href="#">Teacher Guides &amp; Rubrics</a></li><li><a class="hover:text-white transition-colors" data-path="careers" href="#">Join Our Team (Careers)</a></li><li><a class="hover:text-white transition-colors" href="#">Accreditation Pathways</a></li></ul></div><div class="space-y-3"><h3 class="font-title-md text-xs font-bold text-white uppercase tracking-wider">Stay Synchronized</h3><p class="font-body-sm text-xs text-slate-400">Receive firmware releases, pedagogical whitepapers, and national STEM tournament invites.</p><form class="space-y-2"><div class="flex items-center gap-1.5"><input class="w-full px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white font-body-sm text-xs placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="educator@institution.edu" type="email"/><button class="px-3 py-2 rounded-lg bg-[#ea580c] hover:bg-[#c2410c] text-white font-title-md text-xs font-bold shrink-0 transition-all" type="button"><span class="material-symbols-outlined text-[16px]">send</span></button></div><span class="font-title-md text-[10px] text-slate-500 uppercase tracking-wider block">Zero spam. Opt-out anytime.</span></form></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-xs text-slate-500"><p>© 2026 Obo Technology. All rights reserved.</p><div class="flex items-center gap-6"><a class="hover:text-slate-300 transition-colors" href="#">Privacy Policy</a><a class="hover:text-slate-300 transition-colors" href="#">Terms of Service</a><a class="hover:text-slate-300 transition-colors" href="#">Security &amp; Compliance</a><a class="hover:text-slate-300 transition-colors" href="#">Cookie Preferences</a></div></div></div></footer></body></html>

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-surface-variant": "#5a4138",
+          "secondary-fixed-dim": "#b4c5ff",
+          "surface-variant": "#e0e3e5",
+          "primary": "#a33900",
+          "surface-tint": "#a73a00",
+          "secondary-container": "#316bf3",
+          "error-container": "#ffdad6",
+          "on-primary": "#ffffff",
+          "surface": "#f7f9fb",
+          "outline-variant": "#e2bfb2",
+          "error": "#ba1a1a",
+          "on-tertiary-fixed-variant": "#3f465c",
+          "on-tertiary": "#ffffff",
+          "surface-dim": "#d8dadc",
+          "tertiary-container": "#6c748b",
+          "on-background": "#191c1e",
+          "secondary": "#0051d5",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-fixed": "#00174b",
+          "tertiary-fixed": "#dae2fd",
+          "primary-container": "#cc4900",
+          "on-primary-fixed-variant": "#7f2b00",
+          "surface-bright": "#f7f9fb",
+          "outline": "#8e7166",
+          "on-secondary-fixed-variant": "#003ea8",
+          "background": "#f7f9fb",
+          "on-secondary-container": "#fefcff",
+          "secondary-fixed": "#dbe1ff",
+          "inverse-surface": "#2d3133",
+          "on-primary-fixed": "#370e00",
+          "inverse-primary": "#ffb599",
+          "primary-fixed-dim": "#ffb599",
+          "surface-container": "#eceef0",
+          "on-tertiary-container": "#fefcff",
+          "primary-fixed": "#ffdbce",
+          "on-tertiary-fixed": "#131b2e",
+          "surface-container-highest": "#e0e3e5",
+          "on-secondary": "#ffffff",
+          "on-surface": "#191c1e",
+          "tertiary-fixed-dim": "#bec6e0",
+          "inverse-on-surface": "#eff1f3",
+          "on-error-container": "#93000a",
+          "on-primary-container": "#fffbff",
+          "tertiary": "#545c72",
+          "surface-container-high": "#e6e8ea",
+          "surface-container-low": "#f2f4f6",
+          "on-error": "#ffffff",
+          "electric-coral": "#ea580c",
+          "electric-blue": "#0051d5",
+          "glow-amber": "#d97706",
+          "text-primary": "#0f172a",
+          "text-secondary": "#475569",
+          "text-tertiary": "#64748b"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "margin-mobile": "1rem",
+          "space-xs": "0.25rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-xl": "2.5rem",
+          "space-2xl": "4rem",
+          "space-3xl": "6rem",
+          "margin-sm": "1rem",
+          "margin-lg": "4rem",
+          "gutter-lg": "2rem"
+        },
+        "fontFamily": {
+          "label-code-md": ["JetBrains Mono"],
+          "headline-lg-mobile": ["Space Grotesk"],
+          "title-md": ["Hanken Grotesk"],
+          "label-code-sm": ["JetBrains Mono"],
+          "headline-lg": ["Space Grotesk"],
+          "headline-sm": ["Space Grotesk"],
+          "headline-hero": ["Space Grotesk"],
+          "headline-hero-mobile": ["Space Grotesk"],
+          "body-md": ["Hanken Grotesk"],
+          "body-lg": ["Hanken Grotesk"],
+          "body-sm": ["Hanken Grotesk"],
+          "display-lg-mobile": ["Space Grotesk"],
+          "label-ui": ["Hanken Grotesk"],
+          "headline-md": ["Space Grotesk"],
+          "display-lg": ["Space Grotesk"],
+          "label-lg": ["Hanken Grotesk"],
+          "label-md": ["Hanken Grotesk"],
+          "label-caps": ["Space Grotesk"]
+        },
+        "fontSize": {
+          "label-code-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+          "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+          "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+          "label-code-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+          "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+          "headline-hero": ["52px", { "lineHeight": "60px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+          "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+          "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "label-ui": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+          "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+          "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+          "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }]
+        }
+      }
+    }
+  }
+</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-surface-container-high shadow-sm"><div class="h-20 max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md shrink-0"><img alt="Obo Technology Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG7LU5QTjSlPanA21RMIwLY5HpKQ-Qq5NCg0zXg2SrTLjnEvEE304ik03J15mcnE-Y_3IwQ0zzG-KV3TBgCrPp7d9Mq1IP93osfjb8zU8tW6FNEw_uJncYpw3V7S1kiJN4WTKgMP2tiHhgiVf8f_BEz6-wVP8TAISjD3wKV6fky2dm9ks4vBwX7dRYOLVbL5rMIvobGsKlb3IXUMSiqwyL6_kX-V_XFVpc0wcNlwXKzA"/><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight font-bold">Obo Technology</span></div><nav class="hidden xl:flex items-center gap-gutter" data-active-classes="bg-surface-container text-text-primary font-title-md rounded shadow-sm"><a class="font-title-md text-body-md text-text-secondary hover:text-text-primary flex items-center gap-space-xs transition-colors py-space-xs px-space-sm rounded" data-path="products-and-services" href="#">Products &amp; Services <span class="material-symbols-outlined text-[16px]">expand_more</span></a><a class="font-title-md text-body-md text-text-secondary hover:text-text-primary flex items-center gap-space-xs transition-colors py-space-xs px-space-sm rounded" data-path="robotics" href="#">Robotics <span class="material-symbols-outlined text-[16px]">expand_more</span></a><a class="font-title-md text-body-md text-text-secondary hover:text-text-primary flex items-center gap-space-xs transition-colors py-space-xs px-space-sm rounded" data-path="curriculum-and-programs" href="#">Curriculum &amp; Programs <span class="material-symbols-outlined text-[16px]">expand_more</span></a><a class="font-title-md text-body-md text-text-secondary hover:text-text-primary transition-colors py-space-xs px-space-sm rounded" data-path="about-us" href="#">About Us</a><a class="font-title-md text-body-md text-text-secondary hover:text-text-primary transition-colors py-space-xs px-space-sm rounded" data-path="careers" href="#">Careers</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="hidden sm:inline-flex items-center justify-center font-title-md text-body-md text-text-secondary hover:text-text-primary hover:bg-surface-container-high px-space-md py-space-sm rounded transition-all" data-path="login" href="#">Portal Login</a><a class="inline-flex items-center justify-center font-title-md text-body-md bg-primary text-on-primary font-bold px-space-lg py-space-sm rounded shadow-sm hover:brightness-110 active:scale-95 transition-all" data-path="request-demo" href="#">Request Demo</a><div class="w-8 h-8 rounded-full bg-surface-container-highest text-primary flex items-center justify-center shrink-0 border border-outline-variant"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden pb-space-3xl pt-space-xl">
+<!-- Atmospheric Ambient Glows & Grid Pattern -->
+<div class="pointer-events-none absolute -top-32 -left-20 h-[580px] w-[580px] rounded-full bg-secondary-fixed/40 blur-[130px]"></div>
+<div class="pointer-events-none absolute top-1/4 right-0 h-[640px] w-[640px] rounded-full bg-primary-fixed/50 blur-[140px]"></div>
+<div class="pointer-events-none absolute bottom-0 left-1/3 h-[420px] w-[420px] rounded-full bg-tertiary-fixed/40 blur-[110px]"></div>
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
+<!-- Left Column: Copy & CTAs -->
+<div class="lg:col-span-7 space-y-space-lg relative z-10">
+<!-- Eyebrow Pill -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-white border border-outline-variant shadow-sm">
+<span class="w-2 h-2 rounded-full bg-electric-coral animate-ping"></span>
+<span class="w-2 h-2 rounded-full bg-electric-coral -ml-3"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Next-Gen STEAM &amp; Computational Robotics Education</span>
+</div>
+<!-- Bold Dynamic Headline -->
+<h1 class="font-headline-hero text-headline-hero text-text-primary tracking-tight leading-[1.08]">
+            Empowering the <span class="bg-gradient-to-r from-primary via-primary-container to-electric-coral bg-clip-text text-transparent">Next Generation</span> of Thinkers &amp; Creators.
+          </h1>
+<!-- Verbatim Mission Quote -->
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl leading-relaxed">
+<span class="text-text-primary font-semibold">Obo Robotics</span> focused to educate and provide access to the next generation children to enhance thinking and creativity mindset.
+          </p>
+<!-- Primary & Secondary Actions -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-xl py-3.5 rounded bg-primary text-on-primary font-headline-sm text-body-lg font-bold shadow-md hover:brightness-110 active:scale-95 transition-all" href="#explore">
+              Learn More
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded bg-white border border-surface-container-high text-secondary hover:text-text-primary hover:bg-surface-container-low font-headline-sm text-body-lg font-semibold shadow-sm transition-all" href="#kits">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+              Explore Robotics Kits
+            </a>
+</div>
+<!-- Quick Proof Point Micro-Bar -->
+<div class="pt-space-md flex flex-wrap items-center gap-x-space-xl gap-y-space-sm font-title-md text-body-sm text-text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-glow-amber text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>STEAM Accredited Curricula</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">school</span>
+<span>350+ Partner Academies</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-coral text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span>Hardware + Code Sync</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Showcase & Orbital Composition Inspired by Brand Motif -->
+<div class="lg:col-span-5 relative">
+<!-- Orbital Swirl Graphic (CSS/SVG) Echoing Original Logo Geometry -->
+<div class="relative mx-auto max-w-[480px] lg:max-w-none">
+<!-- Backdrop Radial Halo -->
+<div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-fixed/60 via-secondary-fixed/40 to-tertiary-fixed/30 blur-2xl"></div>
+<!-- Elevated Card Frame -->
+<div class="relative rounded-xl bg-white border border-surface-container-high p-space-md shadow-xl overflow-hidden">
+<!-- Orbital Ring Silhouette Overlay -->
+<svg class="absolute -right-16 -top-16 w-72 h-72 text-primary/10 pointer-events-none" fill="none" viewbox="0 0 200 200">
+<circle cx="100" cy="100" r="78" stroke="currentColor" stroke-dasharray="6 6" stroke-width="2"></circle>
+<ellipse cx="100" cy="100" rx="90" ry="34" stroke="currentColor" stroke-width="3" transform="rotate(-28 100 100)"></ellipse>
+<circle cx="152" cy="72" fill="#a33900" r="5"></circle>
+</svg>
+<!-- Image with Dynamic Asymmetric Shape -->
+<div class="relative w-full h-[360px] rounded-lg overflow-hidden shadow-inner group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Excited young elementary and middle school students collaborating around an orange modular robotics chassis, high-fiving their teacher in a high-tech modern classroom bathed in dark obsidian surfaces and neon blue ambient LED lighting. Precision mechatronic components, glowing sensors, and laptops with code editors on the wooden desks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy-76nvJChOFfdfw7pbIIwSiv6qAs3I6QyH4FBHgHQnrdGqVyeVhppsgr_XwVcZ-AE8Oei5q9sY7aFIcdoaiItYZ3FqfTOOUbH7ntvQO18s4ivnR5FZ4SbUk5MVjD5s_qWso19qwlH93UZCdFPm05PoMXmdBkqcUbukWVCW61kB2Tkb4hY1YYSSYT28Zw-lyQPRUWi-lau5DyFxsaIt9Tf7PVZAIbSjweEfb7oechh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<!-- Floating In-Image Badge -->
+<div class="absolute top-space-md left-space-md px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-sm flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-glow-amber animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-text-primary uppercase tracking-wide">Live Firmware v3.4 Active</span>
+</div>
+<div class="absolute bottom-space-md left-space-md right-space-md flex items-end justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-wider block">Signature Kit</span>
+<h3 class="font-headline-sm text-headline-sm text-white">Obo Spark Core-X</h3>
+</div>
+<span class="px-space-sm py-1 rounded bg-secondary text-on-secondary font-title-md text-body-sm font-bold">Age 8-14</span>
+</div>
+</div>
+<!-- Live Telemetry / Mini Analytics Row Inside Glass Panel -->
+<div class="mt-space-md grid grid-cols-3 gap-space-sm text-center">
+<div class="p-space-sm rounded bg-surface-container-low border border-surface-container">
+<div class="font-headline-md text-headline-md text-text-primary font-extrabold">50k+</div>
+<div class="font-label-caps text-label-caps text-text-secondary uppercase">Students</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-surface-container">
+<div class="font-headline-md text-headline-md text-electric-coral font-extrabold">98%</div>
+<div class="font-label-caps text-label-caps text-text-secondary uppercase">Retention</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-surface-container">
+<div class="font-headline-md text-headline-md text-glow-amber font-extrabold">350+</div>
+<div class="font-label-caps text-label-caps text-text-secondary uppercase">Districts</div>
+</div>
+</div>
+</div>
+<!-- Overlapping Floating Micro-Widget -->
+<div class="-mt-6 -ml-6 relative z-20 max-w-[260px] p-space-sm rounded-lg bg-white border border-surface-container-high shadow-lg flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">psychology</span>
+</div>
+<div class="min-w-0">
+<div class="font-title-md text-body-sm text-text-primary font-bold truncate">Algorithmic Mindset</div>
+<div class="font-body-sm text-body-sm text-text-secondary text-[12px] truncate">Kinematic logic enabled</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- IMPACT & METRICS DASHBOARD STRIP -->
+<section class="w-full bg-white border-y border-surface-container py-space-xl relative">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-1 p-space-md rounded bg-surface-container-lowest border border-surface-container shadow-sm hover:translate-y-[-2px] hover:shadow-md transition-all">
+<div class="flex items-center justify-between text-text-tertiary">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Curriculum Scope</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">terminal</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-text-primary mt-1">120+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Progressive Hands-On Coding Challenges</p>
+</div>
+<div class="flex flex-col gap-1 p-space-md rounded bg-surface-container-lowest border border-surface-container shadow-sm hover:translate-y-[-2px] hover:shadow-md transition-all">
+<div class="flex items-center justify-between text-text-tertiary">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Cognitive Impact</span>
+<span class="material-symbols-outlined text-[20px] text-electric-coral">trending_up</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-electric-coral mt-1">94%</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Measured Growth in STEAM Curiosity</p>
+</div>
+<div class="flex flex-col gap-1 p-space-md rounded bg-surface-container-lowest border border-surface-container shadow-sm hover:translate-y-[-2px] hover:shadow-md transition-all">
+<div class="flex items-center justify-between text-text-tertiary">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Championships</span>
+<span class="material-symbols-outlined text-[20px] text-glow-amber">emoji_events</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-text-primary mt-1">40+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">International Robotics Tournaments</p>
+</div>
+<div class="flex flex-col gap-1 p-space-md rounded bg-surface-container-lowest border border-surface-container shadow-sm hover:translate-y-[-2px] hover:shadow-md transition-all">
+<div class="flex items-center justify-between text-text-tertiary">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Global Reach</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">cloud_sync</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-secondary mt-1">24 / 7</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Cloud Sandbox &amp; Simulator Access</p>
+</div>
+</div>
+</div>
+</section>
+<!-- PROBLEM & MISSION STATEMENT BANNER -->
+<section class="w-full py-space-3xl relative overflow-hidden bg-surface">
+<div class="pointer-events-none absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary-fixed/40 blur-[120px]"></div>
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg">
+<div class="rounded-xl bg-white border border-surface-container-high p-space-xl md:p-space-2xl shadow-md relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
+<div class="lg:col-span-8 space-y-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container-low text-primary font-label-caps text-label-caps uppercase border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]">psychology_alt</span>
+              Pedagogical Paradigm
+            </div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+              Bridging the Chasm Between Screen Play &amp; Deep Computational Mastery.
+            </h2>
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
+              Most digital learning isolates children into passive consumption. Obo Robotics returns tactile reality to young technologists: physical gears that mesh, circuit loops that pulse, and code scripts that actuate real-world machines.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low border border-surface-container">
+<span class="font-headline-sm text-headline-sm text-electric-coral font-bold block">01</span>
+<span class="font-title-md text-title-md text-text-primary font-semibold block mt-1">Hardware Intuition</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Grasping torque, sensory inputs, and mechanical friction firsthand.</p>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-surface-container">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold block">02</span>
+<span class="font-title-md text-title-md text-text-primary font-semibold block mt-1">Resilient Debugging</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Iterative problem-solving through live test-and-fail physical loops.</p>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-surface-container">
+<span class="font-headline-sm text-headline-sm text-glow-amber font-bold block">03</span>
+<span class="font-title-md text-title-md text-text-primary font-semibold block mt-1">Creative Autonomy</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Designing custom rovers, bipedal walkers, and assistive bots.</p>
+</div>
+</div>
+</div>
+<!-- Interactive Radar / Micro SVG Data Visualizer -->
+<div class="lg:col-span-4 flex flex-col items-center justify-center p-space-lg rounded bg-surface-container-low border border-surface-container text-center shadow-inner">
+<span class="font-label-caps text-label-caps text-text-tertiary uppercase tracking-wider mb-space-sm">Cognitive Skill Distribution</span>
+<!-- SVG Hexagonal Competency Matrix -->
+<div class="w-52 h-52 relative flex items-center justify-center">
+<svg class="w-full h-full text-surface-container-highest" viewbox="0 0 100 100">
+<polygon fill="none" points="50,5 90,27 90,73 50,95 10,73 10,27" stroke="currentColor" stroke-width="1"></polygon>
+<polygon fill="none" points="50,20 78,35 78,65 50,80 22,65 22,35" stroke="currentColor" stroke-width="0.8"></polygon>
+<!-- Active Polygon Fill -->
+<polygon fill="rgba(234, 88, 12, 0.18)" points="50,12 84,32 75,70 50,88 20,68 18,32" stroke="#ea580c" stroke-width="2"></polygon>
+<circle cx="50" cy="12" fill="#ea580c" r="3"></circle>
+<circle cx="84" cy="32" fill="#0051d5" r="3"></circle>
+<circle cx="75" cy="70" fill="#d97706" r="3"></circle>
+<circle cx="50" cy="88" fill="#0051d5" r="3"></circle>
+<circle cx="20" cy="68" fill="#ea580c" r="3"></circle>
+<circle cx="18" cy="32" fill="#d97706" r="3"></circle>
+</svg>
+<div class="absolute text-center">
+<span class="font-headline-md text-headline-md text-text-primary font-bold block">4.9x</span>
+<span class="font-label-caps text-label-caps text-text-secondary">Spatial IQ</span>
+</div>
+</div>
+<div class="mt-space-sm text-text-secondary font-body-sm text-body-sm">
+              Standardized pre- &amp; post-academic mechatronics cohort tracking.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE PRODUCTS & SERVICES GRID -->
+<section class="w-full py-space-3xl relative bg-white border-b border-surface-container" id="kits">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+<div class="space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary-fixed/50 text-secondary font-label-caps text-label-caps uppercase">
+            Product Ecosystem
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+            Precision Hardware. Intuitive Software. Inspiring Minds.
+          </h2>
+<p class="font-body-md text-body-md text-text-secondary">
+            Engineered specifically to scale with students from early curiosity to advanced mechatronic prototyping.
+          </p>
+</div>
+<div class="shrink-0">
+<a class="inline-flex items-center gap-space-xs font-title-md text-body-md text-primary hover:text-electric-coral transition-colors font-bold" href="#">
+            View All Equipment &amp; Bundles
+            <span class="material-symbols-outlined text-[18px]">east</span>
+</a>
+</div>
+</div>
+<!-- Bento-style 4 Card Architecture -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1: Spark Kit -->
+<div class="group flex flex-col justify-between rounded bg-white border border-surface-container-high p-space-lg shadow-sm hover:shadow-md transition-all hover:translate-y-[-4px]">
+<div>
+<div class="h-48 w-full rounded overflow-hidden bg-surface-container-low mb-space-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up photography of modular children robotics chassis with colorful magnetic snap-fit blocks, ultrasonic distance sensor eyes, high-torque micro servos, and glowing LED indicators on a clean dark studio workbench with warm orange and cool cyan rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt2DOHuILNrxz6htdJCD_8r1kUnPSM9fi9_WzPVEM8T1wi6oAOzt2d7IYuD7CSoZvneHKJS8ckhxEvwINM-Q5JX6mOlrFut81EUN-qTpQRzWSH2CLLpgr3DMN6V9yThRIebAYmYcE1twAVSz-XIMFCju_TVXWjiKrP_0csX5lQthJMLOFST3_qvOqWbGAuKzXb0Z4GKZhJBKK0O6kdUr23ID8tsF_RxIjfVMJTQQCx"/>
+<span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur font-label-caps text-label-caps text-primary font-bold shadow-sm">Ages 6 - 10</span>
+</div>
+<div class="flex items-center gap-2 text-glow-amber mb-1">
+<span class="material-symbols-outlined text-[18px]">extension</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">Tactile Beginner</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">
+              Obo Spark Robotics Kit
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-xs leading-relaxed">
+              Modular snap-fit magnetic sensors, drag-and-drop block coding, and storytelling missions designed for early elementary motor and logic development.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container mt-space-md">
+<span class="font-title-md text-body-sm text-text-tertiary">30+ Modules Included</span>
+<button class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2: Cortex Advanced Platform -->
+<div class="group flex flex-col justify-between rounded bg-white border border-surface-container-high p-space-lg shadow-sm hover:shadow-md transition-all hover:translate-y-[-4px]">
+<div>
+<div class="h-48 w-full rounded overflow-hidden bg-surface-container-low mb-space-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic autonomous ground vehicle chassis kit with aluminum frame, LiDAR turret, dual DC brushless motors, ESP32 microcontroller board, and visible circuit traces illuminated under high contrast deep blue laboratory lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP3LB8Irl98H3c4TzYeIR4yAYmjZvXrlVYxeGJspOb2UThJY8VLTw6eE2cYD0IyCjYRiqfQpIOzDeu1-5ODIURVFVMd5C0zVU-ZNr4glAc-8u48daGTz14fK1_guk4dLxXHZQzqHcAzLEMzgjdRudD4ykvLgJyEr1Dj07_9nrDdSnGPGZZFFrRXl-ViUv2Bw8SB1arsQyl8teBxO6jfAQ5gQI1hPCF5SpL1ywbEbKW"/>
+<span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur font-label-caps text-label-caps text-secondary font-bold shadow-sm">Ages 11 - 16+</span>
+</div>
+<div class="flex items-center gap-2 text-secondary mb-1">
+<span class="material-symbols-outlined text-[18px]">developer_board</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">Advanced Mechatronics</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors">
+              Obo Cortex Advanced Platform
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-xs leading-relaxed">
+              Microcontroller architecture supporting native MicroPython and C++. Features autonomous maze navigation, LiDAR integration, and kinematic arms.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container mt-space-md">
+<span class="font-title-md text-body-sm text-text-tertiary">Dual Core 240MHz</span>
+<button class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-text-primary hover:bg-secondary hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3: Integrated K-12 STEAM Curriculum -->
+<div class="group flex flex-col justify-between rounded bg-white border border-surface-container-high p-space-lg shadow-sm hover:shadow-md transition-all hover:translate-y-[-4px]">
+<div>
+<div class="h-48 w-full rounded overflow-hidden bg-surface-container-low mb-space-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern curriculum interface on a sleek tablet showing interactive 3D physics simulations, lesson sequence tracks, grading rubrics for teachers, and colorful engineering milestones against dark mode software UI with orange highlight buttons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQyPrxg6Yh0-LiEmdK5N6EktucF9f696A1CTq9NUDN79WRSKDtfite8_JMH-uZ_BIaUmFhSfZrK_eru-UPoHGq28FLr_6f57TZBHXEdRLVCtiImlwGQ9qYL1CIgufK9eAcj_dVVmDfmubJ9MHTJ1FwiHSsw5bu3KLvwdZU7QGJVK4oJnEy5ARL1MBPhaUtOuhNUhgGO_K-fKSAa6Ewf5c8vyBr8RveDmXTbs4C8hty"/>
+<span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur font-label-caps text-label-caps text-glow-amber font-bold shadow-sm">NGSS Aligned</span>
+</div>
+<div class="flex items-center gap-2 text-tertiary mb-1">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">Academic Framework</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">
+              Integrated K-12 STEAM Curriculum
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-xs leading-relaxed">
+              Turnkey multi-grade lesson guides, standardized evaluation rubrics, student lab journals, and mapped international engineering benchmarks.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container mt-space-md">
+<span class="font-title-md text-body-sm text-text-tertiary">36 Ready Semesters</span>
+<button class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4: Educator & School Enablement -->
+<div class="group flex flex-col justify-between rounded bg-white border border-surface-container-high p-space-lg shadow-sm hover:shadow-md transition-all hover:translate-y-[-4px]">
+<div>
+<div class="h-48 w-full rounded overflow-hidden bg-surface-container-low mb-space-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A passionate female STEM teacher leading an interactive robotics professional development workshop for fellow educators, holding an Obo micro-robotics controller while teachers smile and build robotic chassis around a conference table in an innovative laboratory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5D0KPCACzkqtVyhXVawOJcNzR2xL7_bwURJMkzpU-TWOqPdaiN08qhpH1IIrzcB8WrEM6CEphR_gqPw_GLwNlY-JjsQA4Rr1h4LvKh3d0tcyD2tfSvNDW8dROTtslt54RD9iJRWs3tdUeIA_TsNwsbn7jWd5yBZxnoNh2Abr0RVgGis9flSjRcGVU9p-5sX4rJ8RQqQXaIeZVIFQu08_LUiKLQ47KcDms3jOxpTfb"/>
+<span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur font-label-caps text-label-caps text-primary font-bold shadow-sm">Certified PD</span>
+</div>
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">supervisor_account</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">Institutional Support</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">
+              Educator Enablement Program
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-xs leading-relaxed">
+              Live professional development bootcamps, hardware warranty exchange pools, continuous teacher mentoring, and tournament hosting kits.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-surface-container mt-space-md">
+<span class="font-title-md text-body-sm text-text-tertiary">On-Site &amp; Virtual</span>
+<button class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-text-primary hover:bg-secondary hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE CURRICULUM & LEARNING PATHWAYS -->
+<section class="w-full py-space-3xl bg-surface relative">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg">
+<div class="text-center max-w-3xl mx-auto mb-space-2xl space-y-space-xs">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-outline-variant text-primary font-label-caps text-label-caps uppercase shadow-sm">
+          Continuous Cognitive Growth
+        </div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+          Progressive Robotics Learning Trajectory
+        </h2>
+<p class="font-body-md text-body-md text-text-secondary">
+          From first tactile snap-blocks to deep neural vision navigation, our structured pathway guarantees no student gets left behind or bored.
+        </p>
+</div>
+<!-- Step-by-Step Flow Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter relative">
+<!-- Stage 1 -->
+<div class="relative p-space-xl rounded bg-white border border-surface-container-high shadow-md">
+<div class="w-12 h-12 rounded bg-primary-fixed text-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold mb-space-md">
+            1
+          </div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block font-bold">Foundational Stage</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-1">Block Logic &amp; Mechanics</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm leading-relaxed">
+            Students learn core logic gates, sequential actions, loops, and mechanical advantage using gear trains and levers.
+          </p>
+<div class="pt-space-lg flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">Spatial Reasoning</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">Visual Syntax</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">Gear Ratios</span>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="relative p-space-xl rounded bg-white border border-surface-container-high shadow-md">
+<div class="w-12 h-12 rounded bg-secondary-fixed text-secondary flex items-center justify-center font-headline-sm text-headline-sm font-bold mb-space-md">
+            2
+          </div>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider block font-bold">Explorer Stage</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-1">Sensors, Telemetry &amp; Python</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm leading-relaxed">
+            Transitioning into textual syntax. Reading real-time analog infrared sensors, ultrasonic reflections, and servo PID loops.
+          </p>
+<div class="pt-space-lg flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">Python Scripting</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">Closed Loop Control</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">Serial Debugging</span>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="relative p-space-xl rounded bg-white border border-surface-container-high shadow-md">
+<div class="w-12 h-12 rounded bg-tertiary-fixed text-tertiary flex items-center justify-center font-headline-sm text-headline-sm font-bold mb-space-md">
+            3
+          </div>
+<span class="font-label-caps text-label-caps text-glow-amber uppercase tracking-wider block font-bold">Innovator Stage</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mt-1">AI Vision &amp; Swarm Robotics</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm leading-relaxed">
+            Advanced mechatronic capstone projects. Integration with edge camera models, wireless mesh fleets, and multi-axis manipulators.
+          </p>
+<div class="pt-space-lg flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">Kinematics</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">Computer Vision</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container font-label-caps text-label-caps text-text-secondary">IoT Protocols</span>
+</div>
+</div>
+</div>
+<!-- Live Code & Hardware Simulation Preview Interactive Component -->
+<div class="mt-space-2xl rounded-xl bg-white border border-surface-container-high p-space-lg md:p-space-xl shadow-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 space-y-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block font-bold">Classroom Console</span>
+<h3 class="font-headline-md text-headline-md text-text-primary">
+              Real-Time Code Sync from Screen directly to Servo.
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              Our cloud IDE eliminates serial driver headaches. One click sends compiled MicroPython payloads via WebBluetooth to the Obo Cortex controller in 80 milliseconds.
+            </p>
+<div class="space-y-space-xs pt-space-xs font-body-sm text-body-sm">
+<div class="flex items-center gap-2 text-text-primary">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Web-Bluetooth wireless instantaneous firmware burn</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Built-in dynamic simulator for at-home hybrid practice</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Automated student mistake hints with pedagogical feedback</span>
+</div>
+</div>
+</div>
+<!-- Code Window Mockup -->
+<div class="lg:col-span-7 rounded bg-slate-900 p-space-md shadow-xl font-label-code-md text-[13px] leading-relaxed overflow-hidden text-slate-100">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-slate-800 -mx-space-md -mt-space-md px-space-md pt-space-xs border-b border-slate-700">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-red-500"></div>
+<div class="w-3 h-3 rounded-full bg-amber-500"></div>
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+<span class="font-label-caps text-label-caps text-slate-400 ml-2">autonomous_rover_loop.py</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary text-white text-[11px] font-bold">DEVICE CONNECTED</span>
+</div>
+<div class="text-slate-300 space-y-1">
+<div><span class="text-sky-400">from</span> obo_core <span class="text-sky-400">import</span> Rover, UltrasonicSensor, MotorGroup</div>
+<div><span class="text-sky-400">import</span> time</div>
+<div class="text-slate-500 py-1"># Initialize Cortex Hardware Bus</div>
+<div>bot = Rover(port_left=<span class="text-amber-300">1</span>, port_right=<span class="text-amber-300">2</span>)</div>
+<div>sonar = UltrasonicSensor(pin=<span class="text-amber-300">"D4"</span>)</div>
+<div class="py-1"></div>
+<div><span class="text-sky-400">def</span> <span class="text-teal-300">avoid_obstacle_routine</span>():</div>
+<div class="pl-4"><span class="text-sky-400">while</span> <span class="text-amber-300">True</span>:</div>
+<div class="pl-8">distance = sonar.read_centimeters()</div>
+<div class="pl-8"><span class="text-sky-400">if</span> distance &lt; <span class="text-amber-300">15.0</span>:</div>
+<div class="pl-12 text-orange-400">bot.stop()</div>
+<div class="pl-12 text-orange-400">bot.pivot_degrees(<span class="text-amber-300">90</span>, speed=<span class="text-amber-300">0.4</span>)</div>
+<div class="pl-8"><span class="text-sky-400">else</span>:</div>
+<div class="pl-12 text-emerald-400">bot.forward(speed=<span class="text-amber-300">0.7</span>)</div>
+<div class="pl-8">time.sleep_ms(<span class="text-amber-300">20</span>)</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-slate-800/90 p-space-sm rounded">
+<span class="text-slate-400 text-[12px] flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Ultrasonic Telemetry: <strong class="text-white">24.2 cm clear</strong>
+</span>
+<button class="px-space-md py-1 rounded bg-secondary text-on-secondary font-title-md text-body-sm font-bold hover:brightness-110 transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span> Run on Bot
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS & SCHOOL STORIES -->
+<section class="w-full py-space-3xl relative bg-white border-t border-surface-container">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+<div class="space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container-low text-primary font-label-caps text-label-caps uppercase border border-outline-variant">
+            Voices from Classrooms
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+            How Educators Are Transforming Thinking Mindsets.
+          </h2>
+<p class="font-body-md text-body-md text-text-secondary">
+            Hear from academic leaders and instructors who scaled hands-on robotics with Obo Technology.
+          </p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Story 1 -->
+<div class="rounded bg-surface-container-lowest border border-surface-container-high p-space-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-center gap-1 text-glow-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed italic">
+              “Our 5th graders used to dread coding sessions when it was only screen-based turtle graphics. The moment we deployed Obo Spark kits, their collaborative energy skyrocketed. They debug because they want to see their rover navigate the maze.”
+            </p>
+</div>
+<div class="pt-space-lg flex items-center gap-3 border-t border-surface-container mt-space-md">
+<div class="w-11 h-11 rounded bg-primary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-bold text-primary">
+              M
+            </div>
+<div>
+<div class="font-title-md text-body-md text-text-primary font-bold">Marcus Vance</div>
+<div class="font-body-sm text-body-sm text-text-secondary">District STEM Coordinator, Seattle Academies</div>
+</div>
+</div>
+</div>
+<!-- Story 2 -->
+<div class="rounded bg-surface-container-lowest border border-surface-container-high p-space-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-center gap-1 text-glow-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed italic">
+              “The teacher enablement training from Obo was what separated them from just another toy distributor. In two afternoons, my non-engineering educators felt confident guiding 40 students through kinematic arm assemblies.”
+            </p>
+</div>
+<div class="pt-space-lg flex items-center gap-3 border-t border-surface-container mt-space-md">
+<div class="w-11 h-11 rounded bg-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-bold text-secondary">
+              E
+            </div>
+<div>
+<div class="font-title-md text-body-md text-text-primary font-bold">Dr. Elena Rostova</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Head of School, Innovation Prep</div>
+</div>
+</div>
+</div>
+<!-- Story 3 -->
+<div class="rounded bg-surface-container-lowest border border-surface-container-high p-space-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-center gap-1 text-glow-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed italic">
+              “Before Obo Robotics, I thought coding was boring math tests. Now I built an automated trash collector that sorts aluminum using light sensors. I want to be a roboticist for clean oceans!”
+            </p>
+</div>
+<div class="pt-space-lg flex items-center gap-3 border-t border-surface-container mt-space-md">
+<div class="w-11 h-11 rounded bg-tertiary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-bold text-glow-amber">
+              A
+            </div>
+<div>
+<div class="font-title-md text-body-md text-text-primary font-bold">Aria K., Age 12</div>
+<div class="font-body-sm text-body-sm text-text-secondary">State Robotics Tournament Finalist</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL HIGH-CONVERSION CTA BANNER -->
+<section class="w-full pb-space-3xl pt-space-xl relative bg-surface">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg">
+<div class="relative rounded-xl bg-gradient-to-br from-white via-surface-container-low to-surface-container p-space-xl md:p-space-3xl border border-surface-container-high shadow-xl overflow-hidden">
+<!-- Ambient Orbit Ring Background Decoration -->
+<div class="pointer-events-none absolute -bottom-20 -right-20 w-[450px] h-[450px] rounded-full bg-primary-fixed/40 blur-[100px]"></div>
+<div class="pointer-events-none absolute -top-20 -left-20 w-[450px] h-[450px] rounded-full bg-secondary-fixed/40 blur-[100px]"></div>
+<div class="relative z-10 max-w-3xl mx-auto text-center space-y-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-outline-variant text-primary font-label-caps text-label-caps uppercase shadow-sm">
+            Start Your Academic Transformation
+          </div>
+<h2 class="font-headline-hero text-headline-hero text-text-primary tracking-tight leading-[1.1]">
+            Ready to Bring Next-Gen Robotics to Your Classroom?
+          </h2>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-xl mx-auto leading-relaxed">
+            Equip your students with the computational mindset, hardware intuition, and creative confidence they need to pioneer tomorrow.
+          </p>
+<!-- Action Container -->
+<div class="pt-space-md flex flex-col sm:flex-row items-center justify-center gap-space-md">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-4 rounded bg-primary text-on-primary font-headline-sm text-body-lg font-bold shadow-md hover:brightness-110 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">school</span>
+              Request School Demonstration
+            </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-4 rounded bg-white border border-surface-container-high text-text-primary hover:bg-surface-container-low font-headline-sm text-body-lg font-semibold shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">download</span>
+              Download Curriculum Guide (PDF)
+            </a>
+</div>
+<!-- Micro Confidence Guarantee -->
+<div class="pt-space-md flex items-center justify-center gap-space-lg text-text-secondary font-title-md text-body-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span> 30-Day Classroom Pilot Kits
+            </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span> Direct Teacher Grants Supported
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple interactive micro-hover response for code test runner demo
+  document.addEventListener('DOMContentLoaded', () => {
+    const runBtn = document.querySelector('button:has(.material-symbols-outlined)');
+    if (runBtn) {
+      runBtn.addEventListener('click', (e) => {
+        const btn = e.currentTarget;
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Compiling...';
+        setTimeout(() => {
+          btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span> Transmitted to Bot!';
+          btn.classList.add('bg-primary');
+          setTimeout(() => {
+            btn.innerHTML = orig;
+            btn.classList.remove('bg-primary');
+          }, 2400);
+        }, 1200);
+      });
+    }
+  });
+</script></main><footer class="w-full bg-white text-text-secondary border-t border-surface-container"><div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg pt-space-3xl pb-space-2xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-lg pb-space-2xl"><div class="space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="Obo Technology Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG7LU5QTjSlPanA21RMIwLY5HpKQ-Qq5NCg0zXg2SrTLjnEvEE304ik03J15mcnE-Y_3IwQ0zzG-KV3TBgCrPp7d9Mq1IP93osfjb8zU8tW6FNEw_uJncYpw3V7S1kiJN4WTKgMP2tiHhgiVf8f_BEz6-wVP8TAISjD3wKV6fky2dm9ks4vBwX7dRYOLVbL5rMIvobGsKlb3IXUMSiqwyL6_kX-V_XFVpc0wcNlwXKzA"/><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight font-bold">Obo Technology</span></div><p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">Engineering future-ready educational robotics, precision automation kits, and adaptive STEM curriculum architectures for institutes, classrooms, and makers globally.</p><div class="flex items-center gap-space-sm pt-space-xs"><a aria-label="Global Network" class="w-9 h-9 rounded bg-surface-container-low border border-surface-container flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">language</span></a><a aria-label="Developer Hub" class="w-9 h-9 rounded bg-surface-container-low border border-surface-container flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span></a><a aria-label="Community Forum" class="w-9 h-9 rounded bg-surface-container-low border border-surface-container flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">forum</span></a></div></div><div class="space-y-space-md"><h3 class="font-label-caps text-label-caps text-text-primary uppercase tracking-wider">Solutions &amp; Platforms</h3><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">Autonomous Mobile Robotics</a></li><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">Kinematic Manipulator Arms</a></li><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">Sensor Fusion Core Kits</a></li><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">Microcontroller &amp; IoT Modules</a></li><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">Enterprise Training Hardware</a></li></ul></div><div class="space-y-space-md"><h3 class="font-label-caps text-label-caps text-text-primary uppercase tracking-wider">Curriculum &amp; Resources</h3><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">K-12 Robotic Foundations</a></li><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">University Mechatronics Syllabus</a></li><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">Teacher Guides &amp; Rubrics</a></li><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">Open Documentation &amp; SDK</a></li><li><a class="text-text-secondary hover:text-primary transition-colors" href="#">Accreditation Pathways</a></li></ul></div><div class="space-y-space-md"><h3 class="font-label-caps text-label-caps text-text-primary uppercase tracking-wider">Stay Synchronized</h3><p class="font-body-sm text-body-sm text-text-secondary">Receive firmware releases, pedagogical whitepapers, and national STEM tournament invites.</p><form class="space-y-space-sm"><div class="flex items-center gap-space-xs"><input class="w-full px-space-md py-space-sm rounded bg-surface-container-low border border-surface-container text-text-primary font-body-sm text-body-sm placeholder-text-tertiary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="educator@institution.edu" type="email"/><button class="px-space-md py-space-sm rounded bg-primary text-on-primary font-title-md text-body-sm font-bold shrink-0 hover:brightness-110 transition-all" type="button"><span class="material-symbols-outlined text-[18px]">send</span></button></div><span class="font-label-caps text-label-caps text-text-tertiary block">Zero spam. Opt-out anytime.</span></form></div></div><div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-secondary border-t border-surface-container"><p>© 2026 Obo Technology. All rights reserved.</p><div class="flex items-center gap-gutter"><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a><a class="hover:text-primary transition-colors" href="#">Terms of Service</a><a class="hover:text-primary transition-colors" href="#">Security &amp; Compliance</a><a class="hover:text-primary transition-colors" href="#">Cookie Preferences</a></div></div></div></footer></body></html>
