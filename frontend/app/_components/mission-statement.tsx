@@ -1,15 +1,15 @@
+import { CircleQuestionMark } from 'lucide-react';
+
 function MissionStatement() {
   return (
     <section className='w-full py-space-3xl relative overflow-hidden bg-surface'>
       <div className='pointer-events-none absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary-fixed/40 blur-[120px]'></div>
-      <div className='max-w-[1320px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg'>
+      <div className='max-w-330 mx-auto px-margin-sm md:px-margin lg:px-margin-lg'>
         <div className='rounded-xl bg-white border border-surface-container-high p-space-xl md:p-space-2xl shadow-md relative overflow-hidden'>
           <div className='grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center'>
             <div className='lg:col-span-8 space-y-space-md'>
               <div className='inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container-low text-primary font-label-caps text-label-caps uppercase border border-outline-variant'>
-                <span className='material-symbols-outlined text-[14px]'>
-                  psychology_alt
-                </span>
+                <CircleQuestionMark className='size-3.5' />
                 Pedagogical Paradigm
               </div>
               <h2 className='font-headline-lg text-headline-lg text-text-primary tracking-tight'>

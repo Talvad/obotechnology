@@ -86,7 +86,7 @@ function Hero() {
               {/* <!-- Elevated Card Frame --> */}
               <div className='relative rounded-xl bg-white border border-surface-container-high p-space-md shadow-xl overflow-hidden'>
                 {/* <!-- Orbital Ring Silhouette Overlay --> */}
-                <svg
+                {/* <svg
                   className='absolute -right-16 -top-16 w-72 h-72 text-primary/10 pointer-events-none'
                   fill='none'
                   // viewbox="0 0 200 200"
@@ -109,7 +109,7 @@ function Hero() {
                     transform='rotate(-28 100 100)'
                   ></ellipse>
                   <circle cx='152' cy='72' fill='#a33900' r='5'></circle>
-                </svg>
+                </svg> */}
                 {/* <!-- Image with Dynamic Asymmetric Shape --> */}
                 <div className='relative w-full h-90 rounded-lg overflow-hidden shadow-inner group'>
                   <Image

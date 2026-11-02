@@ -8,25 +8,23 @@ import { Testimonial } from './_components/testimonial';
 
 export default function Home() {
   return (
-    <>
-      <main className='w-full pt-20 bg-surface min-h-screen'>
-        <div className='flex flex-col w-full'>
-          <Hero />
+    <main className='w-full pt-20 bg-surface min-h-screen'>
+      <div className='flex flex-col w-full'>
+        <Hero />
 
-          {/* <!-- IMPACT & METRICS DASHBOARD STRIP --> */}
-          <MetricStrip />
-          {/* <!-- PROBLEM & MISSION STATEMENT BANNER --> */}
-          <MissionStatement />
-          {/* <!-- CORE PRODUCTS & SERVICES GRID --> */}
-          <CoreProduct />
-          {/* <!-- INTERACTIVE CURRICULUM & LEARNING PATHWAYS --> */}
-          <LearningPathways />
-          {/* <!-- TESTIMONIALS & SCHOOL STORIES --> */}
-          <Testimonial />
-          {/* <!-- FINAL HIGH-CONVERSION CTA BANNER --> */}
-          <CtaBanner />
-        </div>
-      </main>
-    </>
+        {/* <!-- IMPACT & METRICS DASHBOARD STRIP --> */}
+        <MetricStrip />
+        {/* <!-- PROBLEM & MISSION STATEMENT BANNER --> */}
+        <MissionStatement />
+        {/* <!-- CORE PRODUCTS & SERVICES GRID --> */}
+        <CoreProduct />
+        {/* <!-- INTERACTIVE CURRICULUM & LEARNING PATHWAYS --> */}
+        <LearningPathways />
+        {/* <!-- TESTIMONIALS & SCHOOL STORIES --> */}
+        <Testimonial />
+        {/* <!-- FINAL HIGH-CONVERSION CTA BANNER --> */}
+        <CtaBanner />
+      </div>
+    </main>
   );
 }
