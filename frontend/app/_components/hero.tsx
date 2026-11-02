@@ -6,6 +6,7 @@ import {
   GraduationCap,
   Zap,
 } from 'lucide-react';
+import Image from 'next/image';
 
 function Hero() {
   return (
@@ -111,11 +112,13 @@ function Hero() {
                 </svg>
                 {/* <!-- Image with Dynamic Asymmetric Shape --> */}
                 <div className='relative w-full h-90 rounded-lg overflow-hidden shadow-inner group'>
-                  <img
-                    className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-105'
-                    data-alt='Excited young elementary and middle school students collaborating around an orange modular robotics chassis, high-fiving their teacher in a high-tech modern classroom bathed in dark obsidian surfaces and neon blue ambient LED lighting. Precision mechatronic components, glowing sensors, and laptops with code editors on the wooden desks.'
-                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuAy-76nvJChOFfdfw7pbIIwSiv6qAs3I6QyH4FBHgHQnrdGqVyeVhppsgr_XwVcZ-AE8Oei5q9sY7aFIcdoaiItYZ3FqfTOOUbH7ntvQO18s4ivnR5FZ4SbUk5MVjD5s_qWso19qwlH93UZCdFPm05PoMXmdBkqcUbukWVCW61kB2Tkb4hY1YYSSYT28Zw-lyQPRUWi-lau5DyFxsaIt9Tf7PVZAIbSjweEfb7oechh'
+                  <Image
+                    alt='Excited young elementary and middle school students collaborating around an orange modular robotics chassis, high-fiving their teacher in a high-tech modern classroom bathed in dark obsidian surfaces and neon blue ambient LED lighting. Precision mechatronic components, glowing sensors, and laptops with code editors on the wooden desks.'
+                    src={'/image/obo_hero.jpg'}
+                    fill
+                    className='object-cover'
                   />
+
                   <div className='absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent'></div>
                   {/* <!-- Floating In-Image Badge --> */}
                   <div className='absolute top-space-md left-space-md px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-sm flex items-center gap-2'>
