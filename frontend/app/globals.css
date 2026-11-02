@@ -1,26 +1,282 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Design */
+  --surface: #f7f9fb;
+  --surface-dim: #d8dadc;
+  --surface-bright: #f7f9fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2f4f6;
+  --surface-container: #eceef0;
+  --surface-container-high: #e6e8ea;
+  --surface-container-highest: #e0e3e5;
+  --on-surface: #191c1e;
+  --on-surface-variant: #5a4138;
+  --inverse-surface: #2d3133;
+  --inverse-on-surface: #eff1f3;
+  --outline: #8e7166;
+  --outline-variant: #e2bfb2;
+  --surface-tint: #a73a00;
+  --primary: #a33900;
+  --on-primary: #ffffff;
+  --primary-container: #cc4900;
+  --on-primary-container: #fffbff;
+  --inverse-primary: #ffb599;
+  --secondary: #0051d5;
+  --on-secondary: #ffffff;
+  --secondary-container: #316bf3;
+  --on-secondary-container: #fefcff;
+  --tertiary: #545c72;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #6c748b;
+  --on-tertiary-container: #fefcff;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  --primary-fixed: #ffdbce;
+  --primary-fixed-dim: #ffb599;
+  --on-primary-fixed: #370e00;
+  --on-primary-fixed-variant: #7f2b00;
+  --secondary-fixed: #dbe1ff;
+  --secondary-fixed-dim: #b4c5ff;
+  --on-secondary-fixed: #00174b;
+  --on-secondary-fixed-variant: #003ea8;
+  --tertiary-fixed: #dae2fd;
+  --tertiary-fixed-dim: #bec6e0;
+  --on-tertiary-fixed: #131b2e;
+  --on-tertiary-fixed-variant: #3f465c;
+  --background: #f7f9fb;
+  --on-background: #191c1e;
+  --surface-variant: #e0e3e5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-surface-tint: var(--surface-tint);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
+  --color-on-background: var(--on-background);
+  --color-surface-variant: var(--surface-variant);
+
+  /* Fonts */
+  --font-space: var(--font-space-grotesk);
+  --font-hanken: var(--font-hanken-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+
+  /* Map your specific component typography names to families */
+  --font-label-code-md: var(--font-mono);
+  --font-label-code-sm: var(--font-mono);
+
+  --font-headline-lg-mobile: var(--font-space);
+  --font-headline-lg: var(--font-space);
+  --font-headline-sm: var(--font-space);
+  --font-headline-md: var(--font-space);
+  --font-headline-hero: var(--font-space);
+  --font-headline-hero-mobile: var(--font-space);
+  --font-display-lg: var(--font-space);
+  --font-display-lg-mobile: var(--font-space);
+  --font-label-caps: var(--font-space);
+  --font-title-md: var(--font-hanken);
+  --font-body-md: var(--font-hanken);
+  --font-body-lg: var(--font-hanken);
+  --font-body-sm: var(--font-hanken);
+  --font-label-ui: var(--font-hanken);
+  --font-label-lg: var(--font-hanken);
+  --font-label-md: var(--font-hanken);
+
+  /* Code Labels */
+  --text-label-code-md: 13px;
+  --text-label-code-md--line-height: 18px;
+  --text-label-code-md--font-weight: 500;
+
+  --text-label-code-sm: 11px;
+  --text-label-code-sm--line-height: 16px;
+  --text-label-code-sm--letter-spacing: 0.02em;
+  --text-label-code-sm--font-weight: 500;
+
+  /* Headlines & Displays */
+  --text-headline-hero: 52px;
+  --text-headline-hero--line-height: 60px;
+  --text-headline-hero--letter-spacing: -0.025em;
+  --text-headline-hero--font-weight: 700;
+
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-display-lg-mobile: 32px;
+  --text-display-lg-mobile--line-height: 40px;
+  --text-display-lg-mobile--letter-spacing: -0.01em;
+  --text-display-lg-mobile--font-weight: 700;
+
+  --text-headline-lg-mobile: 24px;
+  --text-headline-lg-mobile--line-height: 32px;
+  --text-headline-lg-mobile--letter-spacing: -0.005em;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--font-weight: 600;
+
+  /* Titles & Bodies */
+  --text-title-md: 16px;
+  --text-title-md--line-height: 24px;
+  --text-title-md--font-weight: 600;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 18px;
+  --text-body-sm--font-weight: 400;
+
+  /* Labels & Caps */
+  --text-label-ui: 12px;
+  --text-label-ui--line-height: 16px;
+  --text-label-ui--letter-spacing: 0.01em;
+  --text-label-ui--font-weight: 600;
+
+  --text-label-caps: 11px;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0.08em;
+  --text-label-caps--font-weight: 700;
+
+  /* Border Radius */
+  --radius: 0.125rem; /* Maps to DEFAULT */
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* Spacing */
+  --spacing-margin: 2rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-space-2xl: 4rem;
+  --spacing-space-3xl: 6rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-sm: 1rem;
+  --spacing-gutter-mobile: 0.75rem;
+  --spacing-gutter-lg: 2rem;
+  --spacing-margin-sm: 1rem;
+  --spacing-margin-lg: 4rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --surface: #f7f9fb;
+    --surface-dim: #d8dadc;
+    --surface-bright: #f7f9fb;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f2f4f6;
+    --surface-container: #eceef0;
+    --surface-container-high: #e6e8ea;
+    --surface-container-highest: #e0e3e5;
+    --on-surface: #191c1e;
+    --on-surface-variant: #5a4138;
+    --inverse-surface: #2d3133;
+    --inverse-on-surface: #eff1f3;
+    --outline: #8e7166;
+    --outline-variant: #e2bfb2;
+    --surface-tint: #a73a00;
+    --primary: #a33900;
+    --on-primary: #ffffff;
+    --primary-container: #cc4900;
+    --on-primary-container: #fffbff;
+    --inverse-primary: #ffb599;
+    --secondary: #0051d5;
+    --on-secondary: #ffffff;
+    --secondary-container: #316bf3;
+    --on-secondary-container: #fefcff;
+    --tertiary: #545c72;
+    --on-tertiary: #ffffff;
+    --tertiary-container: #6c748b;
+    --on-tertiary-container: #fefcff;
+    --error: #ba1a1a;
+    --on-error: #ffffff;
+    --error-container: #ffdad6;
+    --on-error-container: #93000a;
+    --primary-fixed: #ffdbce;
+    --primary-fixed-dim: #ffb599;
+    --on-primary-fixed: #370e00;
+    --on-primary-fixed-variant: #7f2b00;
+    --secondary-fixed: #dbe1ff;
+    --secondary-fixed-dim: #b4c5ff;
+    --on-secondary-fixed: #00174b;
+    --on-secondary-fixed-variant: #003ea8;
+    --tertiary-fixed: #dae2fd;
+    --tertiary-fixed-dim: #bec6e0;
+    --on-tertiary-fixed: #131b2e;
+    --on-tertiary-fixed-variant: #3f465c;
+    --background: #f7f9fb;
+    --on-background: #191c1e;
+    --surface-variant: #e0e3e5;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  /* background: var(--background);
+  color: var(--foreground); */
   font-family: Arial, Helvetica, sans-serif;
 }
