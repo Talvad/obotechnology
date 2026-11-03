@@ -1,14 +1,44 @@
+import {
+  Archive,
+  ArrowRight,
+  Check,
+  ChevronDown,
+  ChevronRight,
+  CircleCheck,
+  CloudCheck,
+  Download,
+  Eye,
+  GraduationCap,
+  Headset,
+  LockKeyhole,
+  Radio,
+  ReceiptIndianRupee,
+  RefreshCcw,
+  RobotArm,
+  Settings,
+  ShieldCheck,
+  SquareCode,
+  SquareMenu,
+  Star,
+  StarHalf,
+  Timer,
+  Verified,
+  Wifi,
+  Zap,
+} from 'lucide-react';
+import Image from 'next/image';
+
 const ProductsPage = () => {
   return (
     <main className='w-full pt-20 bg-background min-h-screen'>
       <div className='flex flex-col w-full'>
         {/*  <!-- Subtle Ambient Glow Orbs --> */}
         <div className='relative w-full overflow-hidden'>
-          <div className='absolute -top-40 right-1/4 w-[580px] h-[580px] bg-blue-100/60 rounded-full blur-[140px] pointer-events-none -z-10'></div>
-          <div className='absolute top-[680px] -left-32 w-[500px] h-[500px] bg-orange-100/50 rounded-full blur-[130px] pointer-events-none -z-10'></div>
-          <div className='absolute top-[1800px] right-10 w-[600px] h-[600px] bg-amber-100/40 rounded-full blur-[160px] pointer-events-none -z-10'></div>
+          <div className='absolute -top-40 right-1/4 w-145 h-145 bg-blue-100/60 rounded-full blur-[140px] pointer-events-none -z-10'></div>
+          <div className='absolute top-170 -left-32 w-125 h-125 bg-orange-100/50 rounded-full blur-[130px] pointer-events-none -z-10'></div>
+          <div className='absolute top-[1800px] right-10 w-150 h-150 bg-amber-100/40 rounded-full blur-[160px] pointer-events-none -z-10'></div>
           {/* <!-- Section 1: Hero Spotlight --> */}
-          <section className='max-w-[1320px] mx-auto px-4 md:px-8 lg:px-12 pt-space-md pb-space-3xl'>
+          <section className='max-w-330 mx-auto px-4 md:px-8 lg:px-12 pt-space-md pb-space-3xl'>
             {/* <!-- Breadcrumbs --> */}
             <nav
               aria-label='Breadcrumb'
@@ -17,21 +47,16 @@ const ProductsPage = () => {
               <a className='hover:text-slate-900 transition-colors' href='#'>
                 Home
               </a>
-              <span className='material-symbols-outlined text-[16px] text-slate-400'>
-                chevron_right
-              </span>
+              <ChevronRight className='size-4 text-salte-400' />
+
               <a className='hover:text-slate-900 transition-colors' href='#'>
                 Products &amp; Services
               </a>
-              <span className='material-symbols-outlined text-[16px] text-slate-400'>
-                chevron_right
-              </span>
+              <ChevronRight className='size-4 text-salte-400' />
               <a className='hover:text-slate-900 transition-colors' href='#'>
                 Robotics Kits &amp; Hardware
               </a>
-              <span className='material-symbols-outlined text-[16px] text-slate-400'>
-                chevron_right
-              </span>
+              <ChevronRight className='size-4 text-salte-400' />
               <span className='text-slate-900 font-medium'>
                 Obo Cortex-X Modular Robotics Kit
               </span>
@@ -46,9 +71,7 @@ const ProductsPage = () => {
                     Flagship Classroom &amp; Tournament Kit • Ages 11-18
                   </span>
                   <span className='px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-secondary font-label-code-sm uppercase tracking-wider flex items-center gap-1 font-semibold'>
-                    <span className='material-symbols-outlined text-[14px]'>
-                      verified
-                    </span>
+                    <Verified className='size-3.5' />
                     NGSS &amp; STEAM Aligned
                   </span>
                 </div>
@@ -67,36 +90,11 @@ const ProductsPage = () => {
                 {/* <!-- Institutional Trust Rating Banner --> */}
                 <div className='p-space-md rounded-xl bg-surface-container-lowest border border-border-subtle shadow-sm flex items-center gap-space-md flex-wrap'>
                   <div className='flex items-center text-amber-500'>
-                    <span
-                      className='material-symbols-outlined text-[20px]'
-                      // style="font-variation-settings: 'FILL' 1"
-                    >
-                      star
-                    </span>
-                    <span
-                      className='material-symbols-outlined text-[20px]'
-                      // style="font-variation-settings: 'FILL' 1"
-                    >
-                      star
-                    </span>
-                    <span
-                      className='material-symbols-outlined text-[20px]'
-                      // style="font-variation-settings: 'FILL' 1"
-                    >
-                      star
-                    </span>
-                    <span
-                      className='material-symbols-outlined text-[20px]'
-                      // style="font-variation-settings: 'FILL' 1"
-                    >
-                      star
-                    </span>
-                    <span
-                      className='material-symbols-outlined text-[20px]'
-                      // style="font-variation-settings: 'FILL' 1"
-                    >
-                      star_half
-                    </span>
+                    <Star className='size-5' />
+                    <Star className='size-5' />
+                    <Star className='size-5' />
+                    <Star className='size-5' />
+                    <StarHalf className='size-5' />
                   </div>
                   <div className='text-body-sm font-body-sm text-slate-900 font-semibold'>
                     4.9 / 5.0 Rating
@@ -134,16 +132,12 @@ const ProductsPage = () => {
                   </div>
                   <div className='text-body-sm font-body-sm text-slate-600 pt-1 space-y-1'>
                     <p className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-primary text-[18px]'>
-                        check_circle
-                      </span>
+                      <CircleCheck className='size-5 text-primary' />
                       Classroom bundle includes 10-bay fast-charging dock,
                       educator hub, and 60+ spare chassis hardware parts.
                     </p>
                     <p className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-secondary text-[18px]'>
-                        check_circle
-                      </span>
+                      <CircleCheck className='size-5 text-secondary' />
                       Eligible for Title I, Perkins V, and ESSER federal grant
                       allocations.
                     </p>
@@ -154,18 +148,14 @@ const ProductsPage = () => {
                       className='inline-flex items-center justify-center gap-2 font-title-md text-sm font-bold bg-primary-container text-on-primary-container px-space-lg py-space-sm rounded-lg shadow-sm hover:brightness-105 active:scale-95 transition-all text-center'
                       href='#'
                     >
-                      <span className='material-symbols-outlined text-[20px]'>
-                        request_quote
-                      </span>
+                      <ReceiptIndianRupee className='size-5' />
                       Request Institutional Quote
                     </a>
                     <a
                       className='inline-flex items-center justify-center gap-2 font-title-md text-sm font-semibold bg-white border border-slate-300 text-slate-800 hover:bg-slate-50 px-space-md py-space-sm rounded-lg shadow-sm transition-all text-center'
                       href='#'
                     >
-                      <span className='material-symbols-outlined text-[20px]'>
-                        download
-                      </span>
+                      <Download className='size-5' />
                       Spec Sheet (PDF)
                     </a>
                     <a
@@ -173,9 +163,7 @@ const ProductsPage = () => {
                       href='#'
                     >
                       <span>Order Pilot Unit</span>
-                      <span className='material-symbols-outlined text-[16px]'>
-                        arrow_forward
-                      </span>
+                      <ArrowRight className='size-4' />
                     </a>
                   </div>
                 </div>
@@ -234,14 +222,15 @@ const ProductsPage = () => {
               {/* <!-- Right Product Media Showcase --> */}
               <div className='lg:col-span-6 flex flex-col space-y-space-md'>
                 {/* <!-- Main Display Card --> */}
-                <div className='relative w-full h-[460px] rounded-xl overflow-hidden bg-surface-container-lowest border border-border-subtle shadow-md group'>
-                  <img
-                    className='w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105'
-                    data-alt='High-resolution studio photograph of Obo Cortex-X autonomous educational robotics rover with exposed carbon-fiber chassis, precision titanium metal servos, illuminated blue LED micro-controller board, front LiDAR scanner, and omnidirectional mecanum wheels on dark engineering slate background.'
-                    id='mainHeroImage'
-                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuDZIVVFwH4scTZ-BDFbR3o3cElURJhBaapwFkNomHScuYR79DO2z9jlCqf_VaprsddohKU2hJUtrwLtQRfqFpEudwG_z1lCNWOIC0CFsP2oPX-YpdFc-n5lId0fYRioOU3QDEXBUnN_KZR5OUR2T7N4cpNJQX7c1gVPLGASIXshqbWjvW_DsFcTc8XOSLTl-rQ-ZspY6S5WJrlcU9eYsEHh52aE5f0KLpO9jdT7kIpE'
+                <div className='relative w-full h-115 rounded-xl overflow-hidden bg-surface-container-lowest border border-border-subtle shadow-md group'>
+                  <Image
+                    className='object-cover transition-transform duration-700 ease-out group-hover:scale-105'
+                    alt='High-resolution studio photograph of Obo Cortex-X autonomous educational robotics rover with exposed carbon-fiber chassis, precision titanium metal servos, illuminated blue LED micro-controller board, front LiDAR scanner, and omnidirectional mecanum wheels on dark engineering slate background.'
+                    fill
+                    src={'/image/autonomous_omni_rover.jpg'}
                   />
-                  <div className='absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80 pointer-events-none'></div>
+
+                  <div className='absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-80 pointer-events-none'></div>
                   {/* <!-- Floating Sensor Telemetry Tag --> */}
                   <div className='absolute top-4 left-4 p-space-sm rounded-lg bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm flex items-center gap-2'>
                     <span className='w-2.5 h-2.5 rounded-full bg-primary-container animate-ping'></span>
@@ -251,9 +240,8 @@ const ProductsPage = () => {
                   </div>
                   <div className='absolute bottom-4 left-4 right-4 flex items-center justify-between text-body-sm font-body-sm text-white bg-slate-950/75 backdrop-blur-md p-space-sm rounded-lg border border-white/10 shadow-sm'>
                     <div className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-blue-400 text-[20px]'>
-                        precision_manufacturing
-                      </span>
+                      <RobotArm className='size-5 text-blue-400' />
+
                       <span className='font-medium' id='activeViewCaption'>
                         Configuration: Autonomous Omni-Rover with Edge AI Vision
                       </span>
@@ -269,11 +257,12 @@ const ProductsPage = () => {
                     className='thumbnail-btn active-thumb p-1.5 rounded-lg bg-surface-container-lowest border-2 border-primary-container shadow-sm text-left transition-all'
                     // onclick="updateHeroImage('autonomous', this)"
                   >
-                    <div className='w-full h-20 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200'>
-                      <img
-                        className='w-full h-full object-cover'
-                        data-alt='Close up photograph of autonomous rover chassis with mecanum wheels and integrated ultrasonic sensors mounted on dark anodized frame'
-                        src='https://lh3.googleusercontent.com/aida-public/AB6AXuDAIQnKp9mmVSmefisUg9iRLhzDxJtk-dCJHQvxlW4j31RdvoSckkiGpXtSDSEjSqIPPGmWGDFArxEfkK5uhYk4NLWCm-5lFSY7xx2HL8zThBYk5gJM4-4SoCVKFKfoFj3eyZw8AE3QKdnanMwIUG22-_b1Z1oBggoGXYr69pu4jKzeI2P2I-az6xriHvgGkc8IlMGYJpD7OBuYnMFOdp3xNxQtOGnVwE1HH0fI9mmQ'
+                    <div className='relative w-full h-20 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200'>
+                      <Image
+                        className=' object-cover'
+                        alt='Close up photograph of autonomous rover chassis with mecanum wheels and integrated ultrasonic sensors mounted on dark anodized frame'
+                        src={'/image/rover-mode.jpg'}
+                        fill
                       />
                     </div>
                     <span className='block font-title-md text-xs text-slate-900 truncate font-semibold'>
@@ -287,11 +276,12 @@ const ProductsPage = () => {
                     className='thumbnail-btn p-1.5 rounded-lg bg-surface-container-lowest border border-border-subtle hover:border-slate-400 shadow-sm text-left transition-all'
                     // onclick="updateHeroImage('gripper', this)"
                   >
-                    <div className='w-full h-20 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200'>
-                      <img
-                        className='w-full h-full object-cover'
-                        data-alt='High precision 4-axis robotic arm with pneumatic compliant mechanical gripper holding an orange precision calibration block in laboratory lighting'
-                        src='https://lh3.googleusercontent.com/aida-public/AB6AXuAWh8z3rE_8JJuAGAsVru_kLJrYF_4c8kiwEP8BoVSM9QPbuTr-hW7V9QNZ6EiBPo2vL1_xLDlZxftRMAiY9ofW6HvdHz_tUz5-Jth2WsJFgolqOX8XwvuDKMm7BRJLHz3mAvh24ReU6CjyZ4ktkoeiKlwewT9L9RwC-sVFgHeQGAzW0r0HTNygDSqQffRBaya2M7hJG83lR6y598Dem2JRHmqceHo2UwY_eDYOwlZI'
+                    <div className='relative w-full h-20 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200'>
+                      <Image
+                        className='object-cover'
+                        alt='High precision 4-axis robotic arm with pneumatic compliant mechanical gripper holding an orange precision calibration block in laboratory lighting'
+                        src={'/image/kinematic-arm.jpg'}
+                        fill
                       />
                     </div>
                     <span className='block font-title-md text-xs text-slate-900 truncate font-semibold'>
@@ -305,11 +295,12 @@ const ProductsPage = () => {
                     className='thumbnail-btn p-1.5 rounded-lg bg-surface-container-lowest border border-border-subtle hover:border-slate-400 shadow-sm text-left transition-all'
                     // onclick="updateHeroImage('mcu', this)"
                   >
-                    <div className='w-full h-20 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200'>
-                      <img
-                        className='w-full h-full object-cover'
-                        data-alt='Macro photography of custom Obo Cortex electronic motherboard with ESP32-S3 microcontroller, gold contact pads, status LEDs, and magnetic snap ports'
-                        src='https://lh3.googleusercontent.com/aida-public/AB6AXuDaVx6wRxmsdI82VV04B8g0W_5FQfjPnvRXFVkR4RHunIrJtxz6nBUTAEhycR1ZCHrU3rzW1voP2Az0nEkgBdHGZJIZlE9jG4AWEUbzRTrDXBWEl7u4jYJphrh1jMsLGy_ZnPHFffKBQC441k9JUS62KMkxV9wHEklJOiA9ex-c7lPMiDDI--IljVy5Sl1szVjbyOJs1ByAq7rd9Gr3m4A7_MpW5M5q4ZAiH0JhKwY6'
+                    <div className='relative w-full h-20 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200'>
+                      <Image
+                        className='object-cover'
+                        alt='Macro photography of custom Obo Cortex electronic motherboard with ESP32-S3 microcontroller, gold contact pads, status LEDs, and magnetic snap ports'
+                        src={'/image/core-mcu.jpg'}
+                        fill
                       />
                     </div>
                     <span className='block font-title-md text-xs text-slate-900 truncate font-semibold'>
@@ -323,11 +314,12 @@ const ProductsPage = () => {
                     className='thumbnail-btn p-1.5 rounded-lg bg-surface-container-lowest border border-border-subtle hover:border-slate-400 shadow-sm text-left transition-all'
                     // onclick="updateHeroImage('exploded', this)"
                   >
-                    <div className='w-full h-20 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200'>
-                      <img
-                        className='w-full h-full object-cover'
-                        data-alt='Technical exploded diagram view showing all modular components of educational robotics kit separated in 3D isometric space against dark blueprint grid'
-                        src='https://lh3.googleusercontent.com/aida-public/AB6AXuBzweMuwvS4bgCqGqazaTV5br4sM74uPn0YbfFs8PgWv1wUwaj-iSXj8yFk4oUB4ifBFecBrZUTNeqFijZH3wGmcljzN0fPRR_Zx7jC9dyCvj3yqj2CWLluL8Gqv8adW07ZPxjDIYOgbVF7M828fSDeB-S9fVzxaXcuctquYLcOVlI5rLKJRU-jPYwHyEclOayw9EVjR-nZtEG607d0HB1hvryPzBYzHleNkMF7dvcu'
+                    <div className='relative w-full h-20 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200'>
+                      <Image
+                        className='object-cover'
+                        alt='Technical exploded diagram view showing all modular components of educational robotics kit separated in 3D isometric space against dark blueprint grid'
+                        src={`/image/exploded_view.jpg`}
+                        fill
                       />
                     </div>
                     <span className='block font-title-md text-xs text-slate-900 truncate font-semibold'>
@@ -342,7 +334,7 @@ const ProductsPage = () => {
             </div>
           </section>
           {/* <!-- Section 2: Interactive Hardware Anatomy & Architecture --> */}
-          <section className='max-w-[1320px] mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
+          <section className='max-w-330 mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
             <div className='flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl'>
               <div className='space-y-space-xs max-w-2xl'>
                 <span className='font-label-code-sm uppercase tracking-wider block font-semibold text-primary'>
@@ -358,9 +350,8 @@ const ProductsPage = () => {
                 </p>
               </div>
               <div className='p-space-sm rounded-lg bg-surface-container-lowest border border-border-subtle shadow-sm flex items-center gap-space-sm'>
-                <span className='material-symbols-outlined text-amber-500 text-[20px]'>
-                  bolt
-                </span>
+                <Zap className='size-5 text-amber-500' />
+
                 <span className='font-title-md text-sm text-slate-800 font-semibold'>
                   Magnetic Click-Lock System (Zero Wire Fatigue)
                 </span>
@@ -372,9 +363,7 @@ const ProductsPage = () => {
               <div className='p-space-lg rounded-xl bg-surface-container-lowest border border-border-subtle shadow-sm hover:border-orange-300 hover:shadow-md transition-all flex flex-col justify-between'>
                 <div className='space-y-space-md'>
                   <div className='w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center text-primary-container'>
-                    <span className='material-symbols-outlined text-[28px]'>
-                      visibility
-                    </span>
+                    <Eye className='size-7' />
                   </div>
                   <div className='space-y-space-xs'>
                     <span className='font-label-code-sm text-slate-500 uppercase font-semibold'>
@@ -410,9 +399,7 @@ const ProductsPage = () => {
               <div className='p-space-lg rounded-xl bg-surface-container-lowest border border-border-subtle shadow-sm hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between'>
                 <div className='space-y-space-md'>
                   <div className='w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-secondary'>
-                    <span className='material-symbols-outlined text-[28px]'>
-                      sensors
-                    </span>
+                    <Radio className='size-7' />
                   </div>
                   <div className='space-y-space-xs'>
                     <span className='font-label-code-sm text-slate-500 uppercase font-semibold'>
@@ -450,9 +437,7 @@ const ProductsPage = () => {
               <div className='p-space-lg rounded-xl bg-surface-container-lowest border border-border-subtle shadow-sm hover:border-amber-300 hover:shadow-md transition-all flex flex-col justify-between'>
                 <div className='space-y-space-md'>
                   <div className='w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600'>
-                    <span className='material-symbols-outlined text-[28px]'>
-                      settings_suggest
-                    </span>
+                    <Settings className='size-7' />
                   </div>
                   <div className='space-y-space-xs'>
                     <span className='font-label-code-sm text-slate-500 uppercase font-semibold'>
@@ -488,9 +473,7 @@ const ProductsPage = () => {
               <div className='p-space-lg rounded-xl bg-surface-container-lowest border border-border-subtle shadow-sm hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between'>
                 <div className='space-y-space-md'>
                   <div className='w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-secondary'>
-                    <span className='material-symbols-outlined text-[28px]'>
-                      code_blocks
-                    </span>
+                    <SquareCode className='size-7' />
                   </div>
                   <div className='space-y-space-xs'>
                     <span className='font-label-code-sm text-slate-500 uppercase font-semibold'>
@@ -525,7 +508,7 @@ const ProductsPage = () => {
             </div>
           </section>
           {/* <!-- Section 3: Hardware Kits Family Catalog Matrix --> */}
-          <section className='max-w-[1320px] mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
+          <section className='max-w-330 mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
             <div className='text-center max-w-3xl mx-auto space-y-space-xs mb-space-2xl'>
               <span className='font-label-code-sm text-secondary uppercase tracking-wider block font-semibold'>
                 Complete Hardware Lineup
@@ -543,11 +526,12 @@ const ProductsPage = () => {
               {/* <!-- Kit 1: Spark --> */}
               <div className='p-space-lg rounded-xl bg-surface-container-lowest border border-border-subtle shadow-sm flex flex-col justify-between hover:shadow-md transition-all'>
                 <div className='space-y-space-md'>
-                  <div className='w-full h-44 rounded-lg overflow-hidden bg-slate-100 border border-slate-200'>
-                    <img
+                  <div className='relative w-full h-44 rounded-lg overflow-hidden bg-slate-100 border border-slate-200'>
+                    <Image
                       className='w-full h-full object-cover'
-                      data-alt='Playful yet rugged colorful magnetic robotics block kit designed for early learners aged 6 to 10 with oversized gears, silicone wheels and friendly LED expression screen'
-                      src='https://lh3.googleusercontent.com/aida-public/AB6AXuABb18JplUccsZRS7LO079NTJBBYEOE2r146Pj8YT-40xmhbiO8XVrmc6e8RSvQV42dI-JHn2Ko7UetwlLsnnDIA_j-rUGoYkqkfFMsc68JEI6O1rNl7JtYKf3z1i0gSdUuRlJ-1EJKEjeEHTgn4wFUj67lRvcrUNCe2tLKYGp80iX3C_a8V3xcOHwhnV4rtT036dic3Ux7d66EFXkYpEF3v32gM6QuwlXhrRo74STs'
+                      alt='Playful yet rugged colorful magnetic robotics block kit designed for early learners aged 6 to 10 with oversized gears, silicone wheels and friendly LED expression screen'
+                      src={'/image/obo_spark_platform_product.jpg'}
+                      fill
                     />
                   </div>
                   <div className='space-y-space-xs'>
@@ -570,21 +554,15 @@ const ProductsPage = () => {
                   </div>
                   <ul className='text-body-sm font-body-sm text-slate-600 space-y-1 pt-1'>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       24 Magnetic Smart Modules
                     </li>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       Tactile Tile Reader Included
                     </li>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       20 Story Mission Cards
                     </li>
                   </ul>
@@ -601,15 +579,16 @@ const ProductsPage = () => {
               {/* <!-- Kit 2: Cortex-X (Featured) --> */}
               <div className='p-space-lg rounded-xl bg-surface-container-lowest border-2 border-primary-container shadow-lg flex flex-col justify-between relative transform -translate-y-2'>
                 {/* <!-- Featured Badge --> */}
-                <div className='absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-code-sm font-bold uppercase tracking-wider shadow-sm'>
+                <div className='absolute z-10 -top-3 left-1/2 -translate-x-1/2 px-4 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-code-sm font-bold uppercase tracking-wider shadow-sm'>
                   Most Popular in Secondary
                 </div>
                 <div className='space-y-space-md pt-2'>
-                  <div className='w-full h-44 rounded-lg overflow-hidden bg-slate-100 border border-slate-200'>
-                    <img
-                      className='w-full h-full object-cover'
-                      data-alt='Futuristic black and electric orange modular educational robot with multi-jointed articulated arm and illuminated dual-core processor chassis'
-                      src='https://lh3.googleusercontent.com/aida-public/AB6AXuArrmfO4y0nTTbS2D7rrwetVsjZGHRp9czrksKOdZaELRzqWHA5xBb3qzm9hss41N4vIRvsiVa8Cd82tiiBpGhq4_NMj2A_WtL1NAmcgOPWehtoeGM0WyIJp4e_WxmBogtqxflfjyHrAzeMJafCAI2ngJHa13gOxp19eUfZpw4CYzkxhGYF6bAMHADlTBGhSql6pBDn1cxXfCH0gZKCfU9XFJ2Q0V3xiOrr0gXxllcB'
+                  <div className='relative w-full h-44 rounded-lg overflow-hidden bg-slate-100 border border-slate-200'>
+                    <Image
+                      className='object-cover'
+                      alt='Futuristic black and electric orange modular educational robot with multi-jointed articulated arm and illuminated dual-core processor chassis'
+                      src='/image/obo_cortex_x_product.jpg'
+                      fill
                     />
                   </div>
                   <div className='space-y-space-xs'>
@@ -632,21 +611,15 @@ const ProductsPage = () => {
                   </div>
                   <ul className='text-body-sm font-body-sm text-slate-600 space-y-1 pt-1'>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-primary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-primary' />
                       Dual Blockly &amp; MicroPython
                     </li>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-primary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-primary' />
                       Neural AI Vision Unit
                     </li>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-primary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-primary' />
                       36 Standard-Aligned Units
                     </li>
                   </ul>
@@ -663,11 +636,12 @@ const ProductsPage = () => {
               {/* <!-- Kit 3: Swarm & Drone Lab --> */}
               <div className='p-space-lg rounded-xl bg-surface-container-lowest border border-border-subtle shadow-sm flex flex-col justify-between hover:shadow-md transition-all'>
                 <div className='space-y-space-md'>
-                  <div className='w-full h-44 rounded-lg overflow-hidden bg-slate-100 border border-slate-200'>
-                    <img
-                      className='w-full h-full object-cover'
-                      data-alt='Duo setup of a carbon-fiber quadcopter drone and ground rover operating together in an educational research lab setting with optical positioning sensors'
-                      src='https://lh3.googleusercontent.com/aida-public/AB6AXuB2-z7f03J7g9Gp8BNYGa1Q_RU5cVoA73w9OXxOGfYeITY49mZ6r3x4jbdHFuhPrNvEtm--dpA1Yj3rhLsgBTrcnkqDpJc2_PJPaaYGOyX-rTqrJEFREBZCRA4ECid67rqCwcjwmxw5QQV613gXpMQIXNrndrZazfB24_fmZ1m7dhI1oupTHXdVubVz8ciBQvCbGMc_n6vYA7pwIrOEQhdA5hS7hz0fE5gxHV23h6L6'
+                  <div className='relative w-full h-44 rounded-lg overflow-hidden bg-slate-100 border border-slate-200'>
+                    <Image
+                      className=' object-cover'
+                      alt='Duo setup of a carbon-fiber quadcopter drone and ground rover operating together in an educational research lab setting with optical positioning sensors'
+                      src='/image/obo_swarm_drone_lab_product.jpg'
+                      fill
                     />
                   </div>
                   <div className='space-y-space-xs'>
@@ -690,21 +664,15 @@ const ProductsPage = () => {
                   </div>
                   <ul className='text-body-sm font-body-sm text-slate-600 space-y-1 pt-1'>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       Multi-Agent Mesh Protocol
                     </li>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       Optical Flow Stabilized Quad
                     </li>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       ROS2 Humble Package Sync
                     </li>
                   </ul>
@@ -721,11 +689,12 @@ const ProductsPage = () => {
               {/* <!-- Kit 4: Classroom Parts Vault --> */}
               <div className='p-space-lg rounded-xl bg-surface-container-lowest border border-border-subtle shadow-sm flex flex-col justify-between hover:shadow-md transition-all'>
                 <div className='space-y-space-md'>
-                  <div className='w-full h-44 rounded-lg overflow-hidden bg-slate-100 border border-slate-200'>
-                    <img
-                      className='w-full h-full object-cover'
-                      data-alt='Heavy duty classroom storage cart with organized clear compartmentalized pull-out drawers filled with replacement robotic gears, motors, wiring, and nuts'
-                      src='https://lh3.googleusercontent.com/aida-public/AB6AXuAaGHRVQdjo5cGnsuNeUTtmvmOCHjgxDR3KbmIebdgn9VEbW_spUwNpV6FFOHQ0kKK1eafFVXZQno6F1SDne2QmIB5kC6SrArk6CgA23rQmpSHOYOgQiWPqAr3T1Va_6DlHENrUIEOHhYKrJTgHm1tAR6Erj7yXXxSqEmlB5IRYsaAFWsoKx_BYodY7pNyoWmpqjCl5oPYr6TjNZ_LZtgAVbvE2tEaIqb0mRT6IWW-P'
+                  <div className='relative h-44 rounded-lg overflow-hidden bg-slate-100 border border-slate-200'>
+                    <Image
+                      className='object-cover'
+                      alt='Heavy duty classroom storage cart with organized clear compartmentalized pull-out drawers filled with replacement robotic gears, motors, wiring, and nuts'
+                      src='/image/lab_infrastructure_product.jpg'
+                      fill
                     />
                   </div>
                   <div className='space-y-space-xs'>
@@ -748,21 +717,15 @@ const ProductsPage = () => {
                   </div>
                   <ul className='text-body-sm font-body-sm text-slate-600 space-y-1 pt-1'>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       400+ Replacement Components
                     </li>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       Lockable Mobile Cart
                     </li>
                     <li className='flex items-center gap-2'>
-                      <span className='material-symbols-outlined text-[16px] text-secondary'>
-                        check
-                      </span>
+                      <Check className='size-4 text-secondary' />
                       12x Swappable Battery Modules
                     </li>
                   </ul>
@@ -779,7 +742,7 @@ const ProductsPage = () => {
             </div>
           </section>
           {/* <!-- Section 4: Classroom Integration & Educator Benefits --> */}
-          <section className='max-w-[1320px] mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
+          <section className='max-w-330 mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
             <div className='p-space-xl md:p-space-2xl rounded-2xl bg-surface-container-lowest border border-border-subtle shadow-sm'>
               <div className='grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center'>
                 <div className='lg:col-span-5 space-y-space-md'>
@@ -798,9 +761,7 @@ const ProductsPage = () => {
                   <div className='pt-space-sm space-y-space-md'>
                     <div className='flex items-start gap-space-sm'>
                       <div className='w-10 h-10 rounded-lg bg-blue-100 text-secondary flex items-center justify-center shrink-0'>
-                        <span className='material-symbols-outlined text-[22px]'>
-                          cloud_done
-                        </span>
+                        <CloudCheck className='size-6' />
                       </div>
                       <div>
                         <h4 className='font-title-md text-sm text-slate-900 font-bold'>
@@ -814,9 +775,7 @@ const ProductsPage = () => {
                     </div>
                     <div className='flex items-start gap-space-sm'>
                       <div className='w-10 h-10 rounded-lg bg-orange-100 text-primary-container flex items-center justify-center shrink-0'>
-                        <span className='material-symbols-outlined text-[22px]'>
-                          menu_book
-                        </span>
+                        <SquareMenu className='size-6' />
                       </div>
                       <div>
                         <h4 className='font-title-md text-sm text-slate-900 font-bold'>
@@ -830,9 +789,7 @@ const ProductsPage = () => {
                     </div>
                     <div className='flex items-start gap-space-sm'>
                       <div className='w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center shrink-0'>
-                        <span className='material-symbols-outlined text-[22px]'>
-                          school
-                        </span>
+                        <GraduationCap className='size-6' />
                       </div>
                       <div>
                         <h4 className='font-title-md text-sm text-slate-900 font-bold'>
@@ -872,9 +829,7 @@ const ProductsPage = () => {
                           24 / 24
                         </span>
                         <span className='text-body-sm font-body-sm text-secondary flex items-center gap-1 mt-1 font-semibold'>
-                          <span className='material-symbols-outlined text-[14px]'>
-                            wifi
-                          </span>
+                          <Wifi className='size-3.5' />
                           100% Signal
                         </span>
                       </div>
@@ -886,9 +841,7 @@ const ProductsPage = () => {
                           3.5 min
                         </span>
                         <span className='text-body-sm font-body-sm text-primary flex items-center gap-1 mt-1 font-semibold'>
-                          <span className='material-symbols-outlined text-[14px]'>
-                            timer
-                          </span>
+                          <Timer className='size-3.5' />
                           -75% vs rivals
                         </span>
                       </div>
@@ -986,7 +939,7 @@ const ProductsPage = () => {
             </div>
           </section>
           {/* <!-- Section 5: Technical Specifications Table --> */}
-          <section className='max-w-[1320px] mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
+          <section className='max-w-330 mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
             <div className='space-y-space-xs mb-space-xl'>
               <span className='font-label-code-sm text-primary uppercase tracking-wider block font-semibold'>
                 Deep Technical Verification
@@ -1113,7 +1066,7 @@ const ProductsPage = () => {
             </div>
           </section>
           {/* <!-- Section 6: Frequently Asked Questions (Accordion) --> */}
-          <section className='max-w-[1320px] mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
+          <section className='max-w-330 mx-auto px-4 md:px-8 lg:px-12 py-space-3xl'>
             <div className='text-center max-w-2xl mx-auto space-y-space-xs mb-space-2xl'>
               <span className='font-label-code-sm text-secondary uppercase tracking-wider block font-semibold'>
                 Procurement &amp; Implementation
@@ -1137,12 +1090,7 @@ const ProductsPage = () => {
                     Can we purchase Obo hardware through educational purchase
                     orders (POs) and vendor bids?
                   </span>
-                  <span
-                    className='material-symbols-outlined text-secondary transition-transform duration-300'
-                    id='faq-1-icon'
-                  >
-                    expand_more
-                  </span>
+                  <ChevronDown className='text-secondary' />
                 </button>
                 <div
                   className='hidden px-space-lg pb-space-lg font-body-md text-body-md text-slate-600 border-t border-slate-100'
@@ -1165,12 +1113,7 @@ const ProductsPage = () => {
                     Does the Cortex-X require any software installs or IT
                     administrator permissions?
                   </span>
-                  <span
-                    className='material-symbols-outlined text-secondary transition-transform duration-300'
-                    id='faq-2-icon'
-                  >
-                    expand_more
-                  </span>
+                  <ChevronDown className='text-secondary' />
                 </button>
                 <div
                   className='hidden px-space-lg pb-space-lg font-body-md text-body-md text-slate-600 border-t border-slate-100'
@@ -1193,12 +1136,7 @@ const ProductsPage = () => {
                     How does the curriculum integrate with state and national
                     science standards?
                   </span>
-                  <span
-                    className='material-symbols-outlined text-secondary transition-transform duration-300'
-                    id='faq-3-icon'
-                  >
-                    expand_more
-                  </span>
+                  <ChevronDown className='text-secondary' />
                 </button>
                 <div
                   className='hidden px-space-lg pb-space-lg font-body-md text-body-md text-slate-600 border-t border-slate-100'
@@ -1222,12 +1160,7 @@ const ProductsPage = () => {
                     What happens if a student loses a component or strips a
                     cable?
                   </span>
-                  <span
-                    className='material-symbols-outlined text-secondary transition-transform duration-300'
-                    id='faq-4-icon'
-                  >
-                    expand_more
-                  </span>
+                  <ChevronDown className='text-secondary' />
                 </button>
                 <div
                   className='hidden px-space-lg pb-space-lg font-body-md text-body-md text-slate-600 border-t border-slate-100'
@@ -1243,8 +1176,8 @@ const ProductsPage = () => {
             </div>
           </section>
           {/* <!-- Section 7: Final High-Conversion Institutional CTA Banner --> */}
-          <section className='max-w-[1320px] mx-auto px-4 md:px-8 lg:px-12 pt-space-2xl pb-space-3xl'>
-            <div className='relative rounded-2xl overflow-hidden bg-gradient-to-r from-orange-50 via-white to-blue-50 border border-slate-200 p-space-xl md:p-space-3xl shadow-md'>
+          <section className='max-w-330 mx-auto px-4 md:px-8 lg:px-12 pt-space-2xl pb-space-3xl'>
+            <div className='relative rounded-2xl overflow-hidden bg-linear-to-r from-orange-50 via-white to-blue-50 border border-slate-200 p-space-xl md:p-space-3xl shadow-md'>
               <div className='absolute -right-20 -bottom-20 w-96 h-96 bg-orange-200/40 rounded-full blur-[100px] pointer-events-none'></div>
               <div className='absolute -left-20 -top-20 w-80 h-80 bg-blue-200/40 rounded-full blur-[100px] pointer-events-none'></div>
               <div className='relative z-10 max-w-3xl space-y-space-md'>
@@ -1264,38 +1197,31 @@ const ProductsPage = () => {
                     className='w-full sm:w-auto inline-flex items-center justify-center gap-2 font-title-md text-sm font-bold bg-primary-container text-on-primary-container px-space-xl py-space-md rounded-lg shadow-sm hover:brightness-105 active:scale-95 transition-all text-center'
                     href='#'
                   >
-                    <span className='material-symbols-outlined text-[20px]'>
-                      inventory_2
-                    </span>
+                    <Archive className='size-5' />
                     Book 30-Day Classroom Trial
                   </a>
                   <a
                     className='w-full sm:w-auto inline-flex items-center justify-center gap-2 font-title-md text-sm font-semibold bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 px-space-lg py-space-md rounded-lg shadow-sm transition-all text-center'
                     href='#'
                   >
-                    <span className='material-symbols-outlined text-[20px]'>
-                      headset_mic
-                    </span>
+                    <Headset className='size-5' />
                     Talk to an Education Specialist
                   </a>
                 </div>
                 <div className='flex items-center gap-space-lg text-body-sm font-body-sm text-slate-600 pt-space-sm flex-wrap'>
                   <div className='flex items-center gap-2'>
-                    <span className='material-symbols-outlined text-amber-500 text-[18px]'>
-                      verified_user
-                    </span>
+                    <ShieldCheck className='size-5 text-amber-500' />
+
                     <span>100% Free Shipping on Pilot Kits</span>
                   </div>
                   <div className='flex items-center gap-2'>
-                    <span className='material-symbols-outlined text-secondary text-[18px]'>
-                      lock
-                    </span>
+                    <LockKeyhole className='size-5 text-secondary' />
+
                     <span>EdTech Privacy &amp; COPPA Compliant</span>
                   </div>
                   <div className='flex items-center gap-2'>
-                    <span className='material-symbols-outlined text-primary text-[18px]'>
-                      published_with_changes
-                    </span>
+                    <RefreshCcw className='size-5 text-primary' />
+
                     <span>3-Year Hardware Warranty</span>
                   </div>
                 </div>
