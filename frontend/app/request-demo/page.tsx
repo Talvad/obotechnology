@@ -1,12 +1,42 @@
+import {
+  BuildingComplex,
+  CalendarCheck,
+  ChevronRight,
+  CloudOff,
+  Download,
+  Handshake,
+  House,
+  Landmark,
+  Lock,
+  LockKeyhole,
+  Minus,
+  Package2,
+  Plug,
+  Plus,
+  Receipt,
+  RobotArm,
+  ShieldCheck,
+  SmartphoneUserRound,
+  Sparkles,
+  SquareCheckBig,
+  Star,
+  Tag,
+  Truck,
+  User,
+  Verified,
+  Video,
+} from 'lucide-react';
+import Image from 'next/image';
+
 const RequestDemoPage = () => {
   return (
     <main className='w-full pt-20 bg-slate-50 min-h-screen'>
       <div className='flex flex-col w-full'>
         <div className='relative w-full overflow-hidden'>
           <div className='absolute -top-40 -left-40 w-96 h-96 rounded-full bg-secondary/5 blur-[120px] pointer-events-none'></div>
-          <div className='absolute top-1/3 -right-40 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none'></div>
+          <div className='absolute top-1/3 -right-40 w-125 h-125 rounded-full bg-primary/5 blur-[150px] pointer-events-none'></div>
           <div className='absolute -bottom-20 left-1/3 w-80 h-80 rounded-full bg-amber-500/5 blur-[120px] pointer-events-none'></div>
-          <div className='max-w-[1320px] mx-auto px-4 md:px-8 lg:px-12 pt-10 pb-16 relative z-10'>
+          <div className='max-w-330 mx-auto px-4 md:px-8 lg:px-12 pt-10 pb-16 relative z-10'>
             <section className='space-y-4 mb-10'>
               <div className='flex flex-wrap items-center gap-2 text-slate-500 text-xs'>
                 <a
@@ -14,20 +44,15 @@ const RequestDemoPage = () => {
                   data-path='home'
                   href='#'
                 >
-                  <span className='material-symbols-outlined text-[16px]'>
-                    home
-                  </span>
+                  <House className='size-4' />
                   Portal
                 </a>
-                <span className='material-symbols-outlined text-[14px]'>
-                  chevron_right
-                </span>
+                <ChevronRight className='size-3.5' />
+
                 <span className='font-label-ui text-slate-600'>
                   Procurement Engine
                 </span>
-                <span className='material-symbols-outlined text-[14px]'>
-                  chevron_right
-                </span>
+                <ChevronRight className='size-3.5' />
                 <span className='font-label-ui uppercase tracking-wider text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full font-semibold'>
                   District Pilot &amp; Quote v4.2
                 </span>
@@ -51,25 +76,22 @@ const RequestDemoPage = () => {
                 </div>
                 <div className='flex flex-wrap items-center gap-2 shrink-0'>
                   <div className='flex items-center gap-2 bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-sm'>
-                    <span className='material-symbols-outlined text-[16px] text-secondary'>
-                      verified_user
-                    </span>
+                    <ShieldCheck className='size-4 text-secondary' />
+
                     <span className='font-label-ui text-slate-700'>
                       FERPA / COPPA Compliant
                     </span>
                   </div>
                   <div className='flex items-center gap-2 bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-sm'>
-                    <span className='material-symbols-outlined text-[16px] text-amber-600'>
-                      account_balance
-                    </span>
+                    <Landmark className='size-4 text-amber-600' />
+
                     <span className='font-label-ui text-slate-700'>
                       Title I &amp; Perkins V Eligible
                     </span>
                   </div>
                   <div className='flex items-center gap-2 bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-sm'>
-                    <span className='material-symbols-outlined text-[16px] text-primary'>
-                      assignment_turned_in
-                    </span>
+                    <SquareCheckBig className='size-4 text-primary' />
+
                     <span className='font-label-ui text-slate-700'>
                       Sole Source &amp; W-9 Ready
                     </span>
@@ -131,9 +153,8 @@ const RequestDemoPage = () => {
                     <div className='flex items-center justify-between border-b border-slate-100 pb-4'>
                       <div className='space-y-1'>
                         <div className='flex items-center gap-2'>
-                          <span className='material-symbols-outlined text-primary text-[22px]'>
-                            domain
-                          </span>
+                          <BuildingComplex className='text-primary size-6' />
+
                           <h2 className='font-headline-sm text-slate-900 text-xl font-bold'>
                             Step 1: District &amp; Academy Verification
                           </h2>
@@ -281,9 +302,8 @@ const RequestDemoPage = () => {
                     <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4'>
                       <div>
                         <div className='flex items-center gap-2'>
-                          <span className='material-symbols-outlined text-secondary text-[22px]'>
-                            precision_manufacturing
-                          </span>
+                          <RobotArm className='text-secondary size-6' />
+
                           <h2 className='font-headline-sm text-slate-900 text-xl font-bold'>
                             Step 2: Hardware Fleet &amp; Lab Configuration
                           </h2>
@@ -294,9 +314,7 @@ const RequestDemoPage = () => {
                         </p>
                       </div>
                       <div className='inline-flex items-center gap-1.5 bg-blue-50 border border-blue-200 px-2.5 py-1 rounded-full text-secondary font-label-ui uppercase text-[11px] font-semibold'>
-                        <span className='material-symbols-outlined text-[14px]'>
-                          auto_awesome
-                        </span>
+                        <Sparkles className='size-4' />
                         Auto-Calculating PO Subtotal
                       </div>
                     </div>
@@ -304,11 +322,13 @@ const RequestDemoPage = () => {
                       <div className='bg-slate-50 border border-slate-200/90 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all'>
                         <div className='flex items-center gap-4 flex-1'>
                           <div className='w-16 h-16 rounded-lg bg-white border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center relative'>
-                            <img
-                              className='w-full h-full object-cover'
-                              data-alt='Close up of Obo Spark robotics starter kit with neon orange mechanical tracks, modular chassis, transparent sensory microcontroller shield, and precision servo gears on obsidian surface.'
-                              src='https://lh3.googleusercontent.com/aida-public/AB6AXuCxK5vAto38MFF7KrOUJMpA5XPXcswSdP9oHWmhaPYBEDpZzH449xLrs59w2IQ9FVr9REMFphr24wbwbp3Xc5QMmNSfJlcfGi3dRX0XjyHiD3qfTm7Lzji5PaUc6zdmj_8WCuDbIOX6tbZ2YMcui5RwYQN_YeoSFUQ5ITdkpgSfz9Fz7IfYkwtP75SNpvD1fZM8AI3Xui6OG2XkSEa10OQz9WgvUgMdBULGzVOgrWf-'
+                            <Image
+                              src={'/image/obo_spark_platform.jpg'}
+                              alt='Close up of Obo Spark robotics starter kit with neon orange mechanical tracks, modular chassis, transparent sensory microcontroller shield, and precision servo gears on obsidian surface.'
+                              fill
+                              className='object-cover'
                             />
+
                             <div className='absolute bottom-0 inset-x-0 h-1 bg-primary'></div>
                           </div>
                           <div className='space-y-1'>
@@ -348,9 +368,7 @@ const RequestDemoPage = () => {
                             // onclick="adjustQty('qty-spark', -1)"
                             type='button'
                           >
-                            <span className='material-symbols-outlined text-[18px]'>
-                              remove
-                            </span>
+                            <Minus className='size-5' />
                           </button>
                           <input
                             className='w-16 text-center py-1.5 bg-white border border-slate-300 text-slate-900 font-headline-sm text-base font-bold rounded-lg focus:outline-none focus:border-primary shadow-sm'
@@ -365,21 +383,21 @@ const RequestDemoPage = () => {
                             // onclick="adjustQty('qty-spark', 1)"
                             type='button'
                           >
-                            <span className='material-symbols-outlined text-[18px]'>
-                              add
-                            </span>
+                            <Plus className='size-5' />
                           </button>
                         </div>
                       </div>
                       <div className='bg-slate-50 border border-slate-200/90 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all relative overflow-hidden'>
-                        <div className='absolute top-0 right-0 w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent'></div>
+                        <div className='absolute top-0 right-0 w-32 h-1 bg-linear-to-r from-transparent via-primary to-transparent'></div>
                         <div className='flex items-center gap-4 flex-1'>
                           <div className='w-16 h-16 rounded-lg bg-white border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center relative'>
-                            <img
-                              className='w-full h-full object-cover'
-                              data-alt='High precision black and anodized red aluminum robotic manipulator chassis with six-axis freedom, LiDAR micro sensor, and brushless stepper motors for academic laboratory research.'
-                              src='https://lh3.googleusercontent.com/aida-public/AB6AXuBa1tRveexpT4FflbbCbVzeDalN0MdHwZLIz6opNRxKoO9nIelVB5YPQTmT6vFJRTd6OcsBB99BRIYBp9vw0Gyh2okSAd6BqpzNuycryd3EDTTjFS-Sajd4nH3RowsSP-BGpC0wa0HWP7U5DWUUlXwzBBooRGewXw6WK_agM9qJBuQDyscWbFTzNAs2d6xlCx5oqUubjc27sEFGMlL3MTmuzMaylYPqsFtzBPwqGnKV'
+                            <Image
+                              src={'/image/obo_cortex_x_modular.jpg'}
+                              alt='High precision black and anodized red aluminum robotic manipulator chassis with six-axis freedom, LiDAR micro sensor, and brushless stepper motors for academic laboratory research.'
+                              fill
+                              className='object-cover'
                             />
+
                             <div className='absolute bottom-0 inset-x-0 h-1 bg-secondary'></div>
                           </div>
                           <div className='space-y-1'>
@@ -419,9 +437,7 @@ const RequestDemoPage = () => {
                             // onclick="adjustQty('qty-cortex', -1)"
                             type='button'
                           >
-                            <span className='material-symbols-outlined text-[18px]'>
-                              remove
-                            </span>
+                            <Minus className='size-5' />
                           </button>
                           <input
                             className='w-16 text-center py-1.5 bg-white border border-slate-300 text-slate-900 font-headline-sm text-base font-bold rounded-lg focus:outline-none focus:border-primary shadow-sm'
@@ -436,20 +452,20 @@ const RequestDemoPage = () => {
                             // onclick="adjustQty('qty-cortex', 1)"
                             type='button'
                           >
-                            <span className='material-symbols-outlined text-[18px]'>
-                              add
-                            </span>
+                            <Plus className='size-5' />
                           </button>
                         </div>
                       </div>
                       <div className='bg-slate-50 border border-slate-200/90 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all'>
                         <div className='flex items-center gap-4 flex-1'>
                           <div className='w-16 h-16 rounded-lg bg-white border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center relative'>
-                            <img
-                              className='w-full h-full object-cover'
-                              data-alt='Enclosed caged autonomous indoor STEM micro-drone showing fiber propeller guards, optical flow positioning sensor, and telemetry communications module in a dark lab setting.'
-                              src='https://lh3.googleusercontent.com/aida-public/AB6AXuBB54jRgWmsCf2DOrafXH994HLBbl5XrCJE-jINvLyXBQlJ2fcCKoZcrkNX2p_L1MCVer7zhMqtKpfRNcjUDBjExAZXGRCaCPPJ71mRGMGljpOAQimOwikFq9i84LZR7AT91CWb9wcuNpH8w3ccE_5E1PIopLrtaKuCKpcJwUxn-yeCjXCNGPgifZ2bOVEQDHlsLE_J1X4tPHW6ucNCIDZslZXK46rmhLp92PAW3h7a'
+                            <Image
+                              src={'/image/obo_swarm_drone_lab.jpg'}
+                              alt='Enclosed caged autonomous indoor STEM micro-drone showing fiber propeller guards, optical flow positioning sensor, and telemetry communications module in a dark lab setting.'
+                              fill
+                              className='object-cover'
                             />
+
                             <div className='absolute bottom-0 inset-x-0 h-1 bg-amber-500'></div>
                           </div>
                           <div className='space-y-1'>
@@ -489,9 +505,7 @@ const RequestDemoPage = () => {
                             // onclick="adjustQty('qty-drone', -1)"
                             type='button'
                           >
-                            <span className='material-symbols-outlined text-[18px]'>
-                              remove
-                            </span>
+                            <Minus className='size-5' />
                           </button>
                           <input
                             className='w-16 text-center py-1.5 bg-white border border-slate-300 text-slate-900 font-headline-sm text-base font-bold rounded-lg focus:outline-none focus:border-primary shadow-sm'
@@ -506,18 +520,14 @@ const RequestDemoPage = () => {
                             // onclick="adjustQty('qty-drone', 1)"
                             type='button'
                           >
-                            <span className='material-symbols-outlined text-[18px]'>
-                              add
-                            </span>
+                            <Plus className='size-5' />
                           </button>
                         </div>
                       </div>
                       <div className='bg-slate-50 border border-slate-200/90 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all'>
                         <div className='flex items-center gap-4 flex-1'>
                           <div className='w-16 h-16 rounded-lg bg-white border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center text-slate-500'>
-                            <span className='material-symbols-outlined text-[32px] text-slate-400'>
-                              power
-                            </span>
+                            <Plug className='size-8 text-slate-400' />
                           </div>
                           <div className='space-y-1'>
                             <div className='flex items-center gap-2'>
@@ -547,9 +557,7 @@ const RequestDemoPage = () => {
                             // onclick="adjustQty('qty-cart', -1)"
                             type='button'
                           >
-                            <span className='material-symbols-outlined text-[18px]'>
-                              remove
-                            </span>
+                            <Minus className='size-5' />
                           </button>
                           <input
                             className='w-16 text-center py-1.5 bg-white border border-slate-300 text-slate-900 font-headline-sm text-base font-bold rounded-lg focus:outline-none focus:border-primary shadow-sm'
@@ -564,9 +572,7 @@ const RequestDemoPage = () => {
                             // onclick="adjustQty('qty-cart', 1)"
                             type='button'
                           >
-                            <span className='material-symbols-outlined text-[18px]'>
-                              add
-                            </span>
+                            <Plus className='size-5' />
                           </button>
                         </div>
                       </div>
@@ -628,9 +634,8 @@ const RequestDemoPage = () => {
                     <div className='flex items-center justify-between border-b border-slate-100 pb-4'>
                       <div>
                         <div className='flex items-center gap-2'>
-                          <span className='material-symbols-outlined text-amber-600 text-[22px]'>
-                            event_available
-                          </span>
+                          <CalendarCheck className='size-6 text-amber-600' />
+
                           <h2 className='font-headline-sm text-slate-900 text-xl font-bold'>
                             Step 3: Evaluation Logistics &amp; PO Preferences
                           </h2>
@@ -659,9 +664,7 @@ const RequestDemoPage = () => {
                             />
                             <div className='relative z-10 space-y-2'>
                               <div className='w-8 h-8 rounded-lg bg-orange-100 text-primary flex items-center justify-center'>
-                                <span className='material-symbols-outlined text-[18px]'>
-                                  package_2
-                                </span>
+                                <Package2 className='size-5' />
                               </div>
                               <div>
                                 <span className='font-title-md text-slate-900 block font-semibold'>
@@ -688,9 +691,7 @@ const RequestDemoPage = () => {
                             />
                             <div className='relative z-10 space-y-2'>
                               <div className='w-8 h-8 rounded-lg bg-blue-100 text-secondary flex items-center justify-center'>
-                                <span className='material-symbols-outlined text-[18px]'>
-                                  videocam
-                                </span>
+                                <Video className='size-5' />
                               </div>
                               <div>
                                 <span className='font-title-md text-slate-900 block font-semibold'>
@@ -717,9 +718,7 @@ const RequestDemoPage = () => {
                             />
                             <div className='relative z-10 space-y-2'>
                               <div className='w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center'>
-                                <span className='material-symbols-outlined text-[18px]'>
-                                  co_present
-                                </span>
+                                <SmartphoneUserRound className='size-5' />
                               </div>
                               <div>
                                 <span className='font-title-md text-slate-900 block font-semibold'>
@@ -828,9 +827,7 @@ const RequestDemoPage = () => {
                       </h3>
                     </div>
                     <div className='w-9 h-9 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center text-primary'>
-                      <span className='material-symbols-outlined text-[22px]'>
-                        receipt_long
-                      </span>
+                      <Receipt className='size-6' />
                     </div>
                   </div>
                   <div className='space-y-2.5 py-4 bg-slate-50 border border-slate-200/70 rounded-lg px-4 my-4'>
@@ -926,9 +923,7 @@ const RequestDemoPage = () => {
                     </div>
                     <div className='flex items-center justify-between font-body-sm text-primary font-medium'>
                       <span className='flex items-center gap-1'>
-                        <span className='material-symbols-outlined text-[14px]'>
-                          sell
-                        </span>
+                        <Tag className='size-4' />
                         District Volume Savings (15%)
                       </span>
                       <span
@@ -972,9 +967,7 @@ const RequestDemoPage = () => {
                       // onclick="handleQuoteSubmit()"
                       type='button'
                     >
-                      <span className='material-symbols-outlined text-[18px]'>
-                        verified
-                      </span>
+                      <Verified className='size-5' />
                       Submit Quote &amp; Request 30-Day Pilot
                     </button>
                     <button
@@ -982,19 +975,15 @@ const RequestDemoPage = () => {
                       // onclick="triggerPDFDownload()"
                       type='button'
                     >
-                      <span className='material-symbols-outlined text-[18px] text-slate-600'>
-                        file_download
-                      </span>
+                      <Download className='size-5 text-slate-600' />
                       Download Official Formal PDF Estimate
                     </button>
-                    <div className='flex items-center justify-center gap-2 pt-1'>
+                    <div className='flex items-center justify-center gap-1 pt-1'>
                       <a
                         className='font-label-ui text-slate-500 hover:text-slate-800 underline flex items-center gap-1 text-[11px]'
                         href='#'
                       >
-                        <span className='material-symbols-outlined text-[14px]'>
-                          download
-                        </span>
+                        <Download className='size-3.5' />
                         W-9 Tax Form
                       </a>
                       <span className='text-slate-300'>•</span>
@@ -1002,9 +991,7 @@ const RequestDemoPage = () => {
                         className='font-label-ui text-slate-500 hover:text-slate-800 underline flex items-center gap-1 text-[11px]'
                         href='#'
                       >
-                        <span className='material-symbols-outlined text-[14px]'>
-                          download
-                        </span>
+                        <Download className='size-3.5' />
                         Sole Source Affidavit
                       </a>
                       <span className='text-slate-300'>•</span>
@@ -1012,21 +999,15 @@ const RequestDemoPage = () => {
                         className='font-label-ui text-slate-500 hover:text-slate-800 underline flex items-center gap-1 text-[11px]'
                         href='#'
                       >
-                        <span className='material-symbols-outlined text-[14px]'>
-                          download
-                        </span>
+                        <Download className='size-3.5' />
                         Vendor Packet
                       </a>
                     </div>
                   </div>
                   <div className='mt-5 pt-4 border-t border-slate-200/80 bg-slate-50 rounded-lg p-3.5 space-y-2'>
                     <div className='flex items-center gap-3'>
-                      <div className='w-10 h-10 rounded-full border border-slate-300 overflow-hidden shrink-0 relative bg-white'>
-                        <img
-                          className='w-full h-full object-cover'
-                          data-alt='Portrait of professional STEM education advisor and curriculum director wearing glasses, dark navy blazer in front of mechatronics laboratory.'
-                          src='https://lh3.googleusercontent.com/aida-public/AB6AXuAVzxth3WSy_4e-t2A8C3YClnjLGnVa-KNCdU_jSvnDdv-AGTUvw8CRmV3IQMy6eRhaBd34h1yFIWTpQpD3lbRTEuuwqyZm-01UKLINF-3GsX3IX4SvxSyQUcu1vTfUon7-gM9I_C6Id967QEk0Q22slqdgznAOeHXiaNok3EtgCZV6XYib-l7ydn_tfCzSvrFqpMS7hzJJpocjEtpleM582KjG_zPO09gD57dti8mG'
-                        />
+                      <div className='grid place-items-center w-10 h-10 rounded-full border border-slate-300 overflow-hidden shrink-0 relative bg-white'>
+                        <User className='size-4' />
                       </div>
                       <div>
                         <span className='font-title-md text-slate-900 text-xs block font-bold'>
@@ -1061,27 +1042,19 @@ const RequestDemoPage = () => {
                   </span>
                   <div className='grid grid-cols-2 gap-2 font-label-ui text-slate-700 text-[11px]'>
                     <div className='flex items-center gap-1.5 bg-slate-50 border border-slate-200 p-2 rounded'>
-                      <span className='material-symbols-outlined text-secondary text-[16px]'>
-                        lock
-                      </span>
+                      <LockKeyhole className='size-4 text-secondary' />
                       SOC2 Type II
                     </div>
                     <div className='flex items-center gap-1.5 bg-slate-50 border border-slate-200 p-2 rounded'>
-                      <span className='material-symbols-outlined text-primary text-[16px]'>
-                        cloud_off
-                      </span>
+                      <CloudOff className='size-4 text-primary' />
                       Zero PII Harvested
                     </div>
                     <div className='flex items-center gap-1.5 bg-slate-50 border border-slate-200 p-2 rounded'>
-                      <span className='material-symbols-outlined text-amber-600 text-[16px]'>
-                        local_shipping
-                      </span>
+                      <Truck className='size-4 text-amber-600' />
                       Pre-Inspected Units
                     </div>
                     <div className='flex items-center gap-1.5 bg-slate-50 border border-slate-200 p-2 rounded'>
-                      <span className='material-symbols-outlined text-secondary text-[16px]'>
-                        handshake
-                      </span>
+                      <Handshake className='size-4 text-secondary' />
                       Direct Vendor Master
                     </div>
                   </div>
@@ -1106,36 +1079,11 @@ const RequestDemoPage = () => {
                 <div className='bg-white border border-slate-200 rounded-xl p-6 space-y-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow'>
                   <div className='space-y-3'>
                     <div className='flex items-center gap-1 text-amber-500'>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
                     </div>
                     <p className='font-body-sm text-slate-700 leading-relaxed italic'>
                       "Our district purchase order cleared in 48 hours with
@@ -1161,36 +1109,11 @@ const RequestDemoPage = () => {
                 <div className='bg-white border border-slate-200 rounded-xl p-6 space-y-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow'>
                   <div className='space-y-3'>
                     <div className='flex items-center gap-1 text-amber-500'>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
                     </div>
                     <p className='font-body-sm text-slate-700 leading-relaxed italic'>
                       "Cortex-X solved our bridge between block coding and
@@ -1216,36 +1139,11 @@ const RequestDemoPage = () => {
                 <div className='bg-white border border-slate-200 rounded-xl p-6 space-y-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow'>
                   <div className='space-y-3'>
                     <div className='flex items-center gap-1 text-amber-500'>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
-                      <span
-                        className='material-symbols-outlined text-[16px]'
-                        // style="font-variation-settings: 'FILL' 1"
-                      >
-                        star
-                      </span>
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
+                      <Star className='size-4' />
                     </div>
                     <p className='font-body-sm text-slate-700 leading-relaxed italic'>
                       "The 4-hour teacher professional development accredited 14
@@ -1294,8 +1192,8 @@ const RequestDemoPage = () => {
             </section>
           </div>
         </div>
-        <div
-          className='fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300'
+        {/* <div
+          className='fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-300'
           id='confirmation-modal'
         >
           <div className='bg-white max-w-lg w-full rounded-xl p-6 sm:p-8 space-y-4 shadow-2xl relative border border-slate-200'>
@@ -1347,7 +1245,7 @@ const RequestDemoPage = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );
