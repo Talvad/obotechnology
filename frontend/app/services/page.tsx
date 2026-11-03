@@ -33,6 +33,7 @@ import {
   VerifiedIcon,
   Zap,
 } from 'lucide-react';
+import Image from 'next/image';
 
 const ServicesPage = () => {
   return (
@@ -233,10 +234,11 @@ const ServicesPage = () => {
                 </div>
                 {/* <!-- Product Visual Placeholder --> */}
                 <div className='mt-space-lg rounded-lg overflow-hidden bg-slate-100 h-52 relative border border-slate-200'>
-                  <img
+                  <Image
                     className='w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500'
-                    data-alt='Close up photography of modular mechatronic robotic chassis featuring black anodized aluminum plates, glowing orange indicator LEDs, brushless stepper motors, and precision wiring against an obsidian lab surface.'
-                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuDMqv6A9pq5FE_lrQWadw3-X3XFL0Z-fOvuFIUN52vPqt1LpbRjO4i78duWjZn8jXWka4-qNC23qZSgdi2IPDX9_yhfHOIsF5u7g3MhUxcItko5WGKtkUf9J7ifP6CH994zY8kSzSfouRGR49qjLjnXU_sJA_-VrI1NSNVBf3vNVPo5_iSHVXGtiIYP-Y6w-IkfeNw-f9iVPhbrxdsrVgi4Az2bUt0N2dGNOO_6BjWs'
+                    alt='Close up photography of modular mechatronic robotic chassis featuring black anodized aluminum plates, glowing orange indicator LEDs, brushless stepper motors, and precision wiring against an obsidian lab surface.'
+                    src='/image/patented_magnetic_bus_arch.jpg'
+                    fill
                   />
                   <div className='absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent'></div>
                   <div className='absolute bottom-3 left-4 flex items-center gap-space-xs font-label-ui text-label-ui font-bold text-white bg-slate-900/80 backdrop-blur-sm px-2.5 py-1 rounded'>
@@ -312,12 +314,13 @@ const ServicesPage = () => {
                   </div>
                 </div>
                 <div className='mt-space-lg rounded-lg overflow-hidden bg-slate-100 h-52 relative border border-slate-200'>
-                  <img
-                    className='w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500'
-                    data-alt='High tech classroom scene of high school students collaborating around a glowing robotic arm, holding digital tablet workbooks displaying code blocks and sensor readouts under modern atmospheric laboratory lighting.'
-                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuB8jZ-pfIaesh8TU-KvfBAGqHS4knw39wlbQNjWU1scLROnLa5MjOmcypLhK0NDIpZvO9A2gei-8W-IprQwTWufwulbKDgxtL9uuhzzD-3NrT_SdSfyGYoBUasyzUlCR9v5xrJHW52Hdmx8yN7IfOWlrRmUX7INYshoLlryjRp7MrZZ80O8SGj7IRZx-PNPITgiXlsIqmmuwPFMS569uJ1Qqg27nJBZTxnM5l_zLKD7'
+                  <Image
+                    className='object-cover object-center group-hover:scale-105 transition-transform duration-500'
+                    alt='High tech classroom scene of high school students collaborating around a glowing robotic arm, holding digital tablet workbooks displaying code blocks and sensor readouts under modern atmospheric laboratory lighting.'
+                    src='/image/full_teacher_slides.jpg'
+                    fill
                   />
-                  <div className='absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent'></div>
+                  <div className='absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent'></div>
                   <div className='absolute bottom-3 left-4 flex items-center gap-space-xs font-label-ui text-label-ui font-bold text-white bg-slate-900/80 backdrop-blur-sm px-2.5 py-1 rounded'>
                     <span className='w-2 h-2 rounded-full bg-amber-400'></span>
                     <span>INCLUDES FULL TEACHER SLIDE PACKS &amp; QUIZZES</span>
@@ -488,10 +491,11 @@ const ServicesPage = () => {
                   </div>
                 </div>
                 <div className='mt-space-lg rounded-lg overflow-hidden bg-slate-100 h-52 relative border border-slate-200'>
-                  <img
+                  <Image
                     className='w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500'
-                    data-alt='Experienced female STEM educator coaching a group of smiling middle school teachers in an engineering workshop, demonstrating robotic circuit assembly on an obsidian work table.'
-                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuC9d7R7ysnii5bvFbSZC8tj7k8LIbHzqPrsNKh79SGFFobKP1mYhr7z-sSy4oBiFxO6DBAlPU0TQWavtkvhhPqxIYT3RjGzdrWuzno9kYDrC04us08Aka076_YT8CFbHErWoJhEJA0L0hhw2wXUoUwmkaN-i81_QuCj9tpR11rx8XmN2yKtpeinq0SIiyJynMHdTMEuZ84aUzj4h9lkS7N9B2prKU7Tjbe20A_19mti'
+                    alt='Experienced female STEM educator coaching a group of smiling middle school teachers in an engineering workshop, demonstrating robotic circuit assembly on an obsidian work table.'
+                    src='/image/retention_rate.jpg'
+                    fill
                   />
                   <div className='absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent'></div>
                   <div className='absolute bottom-3 left-4 flex items-center gap-space-xs font-label-ui text-label-ui font-bold text-white bg-slate-900/80 backdrop-blur-sm px-2.5 py-1 rounded'>
