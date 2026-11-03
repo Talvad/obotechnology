@@ -1,3 +1,28 @@
+import {
+  ArrowDown,
+  BookOpenText,
+  BriefcaseBusiness,
+  BuildingComplex,
+  CheckCheck,
+  CirclePlay,
+  Clock,
+  Cog,
+  Cpu,
+  Earth,
+  Flame,
+  GraduationCap,
+  Handshake,
+  Heart,
+  Infinity,
+  MapPin,
+  Quote,
+  RobotArm,
+  SlidersHorizontal,
+  UserGroup,
+  Verified,
+} from 'lucide-react';
+import Image from 'next/image';
+
 const Careerspage = () => {
   return (
     <main className='w-full pt-20 bg-[#f8fafc] min-h-screen'>
@@ -6,8 +31,8 @@ const Careerspage = () => {
         <section className='relative w-full overflow-hidden py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-white border-b border-slate-200'>
           {/* <!-- Ambient Backdrop Highlights --> */}
           <div className='absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-orange-100/60 blur-[120px] pointer-events-none'></div>
-          <div className='absolute top-1/3 -right-20 w-[480px] h-[480px] rounded-full bg-blue-100/60 blur-[130px] pointer-events-none'></div>
-          <div className='max-w-[1320px] mx-auto relative z-10 flex flex-col gap-space-2xl'>
+          <div className='absolute top-1/3 -right-20 w-120 h-120 rounded-full bg-blue-100/60 blur-[130px] pointer-events-none'></div>
+          <div className='max-w-330 mx-auto relative z-10 flex flex-col gap-space-2xl'>
             {/* <!-- Eyebrow & Badging --> */}
             <div className='flex flex-wrap items-center gap-space-sm'>
               <span className='inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-label-caps text-xs tracking-wider uppercase font-semibold'>
@@ -24,11 +49,11 @@ const Careerspage = () => {
             {/* <!-- Hero Main Heading Layout --> */}
             <div className='grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-end'>
               <div className='lg:col-span-8 flex flex-col gap-space-md'>
-                <h1 className='font-headline-hero text-4xl sm:text-5xl lg:text-[54px] lg:leading-[62px] text-slate-900 tracking-tight font-extrabold max-w-4xl'>
-                  Build the future of
-                  <span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-600 to-blue-600'>
+                <h1 className='font-headline-hero text-4xl sm:text-5xl lg:text-[54px] lg:leading-15.5 text-slate-900 tracking-tight font-extrabold max-w-4xl'>
+                  Build the future of{' '}
+                  <span className='text-transparent bg-clip-text bg-linear-to-r from-orange-600 via-amber-600 to-blue-600'>
                     physical computing
-                  </span>
+                  </span>{' '}
                   and robotics education.
                 </h1>
                 <p className='font-body-lg text-lg text-slate-600 max-w-2xl leading-relaxed'>
@@ -45,18 +70,14 @@ const Careerspage = () => {
                   href='#open-positions'
                 >
                   <span>Explore 6 Open Roles</span>
-                  <span className='material-symbols-outlined text-[18px]'>
-                    arrow_downward
-                  </span>
+                  <ArrowDown className='size-5' />
                 </a>
                 <a
                   className='inline-flex items-center justify-center gap-space-sm px-space-xl py-space-md rounded-lg bg-slate-100 text-slate-800 border border-slate-200 font-label-lg font-semibold hover:bg-slate-200 transition-all'
                   href='#life-at-obo'
                 >
                   <span>Explore Life at Obo</span>
-                  <span className='material-symbols-outlined text-[18px]'>
-                    play_circle
-                  </span>
+                  <CirclePlay className='size-5' />
                 </a>
               </div>
             </div>
@@ -67,9 +88,7 @@ const Careerspage = () => {
                   <span className='font-label-caps text-xs uppercase tracking-wider font-semibold'>
                     National Reach
                   </span>
-                  <span className='material-symbols-outlined text-[20px] text-blue-600'>
-                    domain
-                  </span>
+                  <BuildingComplex className='size-5 text-blue-600' />
                 </div>
                 <div className='mt-space-md'>
                   <span className='font-headline-hero text-4xl lg:text-[44px] font-bold text-slate-900'>
@@ -85,9 +104,7 @@ const Careerspage = () => {
                   <span className='font-label-caps text-xs uppercase tracking-wider font-semibold'>
                     Student Engagement
                   </span>
-                  <span className='material-symbols-outlined text-[20px] text-orange-600'>
-                    group
-                  </span>
+                  <UserGroup className='size-5 text-orange-600' />
                 </div>
                 <div className='mt-space-md'>
                   <span className='font-headline-hero text-4xl lg:text-[44px] font-bold text-slate-900'>
@@ -103,9 +120,7 @@ const Careerspage = () => {
                   <span className='font-label-caps text-xs uppercase tracking-wider font-semibold'>
                     Mission Commitment
                   </span>
-                  <span className='material-symbols-outlined text-[20px] text-amber-600'>
-                    handshake
-                  </span>
+                  <Handshake className='size-5 text-amber-600' />
                 </div>
                 <div className='mt-space-md'>
                   <span className='font-headline-hero text-4xl lg:text-[44px] font-bold text-slate-900'>
@@ -121,9 +136,7 @@ const Careerspage = () => {
                   <span className='font-label-caps text-xs uppercase tracking-wider font-semibold'>
                     Hardware Lab Stipend
                   </span>
-                  <span className='material-symbols-outlined text-[20px] text-orange-600'>
-                    precision_manufacturing
-                  </span>
+                  <RobotArm className='size-5 text-orange-600' />
                 </div>
                 <div className='mt-space-md'>
                   <span className='font-headline-hero text-4xl lg:text-[44px] font-bold text-slate-900'>
@@ -139,7 +152,7 @@ const Careerspage = () => {
         </section>
         {/* <!-- Core Perks & Engineering Culture Grid --> */}
         <section className='w-full py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-[#f8fafc] border-b border-slate-200 relative'>
-          <div className='max-w-[1320px] mx-auto flex flex-col gap-space-2xl'>
+          <div className='max-w-330 mx-auto flex flex-col gap-space-2xl'>
             {/* <!-- Section Header --> */}
             <div className='flex flex-col md:flex-row md:items-end justify-between gap-space-md'>
               <div className='max-w-2xl'>
@@ -161,9 +174,7 @@ const Careerspage = () => {
               {/* <!-- Value 1: Purpose-Driven Impact --> */}
               <div className='p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between'>
                 <div className='w-12 h-12 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-600 mb-space-lg'>
-                  <span className='material-symbols-outlined text-[26px]'>
-                    school
-                  </span>
+                  <GraduationCap className='size-4' />
                 </div>
                 <div className='flex flex-col gap-space-sm'>
                   <h3 className='font-headline-sm text-xl text-slate-900 font-bold'>
@@ -178,17 +189,13 @@ const Careerspage = () => {
                 </div>
                 <div className='mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold'>
                   <span>Direct Classroom Field Tests</span>
-                  <span className='material-symbols-outlined text-[15px] text-emerald-600'>
-                    done_all
-                  </span>
+                  <CheckCheck className='size-4 text-emerald-600' />
                 </div>
               </div>
               {/* <!-- Value 2: Hardware + Software --> */}
               <div className='p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between'>
                 <div className='w-12 h-12 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-space-lg'>
-                  <span className='material-symbols-outlined text-[26px]'>
-                    memory
-                  </span>
+                  <Cpu className='size-7' />
                 </div>
                 <div className='flex flex-col gap-space-sm'>
                   <h3 className='font-headline-sm text-xl text-slate-900 font-bold'>
@@ -203,17 +210,13 @@ const Careerspage = () => {
                 </div>
                 <div className='mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold'>
                   <span>ESP32 • ROS2 • WebGL • Python</span>
-                  <span className='material-symbols-outlined text-[15px] text-blue-600'>
-                    tune
-                  </span>
+                  <SlidersHorizontal className='size-4 text-blue-600' />
                 </div>
               </div>
               {/* <!-- Value 3: Lab Stipend --> */}
               <div className='p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between'>
                 <div className='w-12 h-12 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 mb-space-lg'>
-                  <span className='material-symbols-outlined text-[26px]'>
-                    precision_manufacturing
-                  </span>
+                  <RobotArm className='size-7' />
                 </div>
                 <div className='flex flex-col gap-space-sm'>
                   <h3 className='font-headline-sm text-xl text-slate-900 font-bold'>
@@ -228,17 +231,13 @@ const Careerspage = () => {
                 </div>
                 <div className='mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold'>
                   <span>$3,500 Setup + Annual Refills</span>
-                  <span className='material-symbols-outlined text-[15px] text-amber-600'>
-                    build_circle
-                  </span>
+                  <Flame className='size-4 text-amber-600' />
                 </div>
               </div>
               {/* <!-- Value 4: Flexible & Hybrid Culture --> */}
               <div className='p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between'>
                 <div className='w-12 h-12 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 mb-space-lg'>
-                  <span className='material-symbols-outlined text-[26px]'>
-                    public
-                  </span>
+                  <Earth className='size-7' />
                 </div>
                 <div className='flex flex-col gap-space-sm'>
                   <h3 className='font-headline-sm text-xl text-slate-900 font-bold'>
@@ -253,17 +252,13 @@ const Careerspage = () => {
                 </div>
                 <div className='mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold'>
                   <span>Remote-First with Regional Hubs</span>
-                  <span className='material-symbols-outlined text-[15px] text-slate-600'>
-                    schedule
-                  </span>
+                  <Clock className='size-4 text-slate-600' />
                 </div>
               </div>
               {/* <!-- Value 5: Health & Wellness --> */}
               <div className='p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between'>
                 <div className='w-12 h-12 rounded-lg bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-space-lg'>
-                  <span className='material-symbols-outlined text-[26px]'>
-                    favorite
-                  </span>
+                  <Heart className='size-7' />
                 </div>
                 <div className='flex flex-col gap-space-sm'>
                   <h3 className='font-headline-sm text-xl text-slate-900 font-bold'>
@@ -278,17 +273,13 @@ const Careerspage = () => {
                 </div>
                 <div className='mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold'>
                   <span>Health • Equity • 401(k) Match</span>
-                  <span className='material-symbols-outlined text-[15px] text-rose-600'>
-                    verified
-                  </span>
+                  <Verified className='size-4 text-rose-600' />
                 </div>
               </div>
               {/* <!-- Value 6: Continuous Learning --> */}
               <div className='p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between'>
                 <div className='w-12 h-12 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-600 mb-space-lg'>
-                  <span className='material-symbols-outlined text-[26px]'>
-                    auto_stories
-                  </span>
+                  <BookOpenText className='size-7' />
                 </div>
                 <div className='flex flex-col gap-space-sm'>
                   <h3 className='font-headline-sm text-xl text-slate-900 font-bold'>
@@ -303,9 +294,7 @@ const Careerspage = () => {
                 </div>
                 <div className='mt-space-lg pt-space-md border-t border-slate-100 text-slate-500 font-label-caps text-xs uppercase tracking-wider flex items-center gap-space-xs font-semibold'>
                   <span>Annual $2k Growth Budget</span>
-                  <span className='material-symbols-outlined text-[15px] text-orange-600'>
-                    psychology
-                  </span>
+                  <Cog className='size-4 text-orange-600' />
                 </div>
               </div>
             </div>
@@ -316,13 +305,12 @@ const Careerspage = () => {
           className='w-full py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-white border-b border-slate-200'
           id='open-positions'
         >
-          <div className='max-w-[1320px] mx-auto flex flex-col gap-space-2xl'>
+          <div className='max-w-330 mx-auto flex flex-col gap-space-2xl'>
             {/* <!-- Directory Heading & Controls --> */}
             <div className='flex flex-col gap-space-md'>
               <div className='flex items-center gap-space-xs text-orange-600 font-label-caps text-xs uppercase tracking-wider font-semibold'>
-                <span className='material-symbols-outlined text-[16px]'>
-                  work_outline
-                </span>
+                <BriefcaseBusiness className='size-4' />
+
                 <span>Live Opportunities</span>
               </div>
               <div className='flex flex-col md:flex-row md:items-end justify-between gap-space-lg'>
@@ -397,9 +385,7 @@ const Careerspage = () => {
                       Senior Level
                     </span>
                     <span className='flex items-center gap-space-xs text-slate-500 font-body-sm text-sm'>
-                      <span className='material-symbols-outlined text-[16px]'>
-                        location_on
-                      </span>
+                      <MapPin className='size-4' />
                       Hybrid / Remote (US)
                     </span>
                   </div>
@@ -459,9 +445,7 @@ const Careerspage = () => {
                       Lead Level
                     </span>
                     <span className='flex items-center gap-space-xs text-slate-500 font-body-sm text-sm'>
-                      <span className='material-symbols-outlined text-[16px]'>
-                        location_on
-                      </span>
+                      <MapPin className='size-4' />
                       San Francisco, CA / Remote
                     </span>
                   </div>
@@ -518,9 +502,7 @@ const Careerspage = () => {
                       Mid-Senior
                     </span>
                     <span className='flex items-center gap-space-xs text-slate-500 font-body-sm text-sm'>
-                      <span className='material-symbols-outlined text-[16px]'>
-                        location_on
-                      </span>
+                      <MapPin className='size-4' />
                       Austin Hardware Studio, TX
                     </span>
                   </div>
@@ -579,9 +561,7 @@ const Careerspage = () => {
                       Director / Lead
                     </span>
                     <span className='flex items-center gap-space-xs text-slate-500 font-body-sm text-sm'>
-                      <span className='material-symbols-outlined text-[16px]'>
-                        location_on
-                      </span>
+                      <MapPin className='size-4' />
                       East Coast Territory / Remote
                     </span>
                   </div>
@@ -637,9 +617,7 @@ const Careerspage = () => {
                       Mid-Senior
                     </span>
                     <span className='flex items-center gap-space-xs text-slate-500 font-body-sm text-sm'>
-                      <span className='material-symbols-outlined text-[16px]'>
-                        location_on
-                      </span>
+                      <MapPin className='size-4' />
                       Fully Remote (US / Canada)
                     </span>
                   </div>
@@ -694,9 +672,7 @@ const Careerspage = () => {
                       Practitioner Lead
                     </span>
                     <span className='flex items-center gap-space-xs text-slate-500 font-body-sm text-sm'>
-                      <span className='material-symbols-outlined text-[16px]'>
-                        location_on
-                      </span>
+                      <MapPin className='size-4' />
                       Chicago, IL / Hybrid
                     </span>
                   </div>
@@ -742,7 +718,7 @@ const Careerspage = () => {
           className='w-full py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-[#f8fafc] border-b border-slate-200'
           id='life-at-obo'
         >
-          <div className='max-w-[1320px] mx-auto flex flex-col gap-space-2xl'>
+          <div className='max-w-330 mx-auto flex flex-col gap-space-2xl'>
             {/* <!-- Section Intro --> */}
             <div className='flex flex-col gap-space-xs max-w-3xl'>
               <span className='font-label-caps text-xs text-orange-700 uppercase tracking-widest font-bold'>
@@ -760,12 +736,14 @@ const Careerspage = () => {
             {/* <!-- Photo Mosaic Gallery --> */}
             <div className='grid grid-cols-1 md:grid-cols-12 gap-gutter'>
               <div className='md:col-span-8 overflow-hidden rounded-xl bg-white border border-slate-200 relative group h-80 lg:h-96 shadow-sm'>
-                <img
-                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
-                  data-alt='An energetic modern robotics lab workshop with diverse mechatronics engineers and educators testing articulated orange robotic arms on lab tables surrounded by digital oscilloscopes and glowing monitors in deep moody blue and amber ambient light.'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuBtCWNDtBXs1GIDIiU5L9unTXh6VcAp0BpKc0Q_2-IqGLqnGRMqbpoqtniAVB14EwfIR5PKHr1okyYOOXWn1SpuHNK6nWRnIN5bTW2vHuD7m02AnZ2Ihr6lTq-9Za4xJPLGGWQN2q9M26xIvbjyVUwF2WKf7SrJVZD24bXvbYzefnv6sOQVNM6W9eEqMGLk87R1BRgaB20jJj_VGQWuSZJksNfHBPX0xomMdiPOVkYt'
+                <Image
+                  src={'/image/prototyping_studio.jpg'}
+                  alt='An energetic modern robotics lab workshop with diverse mechatronics engineers and educators testing articulated orange robotic arms on lab tables surrounded by digital oscilloscopes and glowing monitors in deep moody blue and amber ambient light.'
+                  fill
+                  className='object-cover group-hover:scale-105 transition-transform duration-500'
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg'>
+
+                <div className='absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg'>
                   <div>
                     <span className='font-label-caps text-xs text-orange-400 uppercase font-semibold'>
                       Prototyping Studio • Austin
@@ -778,12 +756,14 @@ const Careerspage = () => {
                 </div>
               </div>
               <div className='md:col-span-4 overflow-hidden rounded-xl bg-white border border-slate-200 relative group h-80 lg:h-96 shadow-sm'>
-                <img
-                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
-                  data-alt='Close up shot of hands assembling an intricate multi-axis educational robotic gripper with transparent carbon fiber casings and embedded glowing LED status indicators in a tech development space.'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuB6DbpZj191PRgypREf3ucBcHMYHcdq6N87AKm3SSsaSVGYvh5A3RJxP1lRFVL6FuWYRlV5pvIe5ZfHCH_t-siTQABh08daw5qIWw0gIa8Stt6-rKRhLkSjxtCR7X_ApowV3HShq4C07p54bo1l03Qx6GLbTe9Y5WPz5xJv43gl2MSdzX7Z3iW3XT3-DtQFJwAZbkbQfPscvXqD9JfVk2oeApX6FEdXcOF6_acqhz1Y'
+                <Image
+                  src={'/image/kinematics_lab.jpg'}
+                  alt='Close up shot of hands assembling an intricate multi-axis educational robotic gripper with transparent carbon fiber casings and embedded glowing LED status indicators in a tech development space.'
+                  fill
+                  className='object-cover group-hover:scale-105 transition-transform duration-500'
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg'>
+
+                <div className='absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg'>
                   <div>
                     <span className='font-label-caps text-xs text-amber-400 uppercase font-semibold'>
                       Kinematics Lab
@@ -795,12 +775,14 @@ const Careerspage = () => {
                 </div>
               </div>
               <div className='md:col-span-5 overflow-hidden rounded-xl bg-white border border-slate-200 relative group h-72 shadow-sm'>
-                <img
-                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
-                  data-alt='Young high school students cheering around an autonomous robotic rover following a line maze floor path during a classroom pilot session with smiling curriculum instructors taking telemetry notes.'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuBT7m-tgtluoLKatFi8e4cbHdDrwkRnIj-PfNmmQuFNxmCVP97V3cGSCruHOPDpJEG66ZuyGWR_nvUps456zdMZRYzIOVJEv03mk-Ad1pCyWVEbfiQIqyYS_oh5K8Dz9ZsQeoRjIFiBPilD5bhG1lhMXUvnq_OCYssxm5stVrl_Kec-098Fj5ZaBo0jZR6uP-voKbCz3nvDFFhm5QCB1ezW08Jd3LG7z9hObrQuJSHH'
+                <Image
+                  src={'/image/classroom_pilots.jpg'}
+                  alt='Young high school students cheering around an autonomous robotic rover following a line maze floor path during a classroom pilot session with smiling curriculum instructors taking telemetry notes.'
+                  fill
+                  className='object-cover group-hover:scale-105 transition-transform duration-500'
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg'>
+
+                <div className='absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg'>
                   <div>
                     <span className='font-label-caps text-xs text-blue-400 uppercase font-semibold'>
                       Classroom Pilots
@@ -813,12 +795,14 @@ const Careerspage = () => {
                 </div>
               </div>
               <div className='md:col-span-7 overflow-hidden rounded-xl bg-white border border-slate-200 relative group h-72 shadow-sm'>
-                <img
-                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
-                  data-alt='Remote distributed engineering team gathering around a whiteboard during an annual maker retreat, smiling while holding prototype circuit boards and custom robotic arm prototypes.'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuB-O3sGuP7NRUbw3ri0CB9Q0TA-qoV2yUrPWu78XD_KQZn25E8iRpUAbXP1Sx_Bka-GOM4rde0MQ0QjLRHwyZR_2M7ut2-tf_KursOD2AlPJ2ljZsM2lX-wY-CqZCUnXSD2XYy_zVvl_--WTStILsg-wNMPyWfP6ETCSHGZgjBTB5sW-LrSnoujBaHP-yeOKJCui8yqBKKNNTGP-RrOmR_oBdHXwKyJYnF6t3KkUwbL'
+                <Image
+                  src={'/image/annual_maker_summit.jpg'}
+                  alt='Remote distributed engineering team gathering around a whiteboard during an annual maker retreat, smiling while holding prototype circuit boards and custom robotic arm prototypes.'
+                  fill
+                  className='object-cover group-hover:scale-105 transition-transform duration-500'
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg'>
+
+                <div className='absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-space-lg'>
                   <div>
                     <span className='font-label-caps text-xs text-orange-400 uppercase font-semibold'>
                       Annual Maker Summit
@@ -835,9 +819,8 @@ const Careerspage = () => {
               {/* <!-- Quote 1 --> */}
               <div className='p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between'>
                 <div className='flex flex-col gap-space-md'>
-                  <span className='material-symbols-outlined text-[36px] text-orange-500'>
-                    format_quote
-                  </span>
+                  <Quote className='size-9 text-orange-500' />
+
                   <p className='font-body-lg text-lg text-slate-800 italic leading-relaxed'>
                     "At previous tech companies, I spent years shaving
                     milliseconds off ad clicks. At Obo, I wrote the firmware
@@ -864,9 +847,8 @@ const Careerspage = () => {
               {/* <!-- Quote 2 --> */}
               <div className='p-space-xl rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between'>
                 <div className='flex flex-col gap-space-md'>
-                  <span className='material-symbols-outlined text-[36px] text-blue-500'>
-                    format_quote
-                  </span>
+                  <Quote className='size-9 text-blue-500' />
+
                   <p className='font-body-lg text-lg text-slate-800 italic leading-relaxed'>
                     "I taught public high school physics for nine years before
                     joining Obo. The engineering team treats pedagogical
@@ -895,15 +877,13 @@ const Careerspage = () => {
         </section>
         {/* <!-- "Don't See Your Role?" General Application Callout --> */}
         <section className='w-full py-space-3xl px-margin-sm md:px-margin lg:px-margin-lg bg-white'>
-          <div className='max-w-[1320px] mx-auto'>
-            <div className='p-space-2xl rounded-2xl bg-gradient-to-br from-slate-50 via-white to-orange-50/40 border border-slate-200 flex flex-col lg:flex-row items-center justify-between gap-space-2xl shadow-sm relative overflow-hidden'>
+          <div className='max-w-330 mx-auto'>
+            <div className='p-space-2xl rounded-2xl bg-linear-to-br from-slate-50 via-white to-orange-50/40 border border-slate-200 flex flex-col lg:flex-row items-center justify-between gap-space-2xl shadow-sm relative overflow-hidden'>
               {/* <!-- Glow Accent --> */}
               <div className='absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-orange-200/40 blur-[100px] pointer-events-none'></div>
               <div className='flex flex-col gap-space-md max-w-2xl relative z-10'>
                 <span className='inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-amber-100 text-amber-800 border border-amber-200 font-label-caps text-xs uppercase tracking-wider self-start font-semibold'>
-                  <span className='material-symbols-outlined text-[16px]'>
-                    all_inclusive
-                  </span>
+                  <Infinity className='size-4' />
                   General Fellowship &amp; Inquiries
                 </span>
                 <h2 className='font-headline-lg text-3xl sm:text-4xl text-slate-900 font-bold tracking-tight'>
