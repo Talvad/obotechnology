@@ -1,5 +1,5 @@
-import { ChevronDown, User } from 'lucide-react';
 import Link from 'next/link';
+import { NavBar } from './navbar/nav-bar';
 
 function Header() {
   return (
@@ -10,30 +10,8 @@ function Header() {
             Obo Technology
           </span>
         </Link>
+        <NavBar />
 
-        <nav
-          className='hidden xl:flex items-center gap-gutter'
-          data-active-classes='bg-surface-container text-text-primary font-title-md rounded shadow-sm'
-        >
-          <Link
-            href={'/services'}
-            className='font-title-md text-body-md text-text-secondary hover:text-text-primary flex items-center gap-space-xs transition-colors py-space-xs px-space-sm rounded'
-          >
-            Services
-          </Link>
-          <Link
-            href={'/products'}
-            className='font-title-md text-body-md text-text-secondary hover:text-text-primary flex items-center gap-space-xs transition-colors py-space-xs px-space-sm rounded'
-          >
-            Products
-          </Link>
-          <Link
-            href={'/careers'}
-            className='font-title-md text-body-md text-text-secondary hover:text-text-primary flex items-center gap-space-xs transition-colors py-space-xs px-space-sm rounded'
-          >
-            Careers
-          </Link>
-        </nav>
         <div className='flex items-center gap-space-md shrink-0'>
           {/* <a
             className='hidden sm:inline-flex items-center justify-center font-title-md text-body-md text-text-secondary hover:text-text-primary hover:bg-surface-container-high px-space-md py-space-sm rounded transition-all'
