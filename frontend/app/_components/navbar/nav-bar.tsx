@@ -1,13 +1,9 @@
-import { NavItem, type NavItemProp } from './nav-item';
+import { NavItem } from './nav-item';
+import { navItems } from './nav-items';
 
-const navItems: NavItemProp[] = [
-  { slug: '/services', title: 'Services' },
-  { slug: '/products', title: 'Products' },
-  { slug: '/careers', title: 'Careers' },
-];
 function NavBar() {
   return (
-    <nav className='hidden xl:flex items-center gap-gutter'>
+    <nav className='hidden sm:flex items-center gap-gutter'>
       {navItems.map((navItem) => (
         <NavItem key={navItem.slug} {...navItem} />
       ))}

@@ -1,11 +1,8 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { NavItemProp } from './nav-items';
 
-type NavItemProp = {
-  slug: string;
-  title: string;
-};
 function NavItem({ slug, title }: NavItemProp) {
   const path = usePathname();
   const active = slug === path;
