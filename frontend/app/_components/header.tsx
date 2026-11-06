@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { NavBar } from './navbar/nav-bar';
 import MobileNavBar from './navbar/mobile-nav-bar';
+import { Button } from './ui/button';
 
 function Header() {
   return (
@@ -14,11 +15,8 @@ function Header() {
         <NavBar />
 
         <div className='flex items-center gap-4 shrink-0'>
-          <Link
-            className='inline-flex items-center justify-center font-title-md text-body-md bg-primary text-on-primary font-bold px-space-lg py-space-sm rounded shadow-sm hover:brightness-110 active:scale-95 transition-all'
-            href='/login'
-          >
-            Login
+          <Link href='/login'>
+            <Button>Login</Button>
           </Link>
           <MobileNavBar />
         </div>

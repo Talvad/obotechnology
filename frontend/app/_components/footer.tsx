@@ -4,6 +4,8 @@ import {
   SendHorizonal,
   SquareTerminal,
 } from 'lucide-react';
+import Input from './ui/input';
+import { Button } from './ui/button';
 
 function Footer() {
   return (
@@ -154,17 +156,10 @@ function Footer() {
             </p>
             <form className='space-y-space-sm'>
               <div className='flex items-center gap-space-xs'>
-                <input
-                  className='w-full px-space-md py-space-sm rounded bg-surface-container-low border border-surface-container text-text-primary font-body-sm text-body-sm placeholder-text-tertiary focus:outline-none focus:ring-1 focus:ring-primary'
-                  placeholder='educator@institution.edu'
-                  type='email'
-                />
-                <button
-                  className='px-space-md py-space-sm rounded bg-primary text-on-primary font-title-md text-body-sm font-bold shrink-0 hover:brightness-110 transition-all'
-                  type='button'
-                >
+                <Input placeholder='educator@institution.edu' type='email' />
+                <Button type='submit'>
                   <SendHorizonal className='size-5' />
-                </button>
+                </Button>
               </div>
               <span className='font-label-caps text-label-caps text-text-tertiary block'>
                 Zero spam. Opt-out anytime.

@@ -116,7 +116,9 @@ function Hero() {
                     alt='Excited young elementary and middle school students collaborating around an orange modular robotics chassis, high-fiving their teacher in a high-tech modern classroom bathed in dark obsidian surfaces and neon blue ambient LED lighting. Precision mechatronic components, glowing sensors, and laptops with code editors on the wooden desks.'
                     src={'/image/obo_hero.jpg'}
                     fill
+                    priority
                     className='object-cover'
+                    sizes='(max-width: 640px) 100vw,(max-width: 768px) 50vw, 40vw'
                   />
 
                   <div className='absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent'></div>
