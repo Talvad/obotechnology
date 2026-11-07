@@ -11,7 +11,7 @@ import LoginForm from './login-form';
 
 function LoginView() {
   return (
-    <section className='min-w-1/3'>
+    <section className='min-w-1/3 py-10'>
       <Card>
         <CardHeader>
           <CardTitle>Login to your Account</CardTitle>

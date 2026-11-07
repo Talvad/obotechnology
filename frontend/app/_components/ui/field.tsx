@@ -16,4 +16,39 @@ function FieldLabel({ className = '', ...props }: ComponentProps<'label'>) {
 function FieldDescription({ ...props }: ComponentProps<'p'>) {
   return <p {...props} />;
 }
-export { Field, FieldLabel, FieldDescription };
+
+function FieldError({ errors }: { errors: string[] }) {
+  if (errors.length === 0) return null;
+  const uniquErrors = [...new Set(errors)];
+  return (
+    <ul className='ml-4 flex list-disc flex-col gap-1 text-xs font-normal text-red-500 py-1'>
+      {uniquErrors.map((error) => (
+        <li key={error}>{error}</li>
+      ))}
+    </ul>
+  );
+}
+function FormError({
+  success,
+  message,
+}: {
+  success?: boolean;
+  message?: string;
+}) {
+  if (!message) return null;
+  const classNames = {
+    success: 'text-green-600 border-green-600 bg-green-600/10',
+    error: 'text-red-600 border-red-600 bg-red-600/10',
+  };
+  return (
+    <Field>
+      <p
+        className={`border font-medium p-2 rounded-md text-center text-sm ${success ? classNames['success'] : classNames['error']}`}
+      >
+        {message}
+      </p>
+    </Field>
+  );
+}
+
+export { Field, FieldLabel, FieldDescription, FieldError, FormError };

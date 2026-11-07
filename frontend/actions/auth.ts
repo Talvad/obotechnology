@@ -11,7 +11,7 @@ export async function signUp(
     name: String(formData.get('name') ?? ''),
     email: String(formData.get('email') ?? ''),
     password: String(formData.get('password') ?? ''),
-    confirmPassword: String(formData.get('confirm-password') ?? ''),
+    confirmPassword: String(formData.get('confirmPassword') ?? ''),
   };
 
   const result = SignUpSchema.safeParse(rawData);
