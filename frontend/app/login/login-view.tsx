@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Button } from '../_components/ui/button';
 import {
   Card,
   CardContent,
@@ -8,9 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from '../_components/ui/card';
-import { Field, FieldLabel } from '../_components/ui/field';
-import Input from '../_components/ui/input';
-import { Password } from '../_components/ui/password';
+import LoginForm from './login-form';
 
 function LoginView() {
   return (
@@ -23,31 +20,7 @@ function LoginView() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
-            <Field>
-              <FieldLabel htmlFor='email'>E-mail</FieldLabel>
-              <Input
-                id='email'
-                name='email'
-                type='email'
-                placeholder='Enter your mail'
-              />
-            </Field>
-            <Field>
-              <FieldLabel htmlFor='password'>Password</FieldLabel>
-              <Password
-                id='password'
-                name='password'
-                placeholder='Enter you password'
-              />
-            </Field>
-
-            <Field>
-              <Button type='submit' className='w-full'>
-                Login
-              </Button>
-            </Field>
-          </form>
+          <LoginForm />
         </CardContent>
         <CardFooter>
           <CardDescription className='text-center'>
