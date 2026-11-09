@@ -1,11 +1,11 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: Obotechnology Backend - Backend Http Api for Obotechnology
 
 Parameters:
   AllowedOrigin:
     Type: String
-    Default: '*'
+    Default: "*"
     Description: Origin allowed by CORS (set to your frontend URL in production)
 
 Globals:
@@ -53,9 +53,9 @@ Resources:
       BuildProperties:
         Minify: true
         Target: es2022
-        Sourcemap: true
-        External: ['@aws-sdk/*']
-        EntryPoints: ['handlers/hello.ts']
+        Sourcemap: false
+        External: ["@aws-sdk/*"]
+        EntryPoints: ["handlers/hello.ts"]
 
 Outputs:
   ApiUrl:
