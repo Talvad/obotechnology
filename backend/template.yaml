@@ -57,6 +57,28 @@ Resources:
         External: ["@aws-sdk/*"]
         EntryPoints: ["handlers/hello.ts"]
 
+  UserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src
+      Handler: user.handler
+      Description: Signup,
+      Events:
+        Signup:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Method: POST
+            Path: /api/v1/auth/signup
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        Sourcemap: false
+        External: ["@aws-sdk/*"]
+        EntryPoints: ["handlers/user.ts"]
+
 Outputs:
   ApiUrl:
     Description: HTTP API base URL

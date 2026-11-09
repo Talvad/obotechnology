@@ -6,13 +6,16 @@
   "author": "SAM CLI",
   "license": "MIT",
   "scripts": {
-    "unit": "jest",
-    "lint": "eslint '*.ts' --quiet --fix",
-    "compile": "tsc",
-    "test": "npm run compile && npm run unit"
+    "typecheck": "tsc --noEmit",
+    "validate": "sam validate --lint",
+    "build": "sam build",
+    "deploy": "sam deploy --guided",
+    "deploy:ci": "sam deploy"
   },
   "dependencies": {
-    "esbuild": "^0.14.14"
+    "@aws-sdk/client-cognito-identity-provider": "^3.1164.0",
+    "esbuild": "^0.14.14",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.92",
