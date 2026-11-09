@@ -29,7 +29,7 @@ export function parseBody<S extends z.ZodType>(
   } catch (error) {
     throw new HttpError(400, "Request body must be valid JSON", "InvalidJson");
   }
-  const result = schema.safeParse(body);
+  const result = schema.safeParse(data);
   if (!result.success) {
     const message = result.error.issues
       .map((i) => `${i.path.join(".") || "body"}: ${i.message}`)
