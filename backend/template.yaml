@@ -315,6 +315,31 @@ Resources:
         External: ["@aws-sdk/*"]
         EntryPoints: ["handlers/user.ts"]
 
+  StudentFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src
+      Handler: student.handler
+      Description: Student functions
+      Events:
+        GetCourses:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Method: GET
+            Path: /api/v1/student/courses
+            Auth:
+              AuthorizationScopes:
+                - student.read
+
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        Sourcemap: false
+        External: ["@aws-sdk/*"]
+        EntryPoints: ["handlers/student.ts"]
 Outputs:
   ApiUrl:
     Description: HTTP API base URL
