@@ -51,8 +51,13 @@ Resources:
           Mutable: true
       AdminCreateUserConfig:
         AllowAdminCreateUserOnly: false
-      # LambdaConfig:
-      #   PostConfirmation: !GetAtt PostConfirmationFunction.Arn
+      # Needed for access-token customization (scopes) in the V2 pre-token trigger
+      UserPoolTier: ESSENTIALS
+      LambdaConfig:
+        PostConfirmation: !GetAtt PostConfirmationFunction.Arn
+        PreTokenGenerationConfig:
+          LambdaArn: !GetAtt PreTokenGenerationFunction.Arn
+          LambdaVersion: V2_0
 
   UserPoolClient:
     Type: AWS::Cognito::UserPoolClient
@@ -73,6 +78,46 @@ Resources:
         AccessToken: minutes
         IdToken: minutes
         RefreshToken: days
+
+  AdminsGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      UserPoolId: !Ref UserPool
+      GroupName: admins
+      Description: Full access, can manage users and roles
+      Precedence: 1
+
+  EmployeesGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      UserPoolId: !Ref UserPool
+      GroupName: employees
+      Description: Staff members
+      Precedence: 2
+
+  StudentsGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      UserPoolId: !Ref UserPool
+      GroupName: students
+      Description: Default group for self-registered users
+      Precedence: 3
+
+  PostConfirmationPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref PostConfirmationFunction
+      Principal: cognito-idp.amazonaws.com
+      SourceArn: !GetAtt UserPool.Arn
+
+  PreTokenGenerationPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref PreTokenGenerationFunction
+      Principal: cognito-idp.amazonaws.com
+      SourceArn: !GetAtt UserPool.Arn
 
   HttpApi:
     Type: AWS::Serverless::HttpApi
@@ -101,6 +146,46 @@ Resources:
               issuer: !Sub https://cognito-idp.${AWS::Region}.amazonaws.com/${UserPool}
               audience:
                 - !Ref UserPoolClient
+
+  PostConfirmationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src
+      Handler: post-confirmation.handler
+      Description: Adds self-registered users to the students group
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - cognito-idp:AdminAddUserToGroup
+                - cognito-idp:AdminListGroupsForUser
+              # Wildcard avoids a circular dependency with the user pool
+              Resource: !Sub arn:${AWS::Partition}:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/*
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        Sourcemap: false
+        External: ["@aws-sdk/*"]
+        EntryPoints: [handlers/post-confirmation.ts]
+
+  # Adds API scopes to the access token based on the user's groups. Route-level
+  # AuthorizationScopes on the HTTP API are checked against these.
+  PreTokenGenerationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src
+      Handler: pre-token-generation.handler
+      Description: Maps Cognito groups to access-token scopes
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        Sourcemap: false
+        External: ["@aws-sdk/*"]
+        EntryPoints: [handlers/pre-token-generation.ts]
 
   HelloFunction:
     Type: AWS::Serverless::Function
