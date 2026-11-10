@@ -331,7 +331,6 @@ Resources:
             Auth:
               AuthorizationScopes:
                 - student.read
-
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
@@ -340,6 +339,32 @@ Resources:
         Sourcemap: false
         External: ["@aws-sdk/*"]
         EntryPoints: ["handlers/student.ts"]
+
+  EmployeeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src
+      Handler: employee.handler
+      Description: Employee functions
+      Events:
+        GetCourses:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Method: GET
+            Path: /api/v1/employee/dashboard
+            Auth:
+              AuthorizationScopes:
+                - employee.read
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        Sourcemap: false
+        External: ["@aws-sdk/*"]
+        EntryPoints: ["handlers/employee.ts"]
+
 Outputs:
   ApiUrl:
     Description: HTTP API base URL
