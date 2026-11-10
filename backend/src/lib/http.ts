@@ -44,6 +44,23 @@ const COGNITO_ERRORS: Record<string, [number, string]> = {
     401,
     "Incorrect username or password, or token is invalid",
   ],
+  UserNotConfirmedException: [
+    403,
+    "Account is not confirmed. Check your email for the verification code",
+  ],
+  UsernameExistsException: [409, "An account with this email already exists"],
+  InvalidPasswordException: [400, "Password does not meet the password policy"],
+  CodeMismatchException: [400, "Invalid verification code"],
+  ExpiredCodeException: [400, "Verification code has expired"],
+  InvalidParameterException: [400, "Invalid request parameter"],
+  UserNotFoundException: [404, "User not found"],
+  LimitExceededException: [429, "Too many attempts. Try again later"],
+  TooManyRequestsException: [429, "Too many requests. Try again later"],
+  TooManyFailedAttemptsException: [
+    429,
+    "Too many failed attempts. Try again later",
+  ],
+  AliasExistsException: [409, "An account with this email already exists"],
 };
 
 const ALL_ERRORS: Record<string, [number, string]> = {
