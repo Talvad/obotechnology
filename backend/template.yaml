@@ -292,6 +292,19 @@ Resources:
             Path: /api/v1/auth/new-password
             Auth:
               Authorizer: NONE
+        Me:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Method: GET
+            Path: /api/v1/me
+
+        Logout:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Method: POST
+            Path: /api/v1/auth/logout
 
     Metadata:
       BuildMethod: esbuild

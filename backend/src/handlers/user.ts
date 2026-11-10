@@ -1,5 +1,10 @@
 import z from "zod";
-import { ApiEvent, PromiseApiResult } from "../lib/auth";
+import {
+  ApiEvent,
+  getAccessToken,
+  getGroups,
+  PromiseApiResult,
+} from "../lib/auth";
 import { HttpError, json, parseBody, safely } from "../lib/http";
 import { cognito } from "../lib/cognito";
 import {
@@ -7,6 +12,8 @@ import {
   ConfirmForgotPasswordCommand,
   ConfirmSignUpCommand,
   ForgotPasswordCommand,
+  GetUserCommand,
+  GlobalSignOutCommand,
   InitiateAuthCommand,
   ResendConfirmationCodeCommand,
   RespondToAuthChallengeCommand,
@@ -23,6 +30,8 @@ const UserRoutes = {
   FORGOT_PASSWORD: "POST /api/v1/auth/forgot-password",
   RESET_PASSWORD: "POST /api/v1/auth/reset-password",
   NEW_PASSWORD: "POST /api/v1/auth/new-password",
+  ME: "GET /api/v1/me",
+  LOGOUT: "POST /api/v1/auth/logout",
 } as const;
 
 const email = z.string().trim().toLowerCase().email();
@@ -199,6 +208,25 @@ const routeHandlers: Record<string, RouteHandler> = {
       }),
     );
     return json(200, tokens(res.AuthenticationResult));
+  },
+  [UserRoutes.ME]: async (event) => {
+    const user = await cognito.send(
+      new GetUserCommand({ AccessToken: getAccessToken(event) }),
+    );
+    const attr = (name: string) =>
+      user.UserAttributes?.find((a) => a.Name === name)?.Value;
+    return json(200, {
+      id: attr("sub"),
+      email: attr("email"),
+      name: attr("name"),
+      groups: getGroups(event),
+    });
+  },
+  [UserRoutes.LOGOUT]: async (event) => {
+    await cognito.send(
+      new GlobalSignOutCommand({ AccessToken: getAccessToken(event) }),
+    );
+    return json(200, { message: "Logged out" });
   },
 };
 

@@ -4,6 +4,7 @@ function required(name: string): string {
   return value;
 }
 
+const VERSION = "v1";
 // Read lazily so each function only needs the variables it actually uses.
 export const config = {
   // get userPoolId() {
@@ -11,5 +12,8 @@ export const config = {
   // },
   get clientId() {
     return required("CLIENT_ID");
+  },
+  get version() {
+    return VERSION;
   },
 };
