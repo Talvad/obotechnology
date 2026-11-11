@@ -5,8 +5,8 @@ import {
   JetBrains_Mono,
 } from 'next/font/google';
 import './globals.css';
-import { Header } from './_components/header';
-import Footer from './_components/footer';
+import { Header } from '@/components/shared/header';
+import Footer from '@/components/shared/footer';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',

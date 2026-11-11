@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SignupForm } from '@/components/forms/signup-form';
 import {
   Card,
   CardContent,
@@ -6,8 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../_components/ui/card';
-import { SignupForm } from './signup-form';
+} from '@/components/ui/card';
 
 function SignupView() {
   return (

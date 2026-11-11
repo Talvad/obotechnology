@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { NavBar } from './navbar/nav-bar';
 import MobileNavBar from './navbar/mobile-nav-bar';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 function Header() {
   return (

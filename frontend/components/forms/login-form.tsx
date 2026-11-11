@@ -1,17 +1,12 @@
 'use client';
-import { Button } from '../_components/ui/button';
-import {
-  Field,
-  FieldError,
-  FieldLabel,
-  FormError,
-} from '../_components/ui/field';
-import Input from '../_components/ui/input';
-import { Password } from '../_components/ui/password';
 
 import { useActionState } from 'react';
 import { signIn } from '@/actions/auth';
 import { FormState } from '@/actions/type';
+import { Button } from '../ui/button';
+import { FormError, Field, FieldLabel, FieldError } from '../ui/field';
+import Input from '../ui/input';
+import { Password } from '../ui/password';
 const initialState: FormState = {
   success: false,
 };

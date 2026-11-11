@@ -1,13 +1,13 @@
-import Link from 'next/link';
+import LoginForm from '@/components/forms/login-form';
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
-} from '../_components/ui/card';
-import LoginForm from './login-form';
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@/components/ui/card';
+import Link from 'next/link';
 
 function LoginView() {
   return (
