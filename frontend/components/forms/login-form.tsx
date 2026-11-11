@@ -5,7 +5,7 @@ import { Button } from '../ui/button';
 import { FormError, Field, FieldLabel, FieldError } from '../ui/field';
 import Input from '../ui/input';
 import { Password } from '../ui/password';
-import { loginAction } from '@/actions/authActions';
+import { loginAction } from '@/actions/auth';
 
 function LoginForm() {
   const [state, formAction, isPending] = useActionState(loginAction, undefined);

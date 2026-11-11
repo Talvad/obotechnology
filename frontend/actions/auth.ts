@@ -1,88 +1,107 @@
 'use server';
 
-import { SignInSchema, SignUpSchema } from './schema';
-import { FormState } from './type';
+import type { FormState } from '@/lib/types';
+import z from 'zod';
 
-export async function signUp(
-  _: FormState,
+function pick(
+  raw: Record<string, unknown>,
+  keys: string[],
+): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const key of keys) if (typeof raw[key] === 'string') out[key] = raw[key];
+  return out;
+}
+type Parsed<S extends z.ZodType> =
+  | { ok: true; data: z.infer<S> }
+  | { ok: false; state: NonNullable<FormState> };
+
+function parse<S extends z.ZodType>(
+  schema: S,
   formData: FormData,
-): Promise<FormState> {
-  const rawData = {
-    name: String(formData.get('name') ?? ''),
-    email: String(formData.get('email') ?? ''),
-    password: String(formData.get('password') ?? ''),
-    confirmPassword: String(formData.get('confirmPassword') ?? ''),
-  };
-
-  const result = SignUpSchema.safeParse(rawData);
-
-  if (!result.success) {
-    return {
-      success: false,
-      message: 'Validation failed. Please correct the highlighted errors.',
-      errors: result.error.flatten().fieldErrors,
-      fields: {
-        name: rawData.name,
-        email: rawData.email,
-      },
-    };
-  }
-
-  const { name, email, password } = result.data;
-
-  try {
-    console.log('SIGN UP SUCCESS', { name, email, password });
-  } catch (error) {
-    console.log('SIGN UP ERROR', error);
-    let errorMessage = 'User account creation failed.';
-
-    return {
-      success: false,
-      message: errorMessage,
-    };
-  }
-
+  keep: string[] = ['email'],
+): Parsed<S> {
+  const raw = Object.fromEntries(formData);
+  const result = schema.safeParse(raw);
+  if (result.success) return { ok: true, data: result.data };
   return {
-    success: true,
-    message: 'User account created successfully.',
+    ok: false,
+    state: {
+      fieldErrors: result.error.flatten().fieldErrors as Record<
+        string,
+        string[] | undefined
+      >,
+      values: pick(raw, keep),
+    },
   };
 }
 
-export async function signIn(_: FormState, formData: FormData) {
-  const rawData = {
-    email: String(formData.get('email') ?? ''),
-    password: String(formData.get('password') ?? ''),
-  };
+const email = z.email('Enter a valid email address');
+const password = z
+  .string()
+  .min(8, 'At least 8 characters')
+  .regex(/[a-z]/, 'Include a lowercase letter')
+  .regex(/[A-Z]/, 'Include an uppercase letter')
+  .regex(/[0-9]/, 'Include a number');
+const code = z.string().trim().min(6, 'Enter the code from your email');
 
-  const result = SignInSchema.safeParse(rawData);
+// SIGN UP
+const signupSchema = z
+  .object({
+    name: z.string().trim().min(1, 'Enter your name').max(30),
+    email,
+    password,
+    confirmPassword: z.string(),
+  })
+  .refine((v) => v.password === v.confirmPassword, {
+    path: ['confirmPassword'],
+    message: 'Passwords do not match',
+  });
 
-  if (!result.success) {
-    return {
-      success: false,
-      message: 'Validation failed. Please correct the highlighted errors.',
-      errors: result.error.flatten().fieldErrors,
-      fields: {
-        email: rawData.email,
-      },
-    };
-  }
+export async function signupAction(
+  _prev: FormState,
+  formData: FormData,
+): Promise<FormState> {
+  const parsed = parse(signupSchema, formData, ['name', 'email']);
+  if (!parsed.ok) return parsed.state;
+  const { name, email, password } = parsed.data;
+  return { error: 'Error message', values: { name, email } };
+}
 
-  const { email, password } = result.data;
+// CONFIRM
+const confirmSchema = z.object({ email, code });
+export async function confirmAction(
+  _prev: FormState,
+  formData: FormData,
+): Promise<FormState> {
+  const parsed = parse(confirmSchema, formData);
+  if (!parsed.ok) return parsed.state;
+  const { email } = parsed.data;
+  return { error: 'Error message', values: { email } };
+}
 
-  try {
-    console.log('SIGN IN SUCCESS', { email, password });
-  } catch (error) {
-    console.log('SIGN IN ERROR', error);
-    let errorMessage = 'Invalid email or password.';
+// RESEND
+const emailSchema = z.object({ email });
+export async function resendCodeAction(
+  _prev: FormState,
+  formData: FormData,
+): Promise<FormState> {
+  const parsed = parse(emailSchema, formData);
+  if (!parsed.ok) return parsed.state;
+  const { email } = parsed.data;
+  return { error: 'Error message', values: { email } };
+}
 
-    return {
-      success: false,
-      message: errorMessage,
-    };
-  }
-
-  return {
-    success: true,
-    message: 'User logged in successfully.',
-  };
+// LOGIN
+const loginSchema = z.object({
+  email,
+  password: z.string().min(1, 'Enter your password'),
+});
+export async function loginAction(
+  _prev: FormState,
+  formData: FormData,
+): Promise<FormState> {
+  const parsed = parse(loginSchema, formData);
+  if (!parsed.ok) return parsed.state;
+  const { email, password } = parsed.data;
+  return { error: 'Error message', values: { email } };
 }
