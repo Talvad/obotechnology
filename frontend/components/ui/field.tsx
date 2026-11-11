@@ -1,3 +1,4 @@
+import { FormState } from '@/lib/types';
 import { ComponentProps } from 'react';
 
 function Field({ className = '', ...props }: ComponentProps<'div'>) {
@@ -28,27 +29,28 @@ function FieldError({ errors }: { errors: string[] }) {
     </ul>
   );
 }
-function FormError({
-  success,
-  message,
-}: {
-  success?: boolean;
-  message?: string;
-}) {
-  if (!message) return null;
-  const classNames = {
-    success: 'text-green-600 border-green-600 bg-green-600/10',
-    error: 'text-red-600 border-red-600 bg-red-600/10',
-  };
-  return (
-    <Field>
-      <p
-        className={`border font-medium p-2 rounded-md text-center text-sm ${success ? classNames['success'] : classNames['error']}`}
-      >
-        {message}
-      </p>
-    </Field>
-  );
+
+function FormError({ state }: { state: FormState }) {
+  if (state?.error)
+    return (
+      <Field>
+        <p
+          className={`border font-medium p-2 rounded-md text-center text-sm text-red-600 border-red-600 bg-red-600/10`}
+        >
+          {state.error}
+        </p>
+      </Field>
+    );
+  if (state?.message)
+    return (
+      <Field>
+        <p
+          className={`border font-medium p-2 rounded-md text-center text-sm text-green-600 border-green-600 bg-green-600/10`}
+        >
+          {state.message}
+        </p>
+      </Field>
+    );
 }
 
 export { Field, FieldLabel, FieldDescription, FieldError, FormError };

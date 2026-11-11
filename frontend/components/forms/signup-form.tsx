@@ -1,29 +1,30 @@
 'use client';
 
 import { useActionState } from 'react';
-import { signUp } from '@/actions/auth';
-import { FormState } from '@/actions/type';
 import { Button } from '../ui/button';
 import { FormError, Field, FieldLabel, FieldError } from '../ui/field';
 import Input from '../ui/input';
 import { Password } from '../ui/password';
-const initialState: FormState = {
-  success: false,
-};
+import { signupAction } from '@/actions/authActions';
+
 function SignupForm() {
-  const [state, formAction, isPending] = useActionState(signUp, initialState);
+  const [state, formAction, isPending] = useActionState(
+    signupAction,
+    undefined,
+  );
   return (
     <form action={formAction}>
-      <FormError {...state} />
+      <FormError state={state} />
       <Field>
         <FieldLabel htmlFor='name'>Name</FieldLabel>
         <Input
           id='name'
           name='name'
           type='text'
+          defaultValue={state?.values?.name}
           placeholder='Enter your name'
         />
-        <FieldError errors={state.errors?.name || []} />
+        <FieldError errors={state?.fieldErrors?.name || []} />
       </Field>
       <Field>
         <FieldLabel htmlFor='email'>E-mail</FieldLabel>
@@ -31,9 +32,10 @@ function SignupForm() {
           id='email'
           name='email'
           type='email'
+          defaultValue={state?.values?.email}
           placeholder='Enter your mail'
         />
-        <FieldError errors={state.errors?.email || []} />
+        <FieldError errors={state?.fieldErrors?.email || []} />
       </Field>
       <Field>
         <FieldLabel htmlFor='password'>Password</FieldLabel>
@@ -42,7 +44,7 @@ function SignupForm() {
           name='password'
           placeholder='Enter you password'
         />
-        <FieldError errors={state.errors?.password || []} />
+        <FieldError errors={state?.fieldErrors?.password || []} />
       </Field>
       <Field>
         <FieldLabel htmlFor='confirmPassword'>Confirm Password</FieldLabel>
@@ -51,7 +53,7 @@ function SignupForm() {
           name='confirmPassword'
           placeholder='Confirm your password'
         />
-        <FieldError errors={state.errors?.confirmPassword || []} />
+        <FieldError errors={state?.fieldErrors?.confirmPassword || []} />
       </Field>
       <Field>
         <Button type='submit' className='w-full' disabled={isPending}>

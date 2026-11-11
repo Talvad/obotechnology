@@ -1,31 +1,27 @@
 'use client';
 
 import { useActionState } from 'react';
-import { signIn } from '@/actions/auth';
-import { FormState } from '@/actions/type';
 import { Button } from '../ui/button';
 import { FormError, Field, FieldLabel, FieldError } from '../ui/field';
 import Input from '../ui/input';
 import { Password } from '../ui/password';
-const initialState: FormState = {
-  success: false,
-};
+import { loginAction } from '@/actions/authActions';
 
 function LoginForm() {
-  const [state, formAction, isPending] = useActionState(signIn, initialState);
+  const [state, formAction, isPending] = useActionState(loginAction, undefined);
   return (
     <form action={formAction}>
-      <FormError {...state} />
-
+      <FormError state={state} />
       <Field>
         <FieldLabel htmlFor='email'>E-mail</FieldLabel>
         <Input
           id='email'
           name='email'
           type='email'
+          defaultValue={state?.values?.email}
           placeholder='Enter your mail'
         />
-        <FieldError errors={state.errors?.email || []} />
+        <FieldError errors={state?.fieldErrors?.email || []} />
       </Field>
       <Field>
         <FieldLabel htmlFor='password'>Password</FieldLabel>
@@ -34,7 +30,7 @@ function LoginForm() {
           name='password'
           placeholder='Enter you password'
         />
-        <FieldError errors={state.errors?.password || []} />
+        <FieldError errors={state?.fieldErrors?.password || []} />
       </Field>
 
       <Field>
