@@ -9,7 +9,12 @@ import {
 } from '@/lib/auth-cookies';
 import { decodeJwt, isFresh, type AccessClaims } from '@/lib/jwt';
 import { refreshTokens } from '@/lib/refresh';
-import { AUTH_PAGES, dashboardPathFor, requiredRolesFor } from '@/lib/roles';
+import {
+  AUTH_PAGES,
+  dashboardPathFor,
+  isPublicPage,
+  requiredRolesFor,
+} from '@/lib/roles';
 
 // Next.js 16: proxy.ts replaces middleware.ts and runs on the Node.js runtime.
 //
@@ -21,20 +26,31 @@ import { AUTH_PAGES, dashboardPathFor, requiredRolesFor } from '@/lib/roles';
 // This is a UX gate; the API enforces real authorization on every call.
 
 function writeTokens(res: NextResponse, tokens: Tokens) {
-  res.cookies.set(ACCESS_COOKIE, tokens.accessToken, cookieOptions(tokens.expiresIn ?? 3600));
+  res.cookies.set(
+    ACCESS_COOKIE,
+    tokens.accessToken,
+    cookieOptions(tokens.expiresIn ?? 3600),
+  );
   if (tokens.refreshToken) {
-    res.cookies.set(REFRESH_COOKIE, tokens.refreshToken, cookieOptions(REFRESH_MAX_AGE));
+    res.cookies.set(
+      REFRESH_COOKIE,
+      tokens.refreshToken,
+      cookieOptions(REFRESH_MAX_AGE),
+    );
   }
 }
 
 function clearTokens(res: NextResponse) {
-  for (const name of [ACCESS_COOKIE, REFRESH_COOKIE, CHALLENGE_COOKIE]) res.cookies.delete(name);
+  for (const name of [ACCESS_COOKIE, REFRESH_COOKIE, CHALLENGE_COOKIE])
+    res.cookies.delete(name);
 }
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  let claims: AccessClaims | null = decodeJwt(request.cookies.get(ACCESS_COOKIE)?.value);
+  let claims: AccessClaims | null = decodeJwt(
+    request.cookies.get(ACCESS_COOKIE)?.value,
+  );
   if (!isFresh(claims)) claims = null;
 
   let refreshed: Tokens | null = null;
@@ -58,12 +74,16 @@ export async function proxy(request: NextRequest) {
     if (sessionDead) clearTokens(res);
     return res;
   };
-  const redirectTo = (path: string) => finish(NextResponse.redirect(new URL(path, request.url)));
+  const redirectTo = (path: string) =>
+    finish(NextResponse.redirect(new URL(path, request.url)));
 
+  if (isPublicPage(pathname)) return finish(NextResponse.next({ request }));
   const isAuthPage = AUTH_PAGES.includes(pathname);
 
   if (!claims) {
-    return isAuthPage ? finish(NextResponse.next({ request })) : redirectTo('/login');
+    return isAuthPage
+      ? finish(NextResponse.next({ request }))
+      : redirectTo('/login');
   }
 
   const groups = claims['cognito:groups'] ?? [];

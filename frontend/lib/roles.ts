@@ -2,7 +2,14 @@ export const ROLES = ['admins', 'employees', 'students'] as const;
 export type Role = (typeof ROLES)[number];
 
 /** Pages for signed-out users. Signed-in users are bounced to their dashboard. */
-export const AUTH_PAGES = ['/login', '/signup', '/confirm', '/forgot-password', '/reset-password', '/new-password'];
+export const AUTH_PAGES = [
+  '/login',
+  '/signup',
+  '/confirm',
+  '/forgot-password',
+  '/reset-password',
+  '/new-password',
+];
 
 // Listed in precedence order: a user in several groups lands on the first match.
 const DASHBOARDS: Record<Role, string> = {
@@ -25,6 +32,19 @@ const GATES: Array<[prefix: string, allowed: readonly Role[]]> = [
   ['/student', ['students', 'admins']],
 ];
 
-export function requiredRolesFor(pathname: string): readonly Role[] | undefined {
-  return GATES.find(([prefix]) => pathname === prefix || pathname.startsWith(`${prefix}/`))?.[1];
+export function requiredRolesFor(
+  pathname: string,
+): readonly Role[] | undefined {
+  return GATES.find(
+    ([prefix]) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+  )?.[1];
+}
+
+const PUBLIC_PAGES = ['/', '/services', '/careers', '/products'];
+export function isPublicPage(pathname: string): boolean {
+  return PUBLIC_PAGES.some((p) =>
+    p === '/'
+      ? pathname === '/'
+      : pathname === p || pathname.startsWith(`${p}/`),
+  );
 }
