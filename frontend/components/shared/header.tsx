@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { NavBar } from './navbar/nav-bar';
 import MobileNavBar from './navbar/mobile-nav-bar';
 import { Button } from '../ui/button';
+import LoginBtn from './navbar/login-btn';
 
 function Header() {
   return (
@@ -15,9 +16,7 @@ function Header() {
         <NavBar />
 
         <div className='flex items-center gap-4 shrink-0'>
-          <Link href='/login'>
-            <Button>Login</Button>
-          </Link>
+          <LoginBtn />
           <MobileNavBar />
         </div>
       </div>
