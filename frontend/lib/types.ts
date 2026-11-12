@@ -22,5 +22,6 @@ export type Me = {
   id?: string;
   email?: string;
   name?: string;
+  avatarUrl?: string | null | undefined;
   groups: string[];
 };

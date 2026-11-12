@@ -48,9 +48,12 @@ const Header = async () => {
         ) : null}
       </nav>
       <div>
-        <span className='text-gray-500 underline underline-offset-2 text-sm'>
+        <Link
+          href={'/user/profile'}
+          className='text-gray-500 underline underline-offset-2 text-sm'
+        >
           {displayName ?? 'Signed in'}
-        </span>
+        </Link>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ export default function PrivateLayout({ children }: LayoutProps<'/'>) {
   return (
     <main className='w-full pt-20 bg-[#f8fafc] min-h-screen'>
       <Privateheader />
-      {children}
+      <section className='px-20'>{children}</section>
     </main>
   );
 }
