@@ -14,8 +14,8 @@ function FieldLabel({ className = '', ...props }: ComponentProps<'label'>) {
   );
 }
 
-function FieldDescription({ ...props }: ComponentProps<'p'>) {
-  return <p {...props} />;
+function FieldDescription({ className = '', ...props }: ComponentProps<'p'>) {
+  return <p className={`text-xs text-gray-500 ${className}`} {...props} />;
 }
 
 function FieldError({ errors }: { errors: string[] }) {
