@@ -24,7 +24,7 @@ export default function Avatar({ url, name, size = 'sm' }: Props) {
         alt={name || ''}
         src={url}
         fill
-        className='object-cover'
+        className={`object-cover ${classNames[size]}`}
         sizes=''
       />
     </div>

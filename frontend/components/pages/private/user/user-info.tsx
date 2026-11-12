@@ -20,9 +20,9 @@ async function UserData() {
   if (!me.ok) return <ApiError result={me} />;
   const name = me.data.name ?? me.data.email ?? '';
   return (
-    <section className='py-10'>
+    <section className='p-10 shadow my-2'>
       <h2 className='inline-block border-b mb-5'>Profile Information</h2>
-      <div>
+      <div className='flex gap-4 '>
         <UserAvatar url={me.data.avatarUrl} name={name} />
         <div>
           <h3 className='font-semibold text-sm text-gray-600'>

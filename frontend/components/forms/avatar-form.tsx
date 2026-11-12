@@ -3,19 +3,18 @@
 import { ChangeEvent, useActionState, useState } from 'react';
 import { Button } from '../ui/button';
 import { Field, FieldDescription, FormError } from '../ui/field';
-// import FileInput from '../ui/file-input';
-import Input from '../ui/input';
+import FileInput from '../ui/file-input';
 import { removeAvatarAction, uploadAvatarAction } from '@/actions/profile';
 
 const MAX_BYTES = 8 * 1024 * 1024;
 type Props = { hasAvatar: boolean };
 
 export default function AvatarForm({ hasAvatar }: Props) {
-  const [uploadState, uploadAction, isPending] = useActionState(
+  const [uploadState, uploadAction, uploadIsPending] = useActionState(
     uploadAvatarAction,
     undefined,
   );
-  const [removeState, removeAction] = useActionState(
+  const [removeState, removeAction, removeIsPending] = useActionState(
     removeAvatarAction,
     undefined,
   );
@@ -40,17 +39,14 @@ export default function AvatarForm({ hasAvatar }: Props) {
   }
   return (
     <div>
-      <form action={uploadAction} className='border-b border-b-gray-300 pb-4 '>
+      <form action={uploadAction} className='border-b border-b-gray-300 pb-2 '>
         <FormError state={uploadState} />
         {clientError ? <div>{clientError}</div> : null}
         <Field>
-          {/* <FileInput /> */}
-          <Input
+          <FileInput
             id='avatar'
             name='avatar'
-            type='file'
             accept='image/*'
-            placeholder='Upload your picture'
             required
             onChange={onChange}
           />
@@ -58,15 +54,18 @@ export default function AvatarForm({ hasAvatar }: Props) {
             Large images are resized to 512 x 512 automatically
           </FieldDescription>
         </Field>
-        {preview ? <img src={preview} alt='Preview' /> : null}
-        <Button type='submit' disabled={isPending}>
-          {isPending ? 'Uploading Picture...' : 'Upload Picture'}
+        {preview ? (
+          <img src={preview} alt='Preview' className='size-40 mb-2' />
+        ) : null}
+        <Button type='submit' disabled={uploadIsPending}>
+          {uploadIsPending ? 'Uploading Picture...' : 'Upload Picture'}
         </Button>
       </form>
       {hasAvatar ? (
-        <form action={''}>
-          <Button type='submit' variant='outline'>
-            Remove Picture
+        <form action={removeAction} className='mt-2'>
+          <FormError state={removeState} />
+          <Button type='submit' variant='outline' disabled={removeIsPending}>
+            {removeIsPending ? 'Removing Picture...' : 'Remove Picture'}
           </Button>
         </form>
       ) : null}

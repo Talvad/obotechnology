@@ -12,8 +12,8 @@ type Props = {
 export default function UserAvatar({ url, name }: Props) {
   const [showForm, setShowForm] = useState(false);
   return (
-    <div className='flex gap-4'>
-      <div className='relative inline-block'>
+    <div className='flex flex-col gap-4'>
+      <div className='relative inline-block w-min'>
         <Avatar url={url} name={name} size='lg' />
         <div
           className='absolute top-2 right-2 cursor-pointer bg-primary px-3 py-0.5 rounded-full text-white'
