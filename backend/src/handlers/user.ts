@@ -227,12 +227,13 @@ const routeHandlers: Record<string, RouteHandler> = {
     const user = await cognito.send(
       new GetUserCommand({ AccessToken: getAccessToken(event) }),
     );
-    const attr = (name: string) =>
+    const attrIn = (name: string) =>
       user.UserAttributes?.find((a) => a.Name === name)?.Value;
     return json(200, {
-      id: attr("sub"),
-      email: attr("email"),
-      name: attr("name"),
+      id: attrIn("sub"),
+      email: attrIn("email"),
+      name: attrIn("name"),
+      avatarUrl: await avatarUrl(attr(user, "picture")),
       groups: getGroups(event),
     });
   },
