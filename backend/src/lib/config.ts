@@ -13,6 +13,9 @@ export const config = {
   get clientId() {
     return required("CLIENT_ID");
   },
+  get avatarBucket() {
+    return required("AVATAR_BUCKET");
+  },
   get version() {
     return VERSION;
   },

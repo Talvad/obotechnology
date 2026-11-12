@@ -24,3 +24,7 @@ export function getGroups(event: ApiEvent): string[] {
   }
   return [];
 }
+
+export function getSub(event: ApiEvent): string {
+  return String(event.requestContext.authorizer.jwt.claims["sub"] ?? "");
+}

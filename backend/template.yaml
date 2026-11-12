@@ -111,6 +111,21 @@ Resources:
       Principal: cognito-idp.amazonaws.com
       SourceArn: !GetAtt UserPool.Arn
 
+  AvatarBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
   PreTokenGenerationPermission:
     Type: AWS::Lambda::Permission
     Properties:
@@ -220,6 +235,15 @@ Resources:
       Environment:
         Variables:
           CLIENT_ID: !Ref UserPoolClient
+          AVATAR_BUCKET: !Ref AvatarBucket
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:PutObject
+                - s3:GetObject
+                - s3:DeleteObject
+              Resource: !Sub ${AvatarBucket.Arn}/avatars/*
       Events:
         Signup:
           Type: HttpApi
@@ -305,6 +329,20 @@ Resources:
             ApiId: !Ref HttpApi
             Method: POST
             Path: /api/v1/auth/logout
+
+        UploadAvatar:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Method: POST
+            Path: /api/v1/me/avatar
+
+        DeleteAvatar:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Method: DELETE
+            Path: /api/v1/me/avatar
 
     Metadata:
       BuildMethod: esbuild

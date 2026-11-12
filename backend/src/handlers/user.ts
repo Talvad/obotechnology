@@ -3,14 +3,16 @@ import {
   ApiEvent,
   getAccessToken,
   getGroups,
+  getSub,
   PromiseApiResult,
 } from "../lib/auth";
 import { HttpError, json, parseBody, safely } from "../lib/http";
-import { cognito } from "../lib/cognito";
+import { attr, cognito } from "../lib/cognito";
 import {
   type AuthenticationResultType,
   ConfirmForgotPasswordCommand,
   ConfirmSignUpCommand,
+  DeleteUserAttributesCommand,
   ForgotPasswordCommand,
   GetUserCommand,
   GlobalSignOutCommand,
@@ -18,8 +20,12 @@ import {
   ResendConfirmationCodeCommand,
   RespondToAuthChallengeCommand,
   SignUpCommand,
+  UpdateUserAttributesCommand,
 } from "@aws-sdk/client-cognito-identity-provider";
 import { config } from "../lib/config";
+import { avatarUrl, deleteOwnObject, isWebp, s3 } from "../lib/s3";
+import { randomUUID } from "node:crypto";
+import { PutObjectCommand } from "@aws-sdk/client-s3";
 
 const UserRoutes = {
   SIGNUP: "POST /api/v1/auth/signup",
@@ -32,6 +38,8 @@ const UserRoutes = {
   NEW_PASSWORD: "POST /api/v1/auth/new-password",
   ME: "GET /api/v1/me",
   LOGOUT: "POST /api/v1/auth/logout",
+  UPLOAD_AVATAR: "POST /api/v1/me/avatar",
+  DELETE_AVATAR: "DELETE /api/v1/me/avatar",
 } as const;
 
 const email = z.string().trim().toLowerCase().email();
@@ -59,7 +67,13 @@ const Schemas = {
     session: z.string().min(1),
   }),
 };
-
+const MAX_AVATAR_BYTES = 1024 * 1024;
+const avatarSchema = z.object({
+  image: z
+    .string()
+    .min(1)
+    .max(Math.ceil((MAX_AVATAR_BYTES * 4) / 3) + 8), // base64 of the WebP bytes
+});
 function tokens(result: AuthenticationResultType | undefined) {
   if (!result?.AccessToken)
     throw new HttpError(401, "Authentication failed", "NotAuthorized");
@@ -227,6 +241,63 @@ const routeHandlers: Record<string, RouteHandler> = {
       new GlobalSignOutCommand({ AccessToken: getAccessToken(event) }),
     );
     return json(200, { message: "Logged out" });
+  },
+  [UserRoutes.UPLOAD_AVATAR]: async (event) => {
+    const { image } = parseBody(avatarSchema, event.body);
+    const bytes = Buffer.from(image, "base64");
+    if (bytes.length === 0)
+      throw new HttpError(400, "Image is empty", "InvalidImage");
+    if (bytes.length > MAX_AVATAR_BYTES)
+      throw new HttpError(413, "Image is too large", "ImageTooLarge");
+    if (!isWebp(bytes))
+      throw new HttpError(400, "Image must be a WebP file", "InvalidImage");
+
+    const token = getAccessToken(event);
+    const sub = getSub(event);
+    const current = await cognito.send(
+      new GetUserCommand({ AccessToken: token }),
+    );
+    const previous = attr(current, "picture");
+
+    // New key per upload: no stale caches, and the old object can be removed afterwards.
+    const key = `avatars/${sub}/${randomUUID()}.webp`;
+    await s3.send(
+      new PutObjectCommand({
+        Bucket: config.avatarBucket,
+        Key: key,
+        Body: bytes,
+        ContentType: "image/webp",
+      }),
+    );
+
+    try {
+      await cognito.send(
+        new UpdateUserAttributesCommand({
+          AccessToken: token,
+          UserAttributes: [{ Name: "picture", Value: key }],
+        }),
+      );
+    } catch (err) {
+      await deleteOwnObject(key, sub); // do not leave an orphan behind
+      throw err;
+    }
+
+    await deleteOwnObject(previous, sub);
+    return json(200, { avatarUrl: await avatarUrl(key) });
+  },
+  [UserRoutes.DELETE_AVATAR]: async (event) => {
+    const token = getAccessToken(event);
+    const current = await cognito.send(
+      new GetUserCommand({ AccessToken: token }),
+    );
+    await cognito.send(
+      new DeleteUserAttributesCommand({
+        AccessToken: token,
+        UserAttributeNames: ["picture"],
+      }),
+    );
+    await deleteOwnObject(attr(current, "picture"), getSub(event));
+    return json(200, { avatarUrl: null });
   },
 };
 
